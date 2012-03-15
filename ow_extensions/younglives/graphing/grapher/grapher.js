@@ -113,7 +113,7 @@ steal(
                                         // redraw the graph
                                         $this.yl_grapher('drawGraph');
                                         // rewrite the title
-                                        $('#chart_title', $this).html($.View('views/chart_pane_title.ejs', settings));
+                                        $('#chart_title span', $this).replaceWith($.View('views/chart_pane_title.ejs', settings));
                                         // switch to the graph pane
                                         $('.accordion', $this).data('tabs').click(0);
                                     });

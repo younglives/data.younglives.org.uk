@@ -1,5 +1,5 @@
 <div class="grapher-ui accordion">
-    <h2 id="chart_title" class="current"><%= $.View('views/chart_pane_title.ejs', this) %><a href="http://data.younglives.org"><img src="styles/img/powered_by.png" alt="Powered by YoungLives"></a><div style="clear:both;"></div></h2>
+    <h2 id="chart_title" class="current"><span><%= $.View('views/chart_pane_title.ejs', this) %></span><a href="http://data.younglives.org"><img src="styles/img/powered_by.png" alt="Powered by YoungLives"></a><div style="clear:both;"></div></h2>
     <div id="grapher-vis" class="pane" style="display:block;"></div>
     <%= $.View('views/init-info.ejs', this) %>
     <% if (shareable) { %>
