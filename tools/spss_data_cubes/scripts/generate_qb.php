@@ -36,7 +36,7 @@ if(!$ns['*']) { log_message("Please make sure config.csv includes a default name
 if(!$ns['studymeta']) { log_message("Please make sure config.csv includes a namespace for 'studymeta' to hold study meta-data",1);}
 if(!$ns['var']) { log_message("Please make sure config.csv includes a namespace for 'var' to profile a prefix for variables",1);}
 if(!$ns['stats']) { log_message("Please make sure config.csv includes a namespace for 'stats' to profile a prefix for statistics",1);}
-$prefix_stats = $ns['stats'];
+$prefix_stats = $ns['ylstats'];
 $code_prefix = $ns['*']."code-";
 
 
@@ -61,7 +61,7 @@ $folders = directory_list("../data/csv/",false);
 
 
 //Temporary limit
-$folders = array_slice($folders,0,6);
+$folders = array_slice($folders,0,10);
 
 
 foreach($folders as $folder => $folderName) {
@@ -95,7 +95,7 @@ foreach($folders as $folder => $folderName) {
 		$files = directory_list("../data/csv/".$folderName."/",false);
 
 		foreach($files as $file => $fileName) {
-			if(strlen($fileName) > 2 ) {
+			if(strlen($fileName) > 2 && !(substr($fileName,-2)=="ID")) {
 				echo "\n Processing: $fileName "; $n=1;
 				
 
@@ -118,26 +118,11 @@ foreach($folders as $folder => $folderName) {
 									$model->add(new Statement($observation,$dsd['round'],$thisRound));
 									$model->add(new Statement($observation,$dsd['cohort'],$thisCohort));
 									$model->add(new Statement($observation,$dsd['variable'], new Resource($code_prefix.format_var_string($data[1]))));
-								
 									$count = new Literal($data['2']); 
 									$count->setDatatype("http://www.w3.org/2001/XMLSchema#decimal");
-									$model->add(new Statement($observation,$QB_measureType,$dsd['frequency']));
 									$model->add(new Statement($observation,$dsd['frequency'],$count));
 									
-										//Record an observation attached to the given dataset and using $data[1] and $data[2]
-										$observation = new Resource($prefix_stats."stats-$fileName-".uniqid()); //Note: Improve this ID 
-										$model->add(new Statement($observation,$RDF_type,$QB_Observation));
-										$model->add(new Statement($observation,$QB_dataSet,$dsd['dataset']));
-										$model->add(new Statement($observation,$RDFS_label,new Literal("Frequency of {$fileName}")));
-										$model->add(new Statement($observation,$dsd['country'],$thisCountry)); 
-										$model->add(new Statement($observation,$dsd['round'],$thisRound));
-										$model->add(new Statement($observation,$dsd['cohort'],$thisCohort));
-										$model->add(new Statement($observation,$dsd['variable'], new Resource($code_prefix.format_var_string($data[1]))));
-
-										$count = new Literal($data['3']); 
-										$count->setDatatype("http://www.w3.org/2001/XMLSchema#float");
-										$model->add(new Statement($observation,$QB_measureType,$dsd['proportion']));
-										$model->add(new Statement($observation,$dsd['proportion'],$count));
+									
 						    }
 						    fclose($handle);
 						}
@@ -157,7 +142,7 @@ $model->saveAs("../data/rdf/output.n3", "n3");
 function setUpDSD($varname,$ns,&$model) {
 	include("../../shared_functions/models.php");
 	$prefix_vars = $ns['var'];
-	$prefix_structure = $ns['*'];
+	$prefix_structure = $ns['yldsd'];
 	//Establish the measure
 	
 	//And create the dimensions we'll need later
@@ -166,53 +151,55 @@ function setUpDSD($varname,$ns,&$model) {
 	$cohort = new Resource($prefix_structure."cohort");	
 	$variable = new Resource($prefix_vars.$varname);
 	$frequency = new Resource($prefix_vars."frequency");
-	$proportion = new Resource($prefix_vars."proportion");
-
+	$model->addWithoutDuplicates(new Statement($frequency,$RDF_type,$QB_MeasureProperty));
+	$model->addWithoutDuplicates(new Statement($frequency,$RDFS_label,new Literal("Frequency")));
+	//$proportion = new Resource($prefix_vars."proportion");
+	//$model->addWithoutDuplicates(new Statement($proportion,$RDF_type,$QB_MeasureProperty));
 
 	//Establish the data structure definition & the components
-	$dsd = new Resource($prefix_vars."dsd-".$varname);
+	$dsd = new Resource($ns['ylstats']."SumaryStatistics-".$varname);
 	$model->add(new Statement($dsd,$RDF_type,$QB_DataStructureDefinition));
+	$model->add(new Statement($dsd,$RDFS_label,new Literal("Distribution of responses to variable $varname")));
 
-	$componentCountry = new Resource($prefix_structure."component-country");
+	$componentVariable = new Resource($prefix_structure."component/component-".$varname);
+	$model->addWithoutDuplicates(new Statement($componentVariable,$QB_dimension,$variable));
+	$model->addWithoutDuplicates(new Statement($componentVariable ,$QB_order,new Literal(1)));
+	$model->add(new Statement($dsd,$QB_component,$componentVariable));
+
+	$componentCountry = new Resource($prefix_structure."component/component-country");
 	$model->addWithoutDuplicates(new Statement($componentCountry,$QB_dimension,$country));
-	$model->addWithoutDuplicates(new Statement($componentCountry,$QB_order,new Literal(1)));
+	$model->addWithoutDuplicates(new Statement($componentCountry,$QB_order,new Literal(2)));
 	$model->add(new Statement($dsd,$QB_component,$componentCountry));
 
-	$componentRound = new Resource($prefix_structure."component-round");
+	$componentRound = new Resource($prefix_structure."component/component-round");
 	$model->addWithoutDuplicates(new Statement($componentRound,$QB_dimension,$round));
-	$model->addWithoutDuplicates(new Statement($componentRound,$QB_order,new Literal(2)));
+	$model->addWithoutDuplicates(new Statement($componentRound,$QB_order,new Literal(3)));
 	$model->add(new Statement($dsd,$QB_component,$componentRound));
 
-	$componentCohort = new Resource($prefix_structure."component-cohort");
+	$componentCohort = new Resource($prefix_structure."component/component-cohort");
 	$model->addWithoutDuplicates(new Statement($componentCohort ,$QB_dimension,$cohort));
-	$model->addWithoutDuplicates(new Statement($componentCohort ,$QB_order,new Literal(3)));
+	$model->addWithoutDuplicates(new Statement($componentCohort ,$QB_order,new Literal(4)));
 	$model->add(new Statement($dsd,$QB_component,$componentCohort));
-
-	$componentVariable = new Resource($prefix_structure."component-".$varname);
-	$model->addWithoutDuplicates(new Statement($componentVariable,$QB_dimension,$variable));
-	$model->addWithoutDuplicates(new Statement($componentVariable ,$QB_order,new Literal(4)));
-	$model->add(new Statement($dsd,$QB_component,$componentVariable));
 	
-	$componentMeasureType = new Resource($prefix_structure."component-measureType");
-	$model->addWithoutDuplicates(new Statement($componentMeasureType,$QB_dimension,$QB_measureType));
-	$model->addWithoutDuplicates(new Statement($componentVariable ,$QB_order,new Literal(5)));
-	$model->add(new Statement($dsd,$QB_component,$componentMeasureType));
-	
-	$componentFrequency = new Resource($prefix_structure."component-frequency");
+	$componentFrequency = new Resource($prefix_structure."component/component-measure-frequency");
 	$model->addWithoutDuplicates(new Statement($componentFrequency,$QB_measure,$frequency));
 	$model->add(new Statement($dsd,$QB_component,$componentFrequency));
 	
-	$componentProportion = new Resource($prefix_structure."component-proportion");
-	$model->addWithoutDuplicates(new Statement($componentProportion,$QB_measure,$proportion));
-	$model->add(new Statement($dsd,$QB_component,$componentProportion));
+	//$componentProportion = new Resource($prefix_structure."component/component-proportion");
+	//$model->addWithoutDuplicates(new Statement($componentProportion,$QB_measure,$proportion));
+	//$model->add(new Statement($dsd,$QB_component,$componentProportion));
 	
 
 	//Now set up the dataset and link to it.
-	$dataset = new Resource($prefix_structure."dataset-".$varname);
+	$dataset = new Resource($ns['ylstats']."dataset-".$varname);
 	$model->add(new Statement($dataset,$RDF_type,$QB_DataSet));
 	$model->add(new Statement($dataset,$QB_structure,$dsd));
 
-	return array('dataset'=>$dataset,'country'=>$country,'round'=>$round,'cohort'=>$cohort, 'variable'=>$variable,'frequency'=>$frequency,'proportion'=>$proportion);
+
+	//And link this to the variable
+	$model->addWithoutDuplicates(new Statement($variable,new Resource($ns['yls']."responseDistributionDSD"),$dsd));
+
+	return array('dataset'=>$dataset,'country'=>$country,'round'=>$round,'cohort'=>$cohort, 'variable'=>$variable,'frequency'=>$frequency,'proportion'=>$proportion,'dsd'=>$dsd);
 }
 
 
