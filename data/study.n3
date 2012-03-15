@@ -1,0 +1,110 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix yls: <http://data.younglives.org.uk/vocab/younglivesStudyStructure/>.
+@prefix ylstats: <http://data.younglives.org.uk/data/statistics/>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+
+<http://data.younglives.org.uk/> rdfs:label "Young Lives Linked Data";
+	rdfs:comment "This is an experimental data archive storing meta-data, publications data, and selected statistics from the Young Lives study";
+	foaf:homepage <http://www.younglives.org.uk>.
+
+yls:Country a rdfs:Class;
+	rdfs:label "Young Lives Country"@en.
+	
+yls:country a rdf:Property, qb:DimensionProperty;
+	rdfs:label "Country"@en.
+
+yls:askedInCountry a rdf:Property;
+	rdfs:comment "The question was asked in the given country"@en;
+	rdfs:label "Asked in Country"@en.
+	
+ylstats:Ethiopia a yls:Country;
+	rdfs:comment "Young Lives research is based in 20 communities in the states of Amhara, Oromia, the Southern Nations, Nationalities and Peoples Region (SNNP) and Tigray, as well as in the capital, Addis Ababa. Together, these five areas cover different geographical regions, levels of development, urban/rural locations and population characteristics."@en;
+	rdfs:label "Ethiopia"@en;
+	rdfs:seeAlso <http://www.fao.org/countryprofiles/geoinfo/geopolitical/resource/Ethiopia>.
+	
+ylstats:inCohort a rdf:Property;
+	rdfs:label "Describes the study cohort that this applies to"@en;
+	rdfs:range yls:Cohort.
+	
+ylstats:India a yls:Country;
+	rdfs:comment "Young Lives research is based in Hyderabad plus 6 districts of Andhra Pradesh: Skrikakulam and West Godavari in the Coastal region; Anantapur and Cuddapah in Rayalaseema; and Mahboobnager and Karimnaga in Telangana. Together, these areas cover different geographical regions, levels of development, urban/rural locations and population characteristics."@en;
+	rdfs:label "India (Andhra Pradesh)"@en;
+	rdfs:seeAlso <http://www.fao.org/countryprofiles/geoinfo/geopolitical/resource/India>.
+	
+ylstats:Peru a yls:Country;
+	rdfs:comment "Young Lives has study sites in many areas of Peru including (in alphabetical order): Amazonas, Ancash, Apurimac, Arequipa, Ayacucho, Cajamarca, Hu\u00E1nuco, Jun\u00EDn, La Libertad, Lima, Piura, Puno, San Martin and Tumbes. Together, these areas cover different geographical regions, levels of development, urban/rural location and population characteristics."@en;
+	rdfs:label "Peru"@en;
+	rdfs:seeAlso <http://www.fao.org/countryprofiles/geoinfo/geopolitical/resource/Peru>.
+
+ylstats:Vietnam a yls:Country;
+	rdfs:comment "Young Lives research is based in 20 communities in the communes of Lao Cai in the north-west, Hung Yen province in the Red River Delta, the city of Danang on the coast, Phu Yen province from the South Central Coast and Ben Tre province on the Mekong River Delta. Together, these five areas cover different geographical regions, levels of development, urban/rural locations and population characteristics. For a map showing the sample sites, a full description of the sample sites and key findings so far, follow the links. "@en;
+	rdfs:label "Vietnam"@en;
+	rdfs:seeAlso <http://www.fao.org/countryprofiles/geoinfo/geopolitical/resource/Vietnam>.
+
+yls:provenaceExtractedFromFile a rdf:Property;
+	rdfs:label "This data was found in the related survey file"@en.
+	
+yls:Round a rdfs:Class;
+	rdfs:comment "The Young Lives Study is a longitudinal study carried out over a series of rounds."@en;
+	rdfs:label "Study Round"@en.
+	
+yls:roundOne a yls:Round;
+	rdfs:label "Study Round 1"@en.
+	
+yls:roundTwo a yls:Round;
+	rdfs:label "Study Round 2"@en.
+	
+yls:roundThree a yls:Round;
+	rdfs:label "Study Round 3"@en.
+
+yls:roundFour a yls:Round;
+	rdfs:label "Study Round 4"@en.	
+
+yls:roundFive a yls:Round;
+	rdfs:label "Study Round 5"@en.
+		
+ylstats:Cohort a rdfs:Class;
+	rdfs:comment "The Young Lives study follows two cohorts of young people, divided based on their age in Round 1 of the study"@en;
+	rdfs:label "Cohort"@en.
+
+ylstats:All_cohorts a ylstat:Cohort.
+
+yls:round a rdf:Property, qb:DimensionProperty;
+	rdfs:label "Young Lives Study Round"@en.
+	
+ylstats:Young_Cohort a ylstats:Cohort;
+	rdfs:comment "The Younger Cohort were aged one-years-old in round one of the study"@en;
+	rdfs:label "Younger Cohort"@en;
+	rdfs:subPropertyOf yls:AllCohorts.
+	
+ylstats:Old_cohort a ylstats:Cohort;
+	rdfs:comment "The Older Cohort were aged eight-years-old in round one of the study"@en;
+	rdfs:label "Older Cohort"@en;
+	rdfs:subPropertyOf yls:AllCohorts.
+
+ylstats:cohort a rdf:Property, qb:DimensionProperty;
+	rdfs:label "Young Lives Cohort"@en.
+
+yls:inRound a rdf:Property;
+	rdfs:label "Describes the study round which this applies to"@en;
+	rdfs:range yls:Round.
+	
+yls:Variable a rdfs:Class;
+	rdfs:label "Young Lives Variable"@en;
+	rdfs:comment "A variable used within the Young Lives Study.".
+
+yls:Question a rdfs:Class;
+	rdfs:label "Young Lives Question"@en;
+	rdfs:comment "A question or variable from the main household, child level or household member level questionnaire."@en;
+	rdfs:subClassOf yls:Variable.
+			
+yls:AdditionalVariable a rdfs:Class;
+	rdfs:label "Young Lives Additional Variables"@en;
+	rdfs:comment "Additional Variables usually collect extra information linked to a particular study question."@en;
+	rdfs:subClassOf yls:Variable.
+	
+<http://data.younglives.org.uk> rdfs:label "Young Lives Dataset"@en.

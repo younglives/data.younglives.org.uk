@@ -1,3 +1,15 @@
 /build/
 *~
 /src/
+build/
+*ddi/*
+*spss/*
+tools/rap/api/*
+*.sav
+tools/spss_ddi_rdf/data/spss/*/output/*
+tools/spss_ddi_rdf/data/ddi
+*.svn
+tools/spss_data_cubes/data/spss/output/*
+tools/annotate_variables/data/output/archive
+tools/annotate_variables/data/output
+tools/spss_data_cubes/data/rdf

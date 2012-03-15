@@ -1,0 +1,8 @@
+ddi/*.xml
+csv/*
+spss/*.sav
+rdf/*.rdf
+!rdf/
+!ddi/
+!csv/
+!spss/

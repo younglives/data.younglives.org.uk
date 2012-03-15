@@ -1,0 +1,182 @@
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPreliminaryInterview>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3PreliminaryInterview>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>,>SECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionParentalBackground>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3ParentalBackground>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAndChildEducation>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3HouseholdEducation>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionLivelihoodsAndAssetFramework>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3Livelihoods>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdFoodAndNonFoodConsumptionAndExpenditure>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3Consumption>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSocialCapital>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3SocialCapital>
+>SECTION <yls:roundThreeStudySection> <yls:studyEconomicChangesAndRecentLifeHistory>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3EconomicChanges>
+>SECTION <yls:roundThreeStudySection> <yls:studySocioEconomicStatus>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3SocioeconomicStatus>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3ChildHealthAndDevelopment>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionAnthropometry>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3Anthropometry>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCaregiverPerceptionsAndAttitudes>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3CaregiverFeelingsAttitudesPerceptions>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3ChildHealthAndDevelopment>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildActivities>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3ChildActivities>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionMothersHealth>,>SECTION <yls:roundThreeStudySection> <yls:studySectionR3MaternalHealth>
+
+
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdMemberLevelData>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCrowsGrownByHousehold>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCreditSupportProgram>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionMoneyOrGoodsGivenToIndividualsOutsideTheHousehold>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionLandOwnedOrRentedByTheHousehold>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPlotsWithNoCrops>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCropsGrownByTheHousehold>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSupportFromNGOorGOPrograms>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildsTimeUseAndActivities>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionFeelingsAndAttitudes>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSocialNetworksSocialSkillsAndSocialSupport>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionMigration>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdIssues>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildrenGirlsOnly>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHeadsOrTailsRiskAversionAndTimeDiscountingQuestions>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionAchievementAndDevelopmentInstruments>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPeabodyPictureVocabularyTest>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionOne>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionTwo>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionThree>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFour>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFive>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionSix>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildActivities>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionGroups>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPreliminaryInterview>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionParentalBackground>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAndChildEducation>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionLivelihoodsAndAssetFramework>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdFoodAndNonFoodConsumptionAndExpenditure>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSocialCapital>	 
+>SECTION <yls:roundThreeStudySection> <yls:studyEconomicChangesAndRecentLifeHistory>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySocioEconomicStatus>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildActivities>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionAnthropometry>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCaregiverPerceptionsAndAttitudes>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdMemberLevelData>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCropsGrownByTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCreditSupportProgram>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionMoneyOrGoodsGivenToIndividualsOutsideTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionLandOwnedOrRentedByTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPlotsWithNoCrops>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCropsGrownByTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSupportFromNGOorGOPrograms>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildWorkActivities>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionOne>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionTwo>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionThree>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFour>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPeabodyPictureVocabularyTest>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildActivities>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPreliminaryInterview>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionParentalBackground>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAndChildEducation>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionLivelihoodsAndAssetFramework>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdFoodAndNonFoodConsumptionAndExpenditure>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSocialCapital>	 
+>SECTION <yls:roundThreeStudySection> <yls:studyEconomicChangesAndRecentLifeHistory>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySocioEconomicStatus>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionAnthropometry>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdMemberLevelData>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCropsGrownByTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionMoneyOrGoodsGivenToIndividualsOutsideTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSupportFromNGOorGOPrograms>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildsTimeUseAndActivities>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionTwo>	 - Feeling, Attitudes and Perceptions
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionThree>	: Schooling
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFour>	 – Child Health
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFive>	 – Social Networks, Social Skills & Social Support
+>SECTION <yls:roundThreeStudySection> <yls:studySectionMigration> 	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdIssues>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionAchievementAndDevelopmentInstruments>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildActivities>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionGroups>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPreliminaryInterview>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionParentalBackground>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildMigration>	B – MIGRATION (YOUNGER COHORT ONLY)
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAndChildEducation>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionLivelihoodsAndAssetFramework>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdFoodAndNonFoodConsumptionAndExpenditure>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSocialCapital>	 
+>SECTION <yls:roundThreeStudySection> <yls:studyEconomicChangesAndRecentLifeHistory>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySocioEconomicStatus>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionAnthropometry>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCaregiverPerceptionsAndAttitudes>	1: Caregiver Perceptions and Attitudes 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdMemberLevelData>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCropsGrownByTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionMoneyOrGoodsGivenToIndividualsOutsideTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAssets>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSupportFromNGOorGOPrograms>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionOne>	 – School, School Meals and Work Activities
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionTwo>	 - Feeling, Attitudes and Perceptions
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionThree>	 – Social Networks, Social Skills & Social Support
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFour>	 - Heads or Tails?
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFive>	 – Self-Achievement and Development Instruments
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildActivities>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPreliminaryInterview>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionParentalBackground>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAndChildEducation>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionLivelihoodsAndAssetFramework>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdFoodAndNonFoodConsumptionAndExpenditure>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSocialCapital>	
+>SECTION <yls:roundThreeStudySection> <yls:studyEconomicChangesAndRecentLifeHistory>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySocioEconomicStatus>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionAnthropometry>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCaregiverPerceptionsAndAttitudes>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionOne>	2 – Mother’s Health
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdMemberLevelData>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCropsGrownByTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDonatedFood>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdIncomeMonetaryIncome>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildsTimeUseAndActivities>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionFeelingsAndAttitudes>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionThree>	 – School 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFive>	 – Social Networks, Social Skills & Social Support
+>SECTION <yls:roundThreeStudySection> <yls:studySectionMigration> 	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdIssues>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildrenGirlsOnly>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPets>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionAchievementAndDevelopmentInstruments>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdminHeader>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionOne>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionTwo>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionThree>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFour>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildActivities>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionGroups>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPreliminaryInterview>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionParentalBackground>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAndChildEducation>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionLivelihoodsAndAssetFramework>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdFoodAndNonFoodConsumptionAndExpenditure>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSocialCapital>	
+>SECTION <yls:roundThreeStudySection> <yls:studyEconomicChangesAndRecentLifeHistory>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySocioEconomicStatus>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionAnthropometry>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCaregiverPerceptionsAndAttitudes>	 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionMothersHealth>
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdMemberLevelData>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionCropsGrownByTheHousehold>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDonatedFood>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdIncomeMonetaryIncome>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildWorkActivities>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionOne>	 – School and Work
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionTwo>	 – Feelings, Attitudes and Perceptions 
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionThree>	 – Social Networks, Social Skills & Social Support
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFour>	: Pets
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFive>	: Heads or Tails?
+>SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionSix>	: Self- Achievement Tests
+>SECTION <yls:roundThreeStudySection> <yls:studySectionPeabodyPictureVocabularyTest>	
+>SECTION <yls:roundThreeStudySection> <yls:studySectionChildActivities>	

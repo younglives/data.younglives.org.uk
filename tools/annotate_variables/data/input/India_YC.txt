@@ -1,0 +1,5016 @@
+India Data Dictionary
+Younger Cohort 	 
+Data Files
+
+A total of 10 data files are generated from the India Younger Cohort dataset.  The two main data files are IN_YC_HouseholdLevel.sav and IN_YC_ChildLevel.sav. The file title: IN_OC_HouseholdLevel.sav holds data at the household level (one record per household) and the file titled: IN_YC_ChildLevel.sav holds data at the child level (one record per child. The remaining data files hold data at a lower level. For example IN_YC_HouseholdMemberLevel.sav has one record for each member of the household – i.e. potentially several records per household.  The following table lists the 10 data files which are detailed in the rest of this document.
+
+Data File Name	Description
+IN_YC_HouseholdLevel.sav	All data at the Household level from the Household Questionnaire- one record per child/household.
+IN_YC_HouseholdMemberLevel.sav	All data at the Household level from the Household Questionnaire-includes both Younger and Older Cohort.
+IN_YC_ChildLevel.sav	All data at the Child level from the Younger Cohort Child Questionnaire-one record per YL Index Child
+stblHHSec3Crops.sav	Data about the Crops cultivated by the household.
+stblHHSec3PrimaryAssets.sav	Data about the Primary Assets available to the Household.
+stblHHSec3SupportProgrammes.sav	Data about the support the household receives from NGOs, IOs, Government Bodies.
+stblHHSec3Outgoings.sav	Data about the support the household provided to external bodies/persons.
+stblHHSec3NREG.sav	Data about the members of the household who were registered with the NRG scheme.
+stblHHSec8ChildWork.sav	Data about the work activity of the child in and outside of the household.
+stblSec1Activities.sav	Data about activities done by the child on the previous working day – one record per activity
+
+
+Household Level Data(from Household Questionnaire)
+This section describes the variables and their codes found in the file IN_YC_ChildLevel.sav, which come directly from the Young Lives questionnaire. There is only one record per child/household. The following codes are standard across most of the numeric variables in the dataset:
+77=Not known (NK)– This is where the respondent says they do not know;
+88=Not applicable(N/A)– This is where the question is not applicable because of a response given to an earlier question;
+99=Missing – The question was missed during fieldwork or was not clearly recorded;
+79=Refused to answer – The respondent did not want to answer the question.
+For variables where these values are feasible for the question the missing value codes are negative. Also for year-codes, the missing value codes are composed of 4 digits instead of 2; i.e. 7777= NK, 8888=N/A, 9999= Missing. For year-code variables, the code 79= Refused to answer has not been generated.
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3PreliminaryInterview>	
+CHILDID	Child ID
+DTOPIR3	Date of 
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3PreliminaryInterview>	 
+FNDHSER3	Was YL child residing at address provided? Codes are: 00=No 01=Yes
+FNDNEWR3	Were you able to locate new household for YL child? Codes are: 00=No 01=Yes
+NEWCOMR3	Community ID
+NEWSTER3	Urban or Rural - Codes are: 01=Urban 02=Rural
+NEWREGR3	Region of residence - Codes are: 
+21= Coastal Andhra
+22= Rayalaseema
+23= Telangana
+HEADIDR3	Roster ID of household head
+HEADLNR3	Language spoken by household head
+		57= Hindi
+58= Kannada
+66= Oriya
+72= Telugu
+73= Urdu
+75= English
+CARELNR3	Language spoken by caregiver
+57= Hindi
+58= Kannada
+66= Oriya
+72= Telugu
+73= Urdu
+75= English
+CHLDLNR3	Language spoken by NAME
+		57= Hindi
+58= Kannada
+66= Oriya
+72= Telugu
+73= Urdu
+75= English
+SPECHDLN	Specify language spoken by household head
+SPECCRLN	Specify language spoken by caregiver
+SPECCHLN	Specify language spoken by child
+respndr3	Roster ID of person to talk to about NAME
+newclsr3	Sentinel Site
+
+>SUBSECTION;
+>SECTION;	
+DINT		Date of interview
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3ParentalBackground>	 
+IDR31		ID of respondent for >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionOne>	
+DADALR3	Is this person (father) still alive? Codes are: 00= No, 01= Yes
+MUMALR3	Is this person (mother) still alive? Codes are: 00= No, 01= Yes
+BIODADR3	Is this the biological father? Codes are: 00= No, 01= Yes
+BIOMUMR3	Is this the biological mother? Codes are: 00= No, 01= Yes
+PRIDADR3	Is this person (father) the primary caregiver? Codes are: 00= No, 01= Yes
+PRIMUMR3	Is this person (mother) the primary caregiver? Codes are: 00= No, 01= Yes
+DADIDR3	Roster ID of the father. Code is: 90= Not a member of the household
+MUMIDR3	Roster ID of the mother. Code is: 90= Not a member of the household
+CAREIDR3	Roster ID of the caregiver. Code is: 90= Not a member of the household
+SEEDADR3	How often does this person (father) see the child? Codes are:
+01= Daily
+02= Weekly
+03= Monthly
+04= Annually
+05= Irregularly
+06= Never
+SEEMUMR3	How often does this person (mother) see the child? Codes are the same as used for SEEDADR3.
+SEECRER3	How often does this person (carer) see the child? Codes are the same as used for SEEDADR3.
+CHSPKLR3	Currently does NAME speak the most commonly used language in the locality? Codes are:
+		00= Not at all
+01= Yes, speaks and understands
+02= Does not speak, but understands
+CHCSTER3	Which of the following origins does NAME belong to? Codes are:
+		21= SC
+22= ST
+23= BC
+24= OC
+SUBCSTR3	Sub-caste
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionChildMigration>	B – MIGRATION (YOUNGER COHORT ONLY)
+IDR31B	ID of respondent for >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionOne>	B
+LVHRINR3	Were you living in this community when we last interviewed you in 2006? Codes are: 00= No, 01= Yes
+WHMVAWR3	Why did you move away from that community? Codes are: 
+01= Work
+02= Study
+03= Health
+04= Family disputes
+05= Seeking independence
+06= Rent problems
+07= Divorce, separatiion
+08= Improve dwelling conditions
+09= Violence
+10= Parents died
+11= Inheritance
+12= Other
+13= Married/cohabit
+14= Purchased own home/land
+15= To be close to family
+16= Squatted
+17= Death of a relative
+18= Pregnancy/birth of a child
+19= Don't get used
+21= Natural disaster
+22= Better/more land
+23= More security
+24= Look after a sick relative
+25= Adventure
+26= Higher wages
+27= Found a job
+28= Spouse's family is here
+SPWHMVAW	Specify why moved away from previous community
+PEYLIVR3	Why did you move to this particular community?
+01= Family contacts
+02= School
+03= Found a job
+04= Married/Cohabit
+05= Received inheritance
+06= Good wages
+07= Good living conditions
+08= Safe
+09= Good/cheap school/nearest place to continue my studies
+10= Relatives or friends are here
+11= Spouse's family is here
+12= Offered a job
+13= Easy/cheap to get here
+14= Better healthcare/other services
+15= No reason
+16= Other
+
+SPPEYLIV	Specify why you moved to this community
+CHDMVER3	When you moved did NAME come with you? Codes are: 00= No, 01= Yes
+PEMVFRR3	Have you thought about moving away from this community? Codes are: 00= No, 01= Yes
+PEYMVER3	Why have you thought above moving away from this community? 
+01= Work
+02= Study
+03= Health
+04= Family disputes
+05= Seeking independence
+06= Rent problems
+07= Divorce, separatiion
+08= Improve dwelling conditions
+09= Violence
+10= Parents died
+11= Inheritance
+12= Other
+13= Married/cohabit
+14= Purchased own home/land
+15= To be close to family
+16= Squatted
+17= Death of a relative
+18= Pregnancy/birth of a child
+19= Don't get used
+21= Natural disaster
+22= Better/more land
+23= More security
+24= Look after a sick relative
+25= Adventure
+26= Higher wages
+27= Found a job
+28= Spouse's family is here
+	
+SPECMOVE	Specify why you have thought about moving away from this community
+NMELFTR3	Has NAME left this locality for more than 3 months since we last came to visit? Codes are: 00= No, 01= Yes
+LNGLFTR3	How long did NAME leave the locality for since we last came (in days)?
+RSNLFTR3	What is the most important reason NAME left this locality for more than three months?
+01= Work
+02= Study
+03= Health
+04= Family disputes
+05= Seeking independence
+06= Rent problems
+07= Divorce, separatiion
+08= Improve dwelling conditions
+09= Violence
+10= Parents died
+11= Inheritance
+12= Other
+13= Married/cohabit
+14= Purchased own home/land
+15= To be close to family
+16= Squatted
+17= Death of a relative
+18= Pregnancy/birth of a child
+19= Don't get used
+21= Natural disaster
+22= Better/more land
+23= More security
+24= Look after a sick relative
+25= Adventure
+26= Higher wages
+27= Found a job
+28= Spouse's family is here
+
+SPRSNLFT 	Specify reason why NAME left locality for more than 3 months
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3HouseholdEducation>	 
+IDR32	ID of respondent for >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionTwo>	
+ATSCR309	Did child attend school or pre-school for more than 6 months - in 2009/10? Codes are: 00= No, 01= Yes
+ATSCR308	Did child attend school or pre-school for more than 6 months - in 2008/09? Codes are: 00= No, 01= Yes
+ATSCR307	Did child attend school or pre-school for more than 6 months - in 2007/08? Codes are: 00= No, 01= Yes
+ATSCR306	Did child attend school or pre-school for more than 6 months - in 2006/07? Codes are: 00= No, 01= Yes
+ATSCR305	Did child attend school or pre-school for more than 6 months - in 2005/06? Codes are: 00= No, 01= Yes
+ATSCR304	Did child attend school or pre-school for more than 6 months - in 2004/05? Codes are: 00= No, 01= Yes
+ATSCR303	Did child attend school or pre-school for more than 6 months - in 2003/04? Codes are: 00= No, 01= Yes
+ATSCR302	Did child attend school or pre-school for more than 6 months - in 2002/03? Codes are: 00= No, 01= Yes
+ATSCR301	Did child attend school or pre-school for more than 6 months - in 2001/02? Codes are: 00= No, 01= Yes
+ATSCR300	Did child attend school or pre-school for more than 6 months - in 2000/01? Codes are: 00= No, 01= Yes
+ATSCR399	Did child attend school or pre-school for more than 6 months - in 1999/00? Codes are: 00= No, 01= Yes
+ATSCR398	Did child attend school or pre-school for more than 6 months - in 1998/99? Codes are: 00= No, 01= Yes
+ATSCR397	Did child attend school or pre-school for more than 6 months - in 1997/98? Codes are: 00= No, 01= Yes
+ATSCR396	Did child attend school or pre-school for more than 6 months - in 1996/97? Codes are: 00= No, 01= Yes
+ATSCR395	Did child attend school or pre-school for more than 6 months - in 1995/96? Codes are: 00= No, 01= Yes
+ATSCR394	Did child attend school or pre-school for more than 6 months - in 1994/95? Codes are: 00= No, 01= Yes
+TYSCR309	Type of school attended - in 2009/10. Codes are:
+		01= Private
+02- NGO/Charity/Religious (not-for-profit)
+03= Public (Government)
+04= Informal or non-formal Community
+05= Vocational school
+06= Charitable Trust
+07= Bridge School
+11= Other (specify)
+SPTYSC09	Specify type of school attended  - in 2009/10
+TYSCR308	Type of school attended - in 2008/09. Codes are the same as used for TYSCR309.
+SPTYSC08	Specify type of school attended  - in 2008/09
+TYSCR307	Type of school attended - in 2007/08. Codes are the same as used for TYSCR309.
+SPTYSC07	Specify type of school attended  - in 2007/08 
+TYSCR306	Type of school attended - in 2006/07. Codes are the same as used for TYSCR309.
+SPTYSC06	Specify type of school attended  - in 2006/07
+TYSCR305	Type of school attended - in 2005/06. Codes are the same as used for TYSCR309.
+TYSCR304	Type of school attended - in 2004/05. Codes are the same as used for TYSCR309.
+SPTYSC04	Specify type of school attended  - in 2004/05
+TYSCR303	Type of school attended - in 2003/04. Codes are the same as used for TYSCR309.
+SPTYSC03	Specify type of school attended  - in 2003/04
+TYSCR302	Type of school attended - in 2002/03. Codes are the same as used for TYSCR309.
+SPTYSC02	Specify type of school attended  - in 2002/03
+TYSCR301	Type of school attended - in 2001/02. Codes are the same as used for TYSCR309.
+SPTYSC01	Specify type of school attended  - in 2001/02
+TYSCR300	Type of school attended - in 2000/01. Codes are the same as used for TYSCR309.
+SPTYSC00	Specify type of school attended  - in 2000/01
+TYSCR399	Type of school attended - in 1999/00. Codes are the same as used for TYSCR309.
+SPTYSC99	Specify type of school attended  - in 1999/00
+TYSCR398	Type of school attended - in 1998/99. Codes are the same as used for TYSCR309.
+SPTYSC98	Specify type of school attended  - in 1998/99
+TYSCR397	Type of school attended - in 1997/98. Codes are the same as used for TYSCR309.
+SPTYSC97	Specify type of school attended  - in 1997/98
+TYSCR396	Type of school attended - in 1996/97. Codes are the same as used for TYSCR309.
+SPTYSC96	Specify type of school attended  - in 1996/97
+TYSCR395	Type of school attended - in 1995/96. Codes are the same as used for TYSCR309.
+SPTYSC95	Specify type of school attended  - in 1995/96
+TYSCR394	Type of school attended - in 1994/95. Codes are the same as used for TYSCR309.
+SPTYSC94	Specify type of school attended  - in 1994/95
+GRDER309	Grade child was in - 2009/10. Code is: 00= None(pre-primary)
+GRDER308	Grade child was in - 2008/09. Code is: 00= None(pre-primary)
+GRDER307	Grade child was in - 2007/08. Code is: 00= None(pre-primary)
+GRDER306	Grade child was in - 2006/07. Code is: 00= None(pre-primary)
+GRDER305	Grade child was in - 2005/06. Code is: 00= None(pre-primary)
+GRDER304	Grade child was in - 2004/05. Code is: 00= None(pre-primary)
+GRDER303	Grade child was in - 2003/04. Code is: 00= None(pre-primary)
+GRDER302	Grade child was in - 2002/03. Code is: 00= None(pre-primary)
+GRDER301	Grade child was in - 2001/02. Code is: 00= None(pre-primary)
+GRDER300	Grade child was in - 2000/01. Code is: 00= None(pre-primary)
+GRDER399	Grade child was in - 1999/00. Code is: 00= None(pre-primary)
+GRDER398	Grade child was in - 1998/99. Code is: 00= None(pre-primary)
+GRDER397	Grade child was in - 1997/98. Code is: 00= None(pre-primary)
+GRDER396	Grade child was in - 1996/97. Code is: 00= None(pre-primary)
+GRDER395	Grade child was in - 1995/96. Code is: 00= None(pre-primary)
+GRDER394	Grade child was in - 1994/95. Code is: 00= None(pre-primary)
+NMSCR309	Name of school - 2009/10
+NMSCR308	Name of school - 2008/08
+NMSCR307	Name of school - 2007/08
+NMSCR306	Name of school - 2006/07
+NMSCR305	Name of school - 2005/06
+NMSCR304	Name of school - 2004/05
+NMSCR303	Name of school - 2003/04
+NMSCR302	Name of school - 2002/03
+NMSCR301	Name of school - 2001/02
+NMSCR300	Name of school - 2000/01
+NMSCR399	Name of school - 1999/00
+NMSCR398	Name of school - 1998/99
+NMSCR397	Name of school - 1997/98
+NMSCR396	Name of school - 1996/95
+NMSCR395	Name of school - 1995/96
+NMSCR394	Name of school - 1994/95
+CSSCR309	Census code of school - 2009/10
+CSSCR308	Census code of school - 2008/09
+CSSCR307	Census code of school - 2007/08
+CSSCR306	Census code of school - 2006/07
+CSSCR305	Census code of school - 2005/06
+CSSCR304	Census code of school - 2004/05
+CSSCR303	Census code of school - 2003/04
+CSSCR302	Census code of school - 2002/03
+CSSCR301	Census code of school - 2001/02
+CSSCR300	Census code of school - 2000/01
+CSSCR399	Census code of school - 1999/00
+CSSCR398	Census code of school - 1998/99
+CSSCR397	Census code of school - 1997/98
+CSSCR396	Census code of school - 1996/97
+CSSCR395	Census code of school - 1995/96
+CSSCR394	Census code of school - 1994/95
+DSSCR309	District where school is located - 2009/10
+DSSCR308	District where school is located - 2008/09
+DSSCR307	District where school is located - 2007/08
+DSSCR306	District where school is located - 2006/07
+DSSCR305	District where school is located - 2005/06
+DSSCR304	District where school is located - 2004/05
+DSSCR303	District where school is located - 2003/04
+DSSCR302	District where school is located - 2002/03
+DSSCR301	District where school is located - 2001/02
+DSSCR300	District where school is located - 2000/01
+DSSCR399	District where school is located - 1999/00
+DSSCR398	District where school is located - 1998/99
+DSSCR397	District where school is located - 1997/98
+DSSCR396	District where school is located - 1996/97
+DSSCR395	District where school is located - 1995/96
+DSSCR394	District where school is located - 1994/95
+DSCDR309	District Code where school is located - 2009/10
+DSCDR308	District Code where school is located - 2008/09
+DSCDR307	District Code where school is located - 2007/08
+DSCDR306	District Code where school is located - 2006/07
+DSCDR305	District Code where school is located - 2005/06
+DSCDR304	District Code where school is located - 2004/05
+DSCDR303	District Code where school is located - 2003/04
+DSCDR302	District Code where school is located - 2002/03
+DSCDR301	District Code where school is located - 2001/02
+DSCDR300	District Code where school is located - 2000/01
+DSCDR399	District Code where school is located - 1999/00
+DSCDR398	District Code where school is located - 1998/99
+DSCDR397	District Code where school is located - 1997/98
+DSCDR396	District Code where school is located - 1996/97
+DSCDR395	District Code where school is located - 1995/96
+DSCDR394	District Code where school is located - 1994/95
+STNMR309	State name where school is located - 2009/10
+STNMR308	State name where school is located - 2008/09
+STNMR307	State name where school is located - 2007/08
+STNMR306	State name where school is located - 2006/07
+STNMR305	State name where school is located - 2005/06
+STNMR304	State name where school is located - 2004/05
+STNMR303	State name where school is located - 2003/04
+STNMR302	State name where school is located - 2002/03
+STNMR301	State name where school is located - 2001/02
+STNMR300	State name where school is located - 2000/01
+STNMR399	State name where school is located - 1999/00
+STNMR398	State name where school is located - 1998/99
+STNMR397	State name where school is located - 1997/98
+STNMR396	State name where school is located - 1996/97
+STNMR395	State name where school is located - 1995/96
+STNMR394	State name where school is located - 1994/95
+STCDR309	State Code where school is located - 2009/10
+STCDR308	State Code where school is located - 2008/09
+STCDR307	State Code where school is located - 2007/08
+STCDR306	State Code where school is located - 2006/07
+STCDR305	State Code where school is located - 2005/06
+STCDR304	State Code where school is located - 2004/05
+STCDR303	State Code where school is located - 2003/04
+STCDR302	State Code where school is located - 2002/03
+STCDR301	State Code where school is located - 2001/02
+STCDR300	State Code where school is located - 2000/01
+STCDR399	State Code where school is located - 1999/00
+STCDR398	State Code where school is located - 1998/99
+STCDR397	State Code where school is located - 1997/98
+STCDR396	State Code where school is located - 1996/97
+STCDR395	State Code where school is located - 1995/96
+STCDR394	State Code where school is located - 1994/95
+LNGINSR3	What was the language of instruction at NAME's school during primary? Codes are: 	
+			57= Hindi
+			58= Kannada
+			66= Oriya
+			72= Telugu
+			73= Urdu
+			75= English
+SPLNGINS	Specify language of instruction at primary school
+WHSCHR31, WHSCHR32, WHSCHR33
+	Why have you chosen this school for NAME to attend? Codes are:
+		01= School is near to home
+		02= No other option (only school in area)
+		03= No school fees
+		04= Low school fees
+		05= Good quality teaching and care
+		06= Single sex school
+		07= Mixed gender school
+		08= Receives school meal
+		09= Other household children attended this school
+		10= Other
+		11= Good services
+SPWHSCH1, SPWHSCH2, SPWHSCH3
+	Specify other reasons for choosing school
+SCHMINR3	How long does it take NAME to get to school (minutes)?
+TRNSCHR3	How does NAME usually travel to school? Codes are:
+		01= Walk
+		02= Bicycle
+		03= Family car or motorbike
+		04= School bus
+		05= Public bus/ coach/ shared taxi/ motorbike/ horse carts
+		06= Private hire taxi
+		07= Rickshaw
+		08= River crossing
+		09= Other 
+SPTRNSCH	Specify other method of travel to school
+DNGSCHR3	Does NAME have any difficulties in getting to school? Codes are: 00= No, 01= Yes
+SCRISKR3	What is the main risk? Codes are:
+			01= Traffic
+			02= Harassment/ abuse from other children
+			03= Rebels/ thieves
+			04= Harassment from authorities
+			05= Natural hazards
+			06= Other
+			07= Animals
+			08= Kidnapping
+			09= Sexual violence
+			10= Fear of having an accident on the way to school
+			11= Spirits/ ghosts
+			12= Having to cross dangerous places (rivers, ravines)
+SPSCRISK	Specify other main risk
+MISSCHR3	During the last 12 months has NAME ever missing school for a week or more? Codes are: 00= No, 01= Yes
+PRDABSR3 	How long was the longest period of time NAME was absent from school (days)
+WHYABSR3	Why did NAME miss school? Codes are:
+			01= Fees too expensive
+			02= Books and/or other supplies too expensive
+			03= Shoes/ clothes/ uniform for school too expensive
+			04 Transport too expensive
+			05= School too far from home
+			06= Not safe to travel to school
+			07= Lack of transport
+			08= Truancy child does not want to go, not interested
+			09= Banned from school for behaviour reasons
+			10= Banned from school because away for too long
+			11= Banned from school because failed to achieve necessary grade
+			12= Quality of education at school poor
+			13= Quality of care poor
+			14= No sanitation facilities at school
+			15= Bullying/ abuse from peers
+			16= Ill- treatment/ abuse from teacher/ principal
+			17=No need for schooling for future job
+			18= Need to learn a trade/ skill
+			19= Need to stay home to look after siblings
+			20= Needed for domestic or agricultural work at home
+			21= Have to do paid work to earn money
+			22= It`s not appropriate for girls to go to/ continue at school
+			23= Marriage
+			24= Disability/ illness
+			25= Family member ill/ disabled/ elderly
+			26= Family issues
+			27= Stigma and discrimination
+			28= School not accessible for seasonal reasons
+			29= Child too young
+			30= Child still in pre-school
+			31= Other
+SPWHYABS	Specify why NAME missed school
+DRPOUTR3	Has NAME ever dropped out of school? Codes are: 00= No, 01= Yes
+RJNSCHR3	Did NAME rejoin school? Codes are: 00= No, 01= Yes
+WHYRJNR3	Why did NAME rejoin school? Codes are:
+		01= Household` s financial position improved
+		02= Child labour laws
+		03= Mid-day meal scheme
+		04= School now nearby
+		05= Financial position decreased
+		06= Other
+LKYSCHR3	What type of school is NAME likely to attend? Codes are:
+		01= Private
+		02= NGO/ Charity/ Religious (not-for-profit)
+		03= Public (Government)
+		04= Informal or non-formal Community
+		05= Vocational school
+		06= Charitable trust
+		07= Bridge school
+		08= Mix of public and private
+LKYWHOR3	Who attends this school? Codes are:
+		01= Only boys
+		02= Only girls
+		03= Boys and girls
+LKYLNGR3	What is the language of instruction? Codes are the same as used for LNGINSR3.
+SPLKYLNG	Specify other language of instruction?
+CHSLKR31, CHSLKR32, CHSLKR33
+	Why have you chosen this school for NAME to attend? Provide 3 reasons in the order of importance. Codes are the same as used for WHSCHR31.
+SPCHSLK1, SPCHSLK2, SPCHSLK3
+	Specify other reason for choosing school
+LKYTMER3	How long would it take NAME to get to school (in minutes)?
+LKYTRNR3	How would NAME get to school? Codes are the same as used for TRNSCHR3.
+SPLKYTRN	Specify How would NAME get to school?
+LKYPRBR3	When travelling to school would NAME have any problems? Codes are: 00= No, 01= Yes
+LKMPRR31, LKMPRR32, LKMPRR33
+	What are the main problems? Provide 3 answers in the order of importance. Codes are the same as used for SCRISKR3.
+SPLKMPR1, SPLKMPR2, SPLKMPR3
+	Specify other problems
+For the following section, at least one of the children in the household should be a girl.
+GRLEDUR3	Have any of the girls in the households been enrolled in a scheme that provides financial support for girls' education? Codes are: 00=No, 01= Yes
+GREDR31	ID of girl child enrolled in scheme. Missing value codes are negative.
+GREDR32	ID of girl child enrolled in scheme. Missing value codes are negative.
+GREDR33	ID of girl child enrolled in scheme. Missing value codes are negative.
+GREDR34	ID of girl child enrolled in scheme. Missing value codes are negative.
+FNDSCHR3	How did you find out about this scheme? Codes are:
+01= Village Education Committee
+02= Anganwadi worker
+03= Primary school
+04= TV/Radio spot
+05= Poster
+06= Neighbour/family
+07= Self-help group
+08= Other(specify) 
+SPFNDSCHR	Specify how you found out about this scheme
+MNBENFR3	What is the main benefit you get from this scheme? Codes are:
+01= Motivation for providing education to girls
+02= Financial support for higher education of girls
+03= Delay early marriage of girls
+04= Amount can be used as a dowry
+05= Other (specify) 
+SPMNBENF	Specify benefit you get from this scheme
+ASIMEDR3	Do you think financial assistance is an effective way of improving the status of girls' education? Codes are: 00=No, 01= Yes 
+ADSGRR31	What additional support would you like from the government to support girls' education? Codes are:
+01= Increased financial support for each child
+02= In-kind incentives
+03= Wider eligibility for more girls to benefit
+04= Increased community awareness
+05= Fewer restrictions on eligibility
+06= Other (specify) 
+SPADSGR1	Specify additional support you would like from the government
+ADSGRR32	What additional support would you like from the government to support girls' education? Codes are the same as used for ADSGRR31.
+SPADSGR2	Specify additional support you would like from the government
+ADSGRR33	What additional support would you like from the government to support girls' education? Codes are the same as used for ADSGRR31.
+SPADSGR3	Specify additional support you would like from the government
+CSTWELR3	Have any of your children been enrolled in the related welfare programmes? Codes are: 00=No, 01= Yes
+NOCSWLR3	Why have your children not been enrolled in the related welfare programmes? Codes are:
+01= Only for SC families
+02- Only for BC families
+03= Do not require this support
+04= Support is insufficient for children`s education
+05= Not enough spaces in programme
+06= Children do not want to be enrolled
+07= Other (specify)
+08= Only for ST families
+SPNOCSWL	Specify why your children have not been enrolled in welfare programmes
+BYENRR31	How many boys from the household are enrolled in - Residential school run by social welfare department.
+BYENRR32	How many boys from the household are enrolled in - Education guarantee scheme under SSA/Rejiv Vidya Mission.
+BYENRR33	How many boys from the household are enrolled in - Kasturba Gandhi Balika Vidyalaya.
+BYENRR34	How many boys from the household are enrolled in - SWADHAR Programme.
+GRENRR31	How many girls from the household are enrolled in  - Residential school run by social welfare department.
+GRENRR32	How many girls from the household are enrolled in  - Education guarantee scheme under SSA/Rejiv Vidya Mission.
+GRENRR33	How many girls from the household are enrolled in  - Kasturba Gandhi Balika Vidyalaya.
+GRENRR34	How many girls from the household are enrolled in  - SWADHAR Programme.
+CHENRR31	Is NAME enrolled in this programme -  Residential school run by social welfare department. Codes are: 00=No, 01= Yes
+CHENRR32	Is NAME enrolled in this programme - Education guarantee scheme under SSA/Rejiv Vidya Mission. Codes are: 00=No, 01= Yes
+CHENRR33	Is NAME enrolled in this programme - Kasturba Gandhi Balika Vidyalaya. Codes are: 00=No, 01= Yes
+CHENRR34	Is NAME enrolled in this programme - SWADHAR Programme. Codes are: 00=No, 01= Yes
+YRENRR31	Year of NAME's enrolment in -  Residential school run by social welfare department.
+YRENRR32	Year of NAME's enrolment in - Education guarantee scheme under SSA/Rejiv Vidya Mission
+YRENRR33	Year of NAME's enrolment in - Kasturba Gandhi Balika Vidyalaya
+YRENRR34	Year of NAME's enrolment in - SWADHAR Programme
+RSSCBR31	Main benefits from programme -  Residential school run by social welfare department. Codes are:
+01= Free board
+02= Free textbooks/uniforms
+03= Funding for other expenses
+04= Tuition scholarships
+SPRSSCB1	Specify benefits from programme -  Residential school run by social welfare department
+RSSCBR32	Main benefits from programme -  Residential school run by social welfare department. Codes are:
+01= Free board
+02= Free textbooks/uniforms
+03= Funding for other expenses
+04= Tuition scholarships
+SPRSSCB2	Specify benefits from programme -  Residential school run by social welfare department
+SSSCBR31	Main benefits from programme - Education guarantee scheme under SSA/Rejiv Vidya Mission. Codes are the same as used for RSSCBR32.
+SPSSSCB1	Specify benefits from programme - Education guarantee scheme under SSA/Rejiv Vidya Mission
+SSSCBR32	Main benefits from programme - Education guarantee scheme under SSA/Rejiv Vidya Mission. Codes are the same as used for RSSCBR32.
+SPSSSCB2	Specify benefits from programme - Education guarantee scheme under SSA/Rejiv Vidya Mission
+KGSCBR31	Main benefits from programme - Kasturba Gandhi Balika Vidyalaya. Codes are the same as used for RSSCBR32.
+SPKGSCB1	Specify benefits from programme - Kasturba Gandhi Balika Vidyalaya
+KGSCBR32	Main benefits from programme - Kasturba Gandhi Balika Vidyalaya. Codes are the same as used for RSSCBR32.
+SPKGSCB2	Specify benefits from programme - Kasturba Gandhi Balika Vidyalaya
+SWSCBR31	Main benefits from programme - SWADHAR Programme. Codes are the same as used for RSSCBR32.
+SPSWSCB1	Specify benefits from programme - SWADHAR Programme
+SWSCBR32	Main benefits from programme - SWADHAR Programme. Codes are the same as used for RSSCBR32.
+SPSWSCB2	Specify benefits from programme - SWADHAR Programme
+PSCHLVR3	Do you think the above programmes could bring about positive changes in the lives of your children? Codes are: 00=No, 01= Yes
+ADSWLR31	What additional support would you like from the Government under the welfare programmes. Codes are:
+01= Increased financial support for each child
+02= In-kind incentives
+03= Wider eligibility for more children to benefit
+04= Increased community awareness
+05= Fewer restrictions on eligibility
+06= Other (specify)
+SPADSWL1	Specify what additional support you would like from the Government
+ADSWLR32	What additional support would you like from the Government under the welfare programmes. Codes are the same as used for ADSWLR31.
+SPADSWL2	Specify what additional support you would like from the Government
+ADSWLR33	What additional support would you like from the Government under the welfare programmes. Codes are the same as used for ADSWLR31.
+SPADSWL3	Specify what additional support you would like from the Government
+ABNCLPR3	Have any of your children benefited from – NCLP. Codes are: 00=No, 01= Yes 
+ABAPSPR3	Have any of your children benefited from – APSP. Codes are: 00=No, 01= Yes 
+ABDPIPR3	Have any of your children benefited from - IKP/DPIP. Codes are: 00=No, 01= Yes 
+ABOTHRR3	Have any of your children benefited from - Other programme. Codes are: 00=No, 01= Yes 
+SPABOTHR	Specify other programme children have benefited from
+CBNCLPR3	Has NAME benefited from – NCLP. Codes are: 00=No, 01= Yes 
+CBAPSPR3	Has NAME benefited from – APSP. Codes are: 00=No, 01= Yes 
+CBDPIPR3	Has NAME benefited from - IKP/DPIP. Codes are: 00=No, 01= Yes 
+CBOTHRR3	Has NAME benefited from - Other programme. Codes are: 00=No, 01= Yes 
+SPCBOTHR	Specify Has NAME benefited from - Other programme
+MBNCLR31	Main benefit of – NCLP. Codes are:
+01= Admission to bridge school
+02= Free board and lodging at school
+03= Special attention to upgrading skills
+04= NAME doesn`t have to work
+05= Other (specify)
+SPMBNCL1	Specify main benefit of – NCLP
+MBNCLR32	Main benefit of – APSP. Codes are the same as used for MBNCLR31.
+SPMBNCL2	Specify main benefit of - APSP
+MBNCLR33	Main benefit of - IKP/DPIP. Codes are the same as used for MBNCLR31.
+SPMBNCL3	Specify main benefit of - IKP/DPIP
+MBNCLR34	Main benefit of - Other programme. Codes are the same as used for MBNCLR31.
+SPMBNCL4	Specify main benefit of - Other programme
+MDSCLR31	Main disadvantage of – NCLP. Codes are:
+01= School quality is poor
+02= No parental support due to low income
+03= NAME not bringing income to the household
+04= School curriculum is not as practical as work experience
+05= Other (specify)
+SPMDSCL1	Specify main disadvantage of – NCLP
+MDSCLR32	Main disadvantage of – APSP. Codes are the same as used for MDSCLR31.
+SPMDSCL2	Specify main disadvantage of – APSP
+MDSCLR33	Main disadvantage of - IKP/DPIP. Codes are the same as used for MDSCLR31.
+SPMDSCL3	Specify main disadvantage of - IKP/DPIP
+MDSCLR34	Main disadvantage of - Other programme. Codes are the same as used for MDSCLR31.
+SPMDSCL4	Specify main disadvantage of - Other programme
+MLTCLR31	Main long-term benefit of – NCLP. Codes are:
+01= Improved employment opportunities in the future
+02= Improved potential for future earnings
+03= Improved self-confidence
+04= Avoidance of dangerous work
+05= Other (specify) 
+SPMLTCL1	Specify main long-term benefit of – NCLP
+MLTCLR32	Main long-term benefit of – APSP. Codes are the same as used for MLTCLR31.
+SPMLTCLL2	Specify main long-term benefit of – APSP
+MLTCLR33	Main long-term benefit of - IKP/DPIP. Codes are the same as used for MLTCLR31.
+SPMLTCLL3	Specify main long-term benefit of - IKP/DPIP
+MLTCLR34	Main long-term benefit of - Other programme. Codes are the same as used for MLTCLR31.
+SPMLTCL4	Specify main long-term benefit of - Other programme
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3Livelihoods>	 
+
+IDR33 		ID of respondent for >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionThree>	
+OWNLNDR3	In the last agricultural year has anyone in your household owned, borrowed or rented any land? Codes are: 00=No, 01= Yes
+TOTLNDR3	What is the extent of Agricultural land your household own now? Missing value codes are negative.
+LNDBGHR3	How much land have you bought, received or inherited since we last interviewed you? Missing value codes are negative.
+NEWLNDR3	Describe this new land. Codes are:
+01= Owned
+02= Rented in
+03= Borrowed
+04= Sharecropped in
+05= Common Property
+06= Squatted
+31= Leased from state
+33= Mortgaged
+40= Other (specify) 
+SPCNEWLN	Specify description of the new land
+USELNDR3	What is the main use of this land. Codes are:
+01= Living accommodation
+02= Living accommodation plus garden with produce for 
+consumption or sale
+03= Living accommodation plus industry
+04= Living accommodation plus garden with produce for 
+consumption or sale plus industry
+05= Farming (arable)
+06= Pasture
+07= Gardening
+08= Industry
+09= Rented out
+10= Sharecropped out
+11= Nothing/left fallow
+12= Recreation
+13= Grazing livestock
+14= Aquaculture
+20= Other (specify)
+SPCUSE	Specify use of the land
+SLDLNDR3	How much land have you sold or given away or has been taken away since the last time we interviewed you? Missing value codes are negative.
+TTLNDR32	What is the total extent of land you use now? Missing value codes are negative.
+NOAGLNR3	What is the extent of non-agricultural land your household owns now?
+PLINCR3	Did the household receive any income from this land in the last 12 months? Codes are: 00=No, 01= Yes
+PLVLUR3	What is the total value of income you collected from this land in the last 12 months? Missing value codes are negative.
+PLCSTR3	What is the total value of money you have spent on this land in the last 12 months? Missing value codes are negative.
+CRAINR31	Main crops grown in the rainy season. Codes are:
+02= Afaqi/Kathikala
+03= Avocado
+04= Bananas
+05= Barley
+06= Beetroot
+07= Berbere
+08= black/mixed teft
+09= Black pepper
+10= Cabbage
+11= Cactus
+12= Carrot
+13= Castor
+14= Chat
+15= Chick peas
+16= Chilles
+ 17= Coffee
+18= Cotton
+19= Cow peas
+20= Dagussa
+21= Eucalyptus
+22= Fasolia
+23= Field peas
+24= Flowers
+25= Fruits
+26= Garlic
+27= Gesho
+28= Ginger
+29= Godere
+30= Grams and pulses
+31= Grass
+32= Groundnuts
+33= Guava
+34= Hamicho
+35= Haricot beans
+36= Honey
+37= Jowar
+39= Karia
+40= Karibo/Keredo
+41= Kocho
+42= Lentils
+43= Linseed
+44= Maize
+45= Mango
+46= Mulberry
+47= Nueg
+48= Nuts
+49= Oats
+50= Onions
+51= Orange
+52= Other cereals
+53= Paddy rice
+54= Pineapple
+55= Potatoes
+56= Pumpkin
+57= Ragi
+58= Seasum
+59= Selata
+60= Sesame
+61= Shiefera/Haleko
+62= Shiro/ Germia
+63= Sinar/Germia
+64= Sorghum 
+65= Spices
+66= Spinach
+67= Sugar
+68= Sunflower
+69= Sweet potatoes
+71= Tobacco
+72= Tomato
+73= Tumeric
+74= Vegetables
+75= Wheat
+78= White Teff
+79= Yam
+80= Zengada
+99= All other crops
+SPECCPR1	Specify crops grown in the rainy season
+CRAINR32	Main crops grown in the rainy season. Codes are the same as used for CRAINR31.
+SPECCPR2	Specify crops grown in the rainy season
+CRAINR33	Main crops grown in the rainy season. Codes are the same as used for CRAINR31.
+SPECCPR3	Specify crops grown in the rainy season
+CRAINR34	Main crops grown in the rainy season. Codes are the same as used for CRAINR31.
+SPECCPR4	Specify crops grown in the rainy season
+CRDRYR31	Main crops grown in the dry season. Codes are the same as used for CRAINR31.
+SPECCRD1	Specify crops grown in the dry season
+CRDRYR32	Main crops grown in the dry season. Codes are the same as used for CRAINR31.
+SPECCRD2	Specify crops grown in the dry season
+CRDRYR33	Main crops grown in the dry season. Codes are the same as used for CRAINR31.
+SPECCRD3	Specify crops grown in the dry season. Codes are the same as used for CRAINR31.
+CRDRYR34	Main crops grown in the dry season. Codes are the same as used for CRAINR31.
+SPECCRD4	Specify crops grown in the dry season
+IRRGTR3	In the last agricultural year have you irrigated any of the land? Codes are: 00= No, 01= Yes
+PRIRRR3	What proportion of the land was irrigated in the last dry season? Codes are:
+		01= Less than half
+02= Half
+03= More than half
+04= All
+05= No land was irrigated in the dry season
+CHFERTR3	In the last agricultural year has anyone in your household used chemical fertiliser on your land? Codes are: 00= No, 01= Yes
+METHODR3	In the last agricultural year did anyone in the household use any methods to increase the yield of your commercial crops? Codes are: 00= No, 01= Yes
+FRMSHRR3	In the last agricultural year did anyone in your household share a tractor or other farm vehicle with other people in the community? Codes are: 00= No, 01= Yes
+LABSHRR3	In the last agricultural year did anyone in your household share agricultural labour with other people in the community? Codes are: 00= No, 01= Yes
+INCLSDR3	Income from leased out land value in rupees. Missing value codes are negative.
+INFARMR3	In last 12 months have you earned income from - Independent Farmer. Codes are: 00= No, 01= Yes
+CTLSTCR3	In last 12 months have you earned income from - Cattle/stockbreeding. Codes are: 00= No, 01= Yes
+FISHNGR3	In last 12 months have you earned income from – Fishing. Codes are: 00= No, 01= Yes
+FRSTRYR3	In last 12 months have you earned income from – Forestry. Codes are: 00= No, 01= Yes
+TRNSPR3	In last 12 months have you earned income from – Transport. Codes are: 00= No, 01= Yes
+TRADER3	In last 12 months have you earned income from – Trade. Codes are: 00= No, 01= Yes
+INDSTYR3	In last 12 months have you earned income from – Industry. Codes are: 00= No, 01= Yes
+OTINC1R3	In last 12 months have you earned income from - Other activity. Codes are: 00= No, 01= Yes
+SPOTINC1	Specify other money earning activity
+WGAGFHR3	In last 12 months have you earned income from - Work for wages in agriculture, fishing forest cattle/stockbreeding. Codes are: 00= No, 01= Yes
+NONAGWR3	In last 12 months have you earned income from - Non-agriculture work for wages. Codes are: 00= No, 01= Yes
+RKIN01R3	Rank activity - Independent farmer. Missing value codes are negative.
+RKIN02R3	Rank activity - Cattle/stockbreeding. Missing value codes are negative.
+RKIN03R3	Rank activity – Fishing. Missing value codes are negative.
+RKIN04R3	Rank activity – Forestry. Missing value codes are negative.
+RKIN05R3	Rank activity – Transport. Missing value codes are negative.
+RKIN06R3	Rank activity – Trade. Missing value codes are negative.
+RKIN07R3	Rank activity – Industry. Missing value codes are negative.
+RKIN08R3	Rank activity - Other activity. Missing value codes are negative.
+RKIN09R3	Rank activity - Work for wages in agriculture. Missing value codes are negative.
+RKIN10R3	Rank activity - Work for wages non-agriculture. Missing value codes are negative.
+ANIMALR3	Has anyone in the household owned any livestock in the last 12 months? Codes are: 00= No, 01= Yes
+AYANR301	In the last 12 months has anyone in the household owned any Cows (modern variety)? Codes are: 00= No, 01= Yes
+AYANR302	In the last 12 months has anyone in the household owned any Cows (traditional variety)? Codes are: 00= No, 01= Yes
+AYANR303	In the last 12 months has anyone in the household owned any Calves? Codes are: 00= No, 01= Yes
+AYANR304	In the last 12 months has anyone in the household owned any Buffalo (modern)? Codes are: 00= No, 01= Yes
+AYANR305	In the last 12 months has anyone in the household owned any Buffalo (traditional)? Codes are: 00= No, 01= Yes
+AYANR306	In the last 12 months has anyone in the household owned any Heifer? Codes are: 00= No, 01= Yes
+AYANR307	In the last 12 months has anyone in the household owned any He-buffalo? Codes are: 00= No, 01= Yes
+AYANR308	In the last 12 months has anyone in the household owned any Ox/Bullock? Codes are: 00= No, 01= Yes
+AYANR309	In the last 12 months has anyone in the household owned any Donkey/horse/other? Codes are: 00= No, 01= Yes
+AYANR310	In the last 12 months has anyone in the household owned any Bull calf/young bull? Codes are: 00= No, 01= Yes
+AYANR311	In the last 12 months has anyone in the household owned any Sheep? Codes are: 00= No, 01= Yes
+AYANR312	In the last 12 months has anyone in the household owned any Goat? Codes are: 00= No, 01= Yes
+AYANR313	In the last 12 months has anyone in the household owned any Pigs? Codes are: 00= No, 01= Yes
+AYANR314	In the last 12 months has anyone in the household owned any Poultry/birds? Codes are: 00= No, 01= Yes
+AYANR315	In the last 12 months has anyone in the household owned any Rabbits? Codes are: 00= No, 01= Yes
+AYANR316	In the last 12 months has anyone in the household owned any Bees(beehives)? Codes are: 00= No, 01= Yes
+AYANR317	In the last 12 months has anyone in the household owned any Fish Ponds? Codes are: 00= No, 01= Yes
+AYANR318	In the last 12 months has anyone in the household owned any Marine shrimp tanks? Codes are: 00= No, 01= Yes
+AYANR319	In the last 12 months has anyone in the household owned any Fresh water shrimp tanks? Codes are: 00= No, 01= Yes
+AYANR320	In the last 12 months has anyone in the household owned any Others? Codes are: 00= No, 01= Yes
+SPCAN20	Specify other animals owned by household in the last 12 months
+NMAMR301	How many of the following animals does the household currently own? - Cow (modern variety). Missing value codes are negative.
+NMAMR302	How many of the following animals does the household currently own? - Cow (traditional variety). Missing value codes are negative.
+NMAMR303	How many of the following animals does the household currently own? – Calves. Missing value codes are negative.
+NMAMR304	How many of the following animals does the household currently own? - Buffalo (modern). Missing value codes are negative.
+NMAMR305	How many of the following animals does the household currently own? - Buffalo (traditional). Missing value codes are negative.
+NMAMR306	How many of the following animals does the household currently own? – Heifer. Missing value codes are negative.
+NMAMR307	How many of the following animals does the household currently own? - He-Buffalo. Missing value codes are negative.
+NMAMR308	How many of the following animals does the household currently own? - Ox/Bullock. Missing value codes are negative.
+NMAMR309	How many of the following animals does the household currently own? - Donkey/horse/other. Missing value codes are negative.
+NMAMR310	How many of the following animals does the household currently own? - Bull calf/young bull. Missing value codes are negative.
+NMAMR311	How many of the following animals does the household currently own? – Sheep. Missing value codes are negative.
+NMAMR312	How many of the following animals does the household currently own? – Goat. Missing value codes are negative.
+NMAMR313	How many of the following animals does the household currently own? – Pigs. Missing value codes are negative.
+NMAMR314	How many of the following animals does the household currently own? - Poultry/birds. Missing value codes are negative.
+NMAMR315	How many of the following animals does the household currently own? – Rabbits. Missing value codes are negative.
+NMAMR316	How many of the following animals does the household currently own? - Bees (beehives). Missing value codes are negative.
+NMAMR317	How many of the following animals does the household currently own? - Fish ponds. Missing value codes are negative.
+NMAMR318	How many of the following animals does the household currently own? - Marine shrimp tanks. Missing value codes are negative.
+NMAMR319	How many of the following animals does the household currently own? - Fresh water shrimp tanks. Missing value codes are negative.
+NMAMR320	How many of the following animals does the household currently own? – Others. Missing value codes are negative.
+VLAMR301	If you were to sell all your currently owned - cows (modern) - today, how much would people pay for them? Missing value codes are negative.
+VLAMR302	If you were to sell all your currently owned - cows (traditional) - today, how much would people pay for them? Missing value codes are negative.
+VLAMR303	If you were to sell all your currently owned - calves - today, how much would people pay for them? Missing value codes are negative.
+VLAMR304	If you were to sell all your currently owned - buffalo (modern) - today, how much would people pay for them? Missing value codes are negative.
+VLAMR305	If you were to sell all your currently owned - buffalo (traditional) - today, how much would people pay for them? Missing value codes are negative.
+VLAMR306	If you were to sell all your currently owned - heifer - today, how much would people pay for them? Missing value codes are negative.
+VLAMR307	If you were to sell all your currently owned - he-buffalo - today, how much would people pay for them? Missing value codes are negative.
+VLAMR308	If you were to sell all your currently owned - Ox/bullock - today, how much would people pay for them? Missing value codes are negative.
+VLAMR309	If you were to sell all your currently owned - donkey/horse/other - today, how much would people pay for them? Missing value codes are negative.
+VLAMR310	If you were to sell all your currently owned - bull calf/young bull - today, how much would people pay for them? Missing value codes are negative.
+VLAMR311	If you were to sell all your currently owned - sheep - today, how much would people pay for them? Missing value codes are negative.
+VLAMR312	If you were to sell all your currently owned - goats - today, how much would people pay for them? Missing value codes are negative.
+VLAMR313	If you were to sell all your currently owned - pigs - today, how much would people pay for them? Missing value codes are negative.
+VLAMR314	If you were to sell all your currently owned - poultry/birds - today, how much would people pay for them? Missing value codes are negative.
+VLAMR315	If you were to sell all your currently owned - rabbits - today, how much would people pay for them? Missing value codes are negative.
+VLAMR316	If you were to sell all your currently owned - bees (beehives) - today, how much would people pay for them? Missing value codes are negative.
+VLAMR317	If you were to sell all your currently owned - fish ponds - today, how much would people pay for them? Missing value codes are negative.
+VLAMR318	If you were to sell all your currently owned - Marine shrimp tanks - today, how much would people pay for them? Missing value codes are negative.
+VLAMR319	If you were to sell all your currently owned - fresh water shrimp tanks - today, how much would people pay for them? Missing value codes are negative.
+VLAMR320	If you were to sell all your currently owned - Other animals - today, how much would people pay for them? Missing value codes are negative.
+VLSVGSR3	Total value of savings including payment of insurance in the last 12 months. Missing value codes are negative.
+ANFDCSR3	Amount spent on animal feed in the last 12 months. Missing value codes are negative.
+VETCSTR3	Amount spent on Vet services in the last 12 months. Missing value codes are negative.
+OTCOSTR3	Amount spent on other costs in the last 12 months. Missing value codes are negative.
+SPCOTCST	Specify other costs
+WRGPMPR3	Do you have a working pump? Codes are:
+00= No
+01= Yes, we own it
+02= Rented or Borrowed
+SWGMCHR3	Do you have a working sewing machine? Codes are the same as used for WRGPMPR3.
+DEBTR3	Do you have any serious debts? Codes are: 00= No, 01= Yes
+PLANR301	What would you do in case of hard times? Codes are:
+01= Nothing
+02= Ask relatives for help
+03= Ask friends/neighbours for help
+04= Look for work
+05= Use formal savings
+06= Use informal savings
+07= Ask for credit or loan from the bank
+08= Borrow from money lender
+09= Get credit from informal loan system
+10= Migrate to another part of the country
+11= Food for work
+12= Work longer hours
+13= Send children to work
+14= Take children out of school
+15= Emigrate to another country
+16= Faith/pray to God/Allah
+17= Self properties or assets
+18= Mortgage assets
+19= Borrow from farmers
+20= Other (specify)
+21= Borrow from friends/neighbours
+22= Borrow from family
+31= Return to my home town
+33= Leave/move-in with my family
+35= Ask for help from government/authority
+SPPLAN01	Specify what you would do in case of hard times
+PLANR302	What would you do in case of hard times? Codes are the same as used for PLANR301.
+SPPLAN02	Specify what you would do in case of hard times
+PLANR303	What would you do in case of hard times? Codes are the same as used for PLANR301.
+SPPLAN03	Specify what you would do in case of hard times
+RAISER3	Would your household be able to raise 1000 rupees in one week if you needed it? Codes are:
+		01= Yes very easily
+02= Probably
+03= Not at all
+HOWRSR3	How would you raise 1000 rupees in one week? Codes are:
+01= From relatives/friends in the same village/town
+02= From relatives/friends in different location
+03= From savings
+04= Microfinance
+05= Sell durable goods/equipment
+06= Sell land/house
+07= Sell livestock
+08= Sell stocks or crops
+09= Take a loan (formal)
+10= Take an informal loan
+11= Take extra work
+12= Other (specify) 
+SPCHOWRS	Specify how you would raise 1000 rupees in one week
+OBTNLNR3	In the last 12 months have you or any member of your family living with you made any arrangements to obtain a loan or credit? Codes are:
+00= No
+01= Yes, from formal financial institution
+02= Yes, from informal financial institution
+03= Yes, both formal and informal
+NOASKLR3	If you never asked for a loan or credit why not? Codes are:
+01= Didn`t need to- have enough resources
+02= Lack of guarantees or references
+03= Didn`t want to give the guarantee they asked for
+04= It`s dangerous to get into debt/fear of losing property
+05= Problems with previous loans/debts
+06= His/her business doesn`t allow him/her to get into debt
+07= Too expensive
+08= Activity too risky
+09= Lack of information
+10= Institution is too far away
+11= Too much paperwork
+12= Other (specify)
+SPNOASKL	Specify why you never asked for a loan
+SREAPPR3	If you were sure of being approved would you apply for a loan? Codes are: 0= No, 01= Yes
+GETLNR3	Did you get the loan or credit you asked for? Codes are: 0= No, 01= Yes
+NOLOANR3	Why do you believe you did not get the credit? Codes are:
+01= Not enough assets
+02= Lack of guarantees or references
+03= Didn`t want to give the guarantee they asked
+04= Too expensive
+05= Activity too risky
+06= Other (specify)
+SPNOLOAN	Specify why you did not get the credit
+AMNTLNR3	What is the amount of the loan/credit that you obtained? Missing value codes negative.
+CRDTNDR3	Did you get all the credit you needed? Codes are: 00= No, 01= Yes
+ACTR301	Income from - Sale of livestock products. Codes are: 00= No, 01= Yes
+ACTR302	Income from - Sale of small live ruminants. Codes are: 00= No, 01= Yes
+ACTR303	Income from - Fisheries catching. Codes are: 00= No, 01= Yes
+ACTR304	Income from - All forestry products. Codes are: 00= No, 01= Yes
+ACTR305	Income from - Agricultural wage work. Codes are: 00= No, 01= Yes
+ACTR306	Income from - Salaried/regular wage work including honorarium income. Codes are: 00= No, 01= Yes
+ACTR307	Income from - Casual wage work. Codes are: 00= No, 01= Yes
+ACTR308	Income from - Food/cash for work. Codes are: 00= No, 01= Yes
+ACTR309	Income from - Profits from trading and selling commodities. Codes are: 00= No, 01= Yes
+ACTR310	Income from - Profits from processed food. Codes are: 00= No, 01= Yes
+ACTR311	Income from - Profits from handicrafts. Codes are: 00= No, 01= Yes
+ACTR312	Income from - Profits from carpentry/ironmongery/etc. Codes are: 00= No, 01= Yes
+ACTR313	Income from - Profits from services. Codes are: 00= No, 01= Yes
+ACTR314	Income from - Other sources. Codes are: 00= No, 01= Yes
+SPECACTV	Specify other income earning activity
+EARNR301	Gross income from - Sale of livestock products. Missing value codes are negative.
+EARNR302	Gross income from - Sale of small live ruminants. Missing value codes are negative.
+EARNR303	Gross income from - Fisheries catching. Missing value codes are negative.
+EARNR304	Gross income from - All forestry products. Missing value codes are negative.
+EARNR305	Gross income from - Agricultural wage work. Missing value codes are negative.
+EARNR306	Gross income from - Salaried/regular wage work including honorarium income. Missing value codes are negative.
+EARNR307	Gross income from - Casual wage work. Missing value codes are negative.
+EARNR308	Gross income from - Food/cash for work. Missing value codes are negative.
+EARNR309	Gross income from - Profits from trading and selling commodities. Missing value codes are negative.
+EARNR310	Gross income from - Profits from processed food. Missing value codes are negative.
+EARNR311	Gross income from - Profits from handicrafts. Missing value codes are negative.
+EARNR312	Gross income from - Profits from carpentry/ironmongery/etc. Missing value codes are negative.
+EARNR313	Gross income from - Profits from services. Missing value codes are negative.
+EARNR314	Gross income from - Other sources. Missing value codes are negative.
+COSTR301	Costs incurred from - Sale of livestock products . Missing value codes are negative.
+COSTR302	Costs incurred from - Sale of small live ruminants. Missing value codes are negative.
+COSTR303	Costs incurred from - Fisheries catching. Missing value codes are negative.
+COSTR304	Costs incurred from - All forestry products. Missing value codes are negative.
+COSTR305	Costs incurred from - Agricultural wage work. Missing value codes are negative.
+COSTR306	Costs incurred from - Salaried/regular wage work including honorarium income. Missing value codes are negative.
+COSTR307	Costs incurred from - Casual wage work. Missing value codes are negative.
+COSTR308	Costs incurred from - Food/cash for work. Missing value codes are negative.
+COSTR309	Costs incurred from - Profits from trading and selling commodities. Missing value codes are negative.
+COSTR310	Costs incurred from - Profits from processed food. Missing value codes are negative.
+COSTR311	Costs incurred from - Profits from handicrafts. Missing value codes are negative.
+COSTR312	Costs incurred from - Profits from carpentry/ironmongery/etc. Missing value codes are negative.
+COSTR313	Costs incurred from - Profits from services. Missing value codes are negative.
+COSTR314	Costs incurred from - Other sources. Missing value codes are negative.
+RTRPNSR3	Source of money - Retirement pension. Codes are: 00= No, 01= Yes
+SCLSECR3	Source of money - Social security/social subsidy. Codes are: 00= No, 01= Yes
+RELIGSR3	Source of money - Religious organisation. Codes are: 00= No, 01= Yes
+CHARTYR3	Source of money - Charity >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionGroups>	/NGO. Codes are: 00= No, 01= Yes
+ALMNYR3	Source of money - Alimony for food/divorce/children. Codes are: 00= No, 01= Yes
+BNKACTR3	Source of money - Interest from bank accounts or other savings. Codes are: 00= No, 01= Yes
+RENTHSR3	Source of money - Rent from houses, buildings, land, etc. Codes are: 00= No, 01= Yes
+INSCNTR3	Source of money - Transfer from family/friends within country but not in household. Codes are: 00= No, 01= Yes
+OUTCNTR3	Source of money - Transfers from outside the country. Codes are: 00= No, 01= Yes
+SVRPAYR3	Source of money - Severence pay/money paid for time worked. Codes are: 00= No, 01= Yes
+LFEINSR3	Source of money - Life/medical insurance. Codes are: 00= No, 01= Yes
+DVDSTCR3	Source of money - Dividends from stocks and shares/bonuses/profit sharing. Codes are: 00= No, 01= Yes
+INHETNR3	Source of money - Inheritance, gambling, lotteries. Codes are: 00= No, 01= Yes
+OTHPUBR3	Source of money - Other transfer from public source. Codes are: 00= No, 01= Yes
+SPOTHPUB	Specify other public source of transfers
+OTHPRVR3	Source of money - Other transfer from private source. Codes are: 00= No, 01= Yes
+SPOTHPRV	Specify other private source of transfers
+OTHTRNR3	Source of money - Any other transfer. Codes are: 00= No, 01= Yes
+SPOTHTRN	Specify other source of money
+AMTRTRR3	Amount received in last 12 months from - Retirement pension
+AMTSCLR3	Amount received in last 12 months from - Social security/social subsidy
+AMTRLGR3	Amount received in last 12 months from - Religious organisation
+AMTCHRR3	Amount received in last 12 months from - Charity >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionGroups>	/NGO
+AMTALMR3	Amount received in last 12 months from - Alimony for food/divorce/children
+AMTBNKR3	Amount received in last 12 months from - Interest from bank accounts or other savings
+AMTRNTR3	Amount received in last 12 months from - Rent from houses, buildings, land, etc
+AMTINSR3	Amount received in last 12 months from - Transfer from family/friends within country but not in household
+AMTOUTR3	Amount received in last 12 months from - Transfers from outside the country
+AMTPAYR3	Amount received in last 12 months from - Severence pay/money paid for time
+AMTMEDR3	Amount received in last 12 months from - Life/medical insurance
+AMTDVDR3	Amount received in last 12 months from - Dividends from stocks and shares/bonuses/profit sharing
+AMTINHR3	Amount received in last 12 months from - Inheritance, gambling, lotteries
+AMTPUBR3	Amount received in last 12 months from - Other transfer from public source
+AMTPRVR3	Amount received in last 12 months from - Other transfer from private source
+AMTOTHR3	Amount received in last 12 months from - Any other transfer
+TMERTRR3	Number of times money received from - Retirement pension
+TMESCLR3	Number of times money received from - Social security/social subsidy
+TMERLGR3	Number of times money received from - Religious organisation
+TMECHRR3	Number of times money received from - Charity >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionGroups>	/NGO
+TMEALMR3	Number of times money received from - Alimony for food/divorce/children
+TMEBNKR3	Number of times money received from - Interest from bank accounts or other savings
+TMERNTR3	Number of times money received from - Rent from houses, buildings, land, etc
+TMEINSR3	Number of times money received from - Transfer from family/friends within country but not in household
+TMEOUTR3	Number of times money received from - Transfers from outside the country
+TMEPAYR3	Number of times money received from - Severence pay/money paid for time worked
+TMEMEDR3	Number of times money received from - Life/medical insurance
+TMEDVDR3 	Number of times money received from - Dividends from stocks and shares/bonuses/profit sharing
+TMEINHR3 	Number of times money received from - Inheritance, gambling, lotteries
+TMEPUBR3	Number of times money received from - Other transfer from public source
+TMEPRVR3	Number of times money received from - Other transfer from private source
+TMEOTHR3	Number of times money received from - Any other transfer
+ETSUPPR3	Has your household received support through programmes provided by NGOs or GOs in the last 3 years? Codes are: 00= No, 01= Yes
+OREMITR3	In the last 12 months has your household given money or goods to support individuals outside the household? Codes are: 00= No, 01= Yes
+PDSRCER3	Are you receiving – Rice. Codes are: 00= No, 01= Yes
+PDSDHLR3	Are you receiving – Dahl. Codes are: 00= No, 01= Yes
+PDSSGRR3	Are you receiving – Sugar. Codes are: 00= No, 01= Yes
+PDSKRSR3	Are you receiving – Kerosene. Codes are: 00= No, 01= Yes
+PDSOILR3	Are you receiving - Edible oil. Codes are: 00= No, 01= Yes
+PDSOTHR3	Are you receiving - Other items. Codes are: 00= No, 01= Yes
+SPPDSOTH	Specify other item received through PDS
+STSPDSR3	Are you satisfied with the quality of the service? Codes are: 00= No, 01= Yes
+NSTPDSR3	Why are you not satisfied with the service? Codes are:
+01= Inconvenient hours to receive food
+02= Poor quality food
+03= Quantity of food insufficient
+04= Irregular supply
+05= Inconvenient location to receive food
+06= Unpleasant experience with food distributors
+07= Other (specify)
+SPNSTPDS	Specify why you are not satisfied with the service
+BNDWCRR3	Did your household benefit from this programme in the last 3 years – DWCRA. Codes are: 00= No, 01= Yes
+BNIKPR3	Did your household benefit from this programme in the last 3 years – IKP. Codes are: 00= No, 01= Yes
+BNPMRYR3	Did your household benefit from this programme in the last 3 years – PMRY. Codes are: 00= No, 01= Yes
+BNCMEYR3	Did your household benefit from this programme in the last 3 years - CMEY/Rajivyuvashaki. Codes are: 00= No, 01= Yes
+BNSGSYR3	Did your household benefit from this programme in the last 3 years – SGSY. Codes are: 00= No, 01= Yes
+BNCRPRR3	Did your household benefit from this programme in the last 3 years - Other programme. Codes are: 00= No, 01= Yes
+SPCRDPRG	Specify other programme household benefited from
+IDDWCRR3	Main person who benefited from – DWCRA. Code is: 80= Whole household. Missing value codes are negative.
+IDIKPR3	Main person who benefited from – IKP. Code is: 80= Whole household. Missing value codes are negative.
+IDPMRYR3	Main person who benefited from – PMRY. Code is: 80= Whole household. Missing value codes are negative.
+IDCMEYR3	Main person who benefited from - CMEY/Rajivyuvashaki. Code is: 80= Whole household. Missing value codes are negative.
+IDSGSYR3	Main person who benefited from – SGSY. Code is: 80= Whole household. Missing value codes are negative.
+IDCRPRR3	Main person who benefited from - Other programme. Code is: 80= Whole household. Missing value codes are negative.
+IMDWCRR3	Importance of programme for household – DWCRA. Codes are:
+01= Most important
+02= Second most important
+IMIKPR3	Importance of programme for household – IKP. Codes are the same as used for IMDWCRR3.
+IMPMRYR3	Importance of programme for household – PMRY. Codes are the same as used for IMDWCRR3.
+IMCMEYR3	Importance of programme for household - CMEY/Rajivyuvashaki. Codes are the same as used for IMDWCRR3.
+IMSGSYR3	Importance of programme for household – SGSY. Codes are the same as used for IMDWCRR3.
+IMCRPRR3	Importance of programme for household - Other programme. Codes are the same as used for IMDWCRR3.
+AWSCCOR3	Are you aware of - SC Corporation. Codes are: 00= No, 01= Yes
+AWSTCOR3	Are you aware of - ST Corporation. Codes are: 00= No, 01= Yes
+AWBCCOR3	Are you aware of - BC Corporation. Codes are: 00= No, 01= Yes
+AWMICOR3	Are you aware of - Minority Corporation. Codes are: 00= No, 01= Yes
+BNSCCOR3	Did you or other household member benefit from - SC Corporation. Codes are: 00= No, 01= Yes
+BNSTCOR3	Did you or other household member benefit from - ST Corporation.  Codes are: 00= No, 01= Yes
+BNBCCOR3	Did you or other household member benefit from - BC Corporation. Codes are: 00= No, 01= Yes
+BNMICOR3	Did you or other household member benefit from - Minority Corporation. Codes are: 00= No, 01= Yes
+IDSCCOR3	Main person who benefited from - SC Corporation. Code is: 80= Whole household. Missing value codes are negative.
+IDSTCOR3	Main person who benefited from - ST Corporation. Code is: 80= Whole household. Missing value codes are negative.
+IDBCCOR3	Main person who benefited from - BC Corporation. Code is: 80= Whole household. Missing value codes are negative.
+IDMICOR3	Main person who benefited from - Minority Corporation. Code is: 80= Whole household. Missing value codes are negative.
+ACCPDSR3	Are you accessing PDS? Codes are: 00= No, 01= Yes
+NREGEGS	Does your household have job card under the NREGS? Codes are: 00= No, 01= Yes
+HHJBNMR3	What is your household's job card number?
+NOJBNMR3	Why does the household not have a job card? Codes are:
+01= Not needed
+02= Don`t know how/where to apply
+03= Administrative problem/applied but never got registered
+04= Discriminated against/turned down
+05= Already committed- long term contract
+06= Can`t, would have applied if I could
+07= Conflict with community
+08= Other (specify)
+WRKNRGR3	In the past 12 months has anyone in the household worked for the NREG scheme? Codes are: 00= No, 01= Yes
+CHDCRER3	Are there child care facilities in the last worksite? Codes are: 00= No, 01= Yes
+WMCH5YR3	Does any woman in your household have a child 5 years or younger? Codes are: 00= No, 01= Yes
+LKCHCRR3	Does that woman not participate in NREGS because of lack of child care facility? Codes are: 00= No, 01= Yes
+WROSGPR3	Has your household ever worked outside GP under NREGS? Codes are: 00= No, 01= Yes
+EXT5KMR3	Extra wages to be paid if work is given beyond 5KM? Codes are: 00= No, 01= Yes
+EM15DYR3	Was employment provided within 15 days of registration? Codes are: 00= No, 01= Yes
+UNEMALR3	Does your household receive unemployment allowance? Codes are: 00= No, 01= Yes
+PY15DYR3	Did you receive payment within 15 days of completion of work? Codes are: 00= No, 01= Yes
+WMRFEMR3	Was any woman in your household refused employments under NREGS because of being a single woman? Codes are: 00= No, 01= Yes
+SCLAUDR3	Are you aware of conducting social audit in your village? Codes are: 00= No, 01= Yes
+PRTAUDR3	Have you participated in the social audit? Codes are: 00= No, 01= Yes
+
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3Consumption>	 
+
+IDR34		ID of respondent for >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionFour>	
+VLRPR300	Value of item bought and consumed in last 15 days - Oil seeds. Missing value codes are negative.
+VLRPR301	Value of item bought and consumed in last 15 days - Pulses/lentils/beans. Missing value codes are negative.
+VLRPR302	Value of item bought and consumed in last 15 days - Pasta/Rice. Missing value codes are negative.
+VLRPR303	Value of item bought and consumed in last 15 days – Cereals. Missing value codes are negative.
+VLRPR304	Value of item bought and consumed in last 15 days - Tubers/potatoes/root crops. Missing value codes are negative.
+VLRPR305	Value of item bought and consumed in last 15 days - Meat/meat products. Missing value codes are negative.
+VLRPR306	Value of item bought and consumed in last 15 days - Powdered/formula milk. Missing value codes are negative.
+VLRPR307	Value of item bought and consumed in last 15 days - Milk or milk products. Missing value codes are negative.
+VLRPR308	Value of item bought and consumed in last 15 days - Fresh fish. Missing value codes are negative.
+VLRPR309	Value of item bought and consumed in last 15 days - Processed fish. Missing value codes are negative.
+VLRPR310	Value of item bought and consumed in last 15 days – Eggs. Missing value codes are negative.
+VLRPR311	Value of item bought and consumed in last 15 days – Vegetables. Missing value codes are negative.
+VLRPR312	Value of item bought and consumed in last 15 days – Fruits. Missing value codes are negative.
+VLRPR313	Value of item bought and consumed in last 15 days - Salt/spices. Missing value codes are negative.
+VLRPR314	Value of item bought and consumed in last 15 days – Oil. Missing value codes are negative.
+VLRPR315	Value of item bought and consumed in last 15 days - Sugar/honey. Missing value codes are negative.
+VLRPR316	Value of item bought and consumed in last 15 days - Prepared food. Missing value codes are negative.
+VLRPR317	Value of item bought and consumed in last 15 days - Packaged sweets. Missing value codes are negative.
+VLRPR318	Value of item bought and consumed in last 15 days - Coffee and tea. Missing value codes are negative.
+VLRPR319	Value of item bought and consumed in last 15 days - Soft drinks. Missing value codes are negative.
+VLRPR320	Value of item bought and consumed in last 15 days - Bread/Wheat flour. Missing value codes are negative.
+VLRPR321	Value of item bought and consumed in last 15 days – Alcohol. Missing value codes are negative.
+VLRPR324	Value of item bought and consumed in last 15 days - Other food item. Missing value codes are negative.
+SPECFOD1	Specify food item
+
+OQNTR300	Quantity consumed in last 15 days from own harvest or stock - Oil seeds
+OQNTR301	Quantity consumed in last 15 days from own harvest or stock - Pulses/lentils/beans
+OQNTR302	Quantity consumed in last 15 days from own harvest or stock - Pasta/rice
+OQNTR303	Quantity consumed in last 15 days from own harvest or stock - Bread/Wheat flour
+OQNTR304	Quantity consumed in last 15 days from own harvest or stock - Cereals
+OQNTR305	Quantity consumed in last 15 days from own harvest or stock - Tubers/potatoes/root crops
+OQNTR306	Quantity consumed in last 15 days from own harvest or stock - Meat/meat products
+OQNTR307	Quantity consumed in last 15 days from own harvest or stock - Powdered/formula milk
+OQNTR308	Quantity consumed in last 15 days from own harvest or stock - Milk or milk products
+OQNTR309	Quantity consumed in last 15 days from own harvest or stock - Fresh fish
+OQNTR310	Quantity consumed in last 15 days from own harvest or stock - Processed fish
+OQNTR311	Quantity consumed in last 15 days from own harvest or stock - Eggs
+OQNTR312	Quantity consumed in last 15 days from own harvest or stock - Vegetables
+OQNTR313	Quantity consumed in last 15 days from own harvest or stock - Fruits
+OQNTR314	Quantity consumed in last 15 days from own harvest or stock - Salt/spices
+OQNTR315	Quantity consumed in last 15 days from own harvest or stock - Oil
+OQNTR316	Quantity consumed in last 15 days from own harvest or stock - Sugar/honey
+OQNTR317	Quantity consumed in last 15 days from gifts or transfers - Prepared food
+GFTVR300	Estimated value from transfers of - Oil seeds
+GFTVR301	Estimated value from transfers of - Pulses/lentils/beans
+GFTVR302	Estimated value from transfers of - Pasta/rice
+GFTVR303	Estimated value from transfers of - Bread/Wheat flour
+GFTVR304	Estimated value from transfers of - Cereals
+GFTVR305	Estimated value from transfers of - Tubers/potatoes/root crops
+GFTVR306	Estimated value from transfers of - Meat/meat products
+GFTVR307	Estimated value from transfers of - Powdered/formula milk
+GFTVR308	Estimated value from transfers of - Milk or milk products
+GFTVR309	Estimated value from transfers of - Fresh fish
+GFTVR310	Estimated value from transfers of - Processed fish
+GFTVR311	Estimated value from transfers of - Eggs
+GFTVR312	Estimated value from transfers of - Vegetables
+GFTVR313	Estimated value from transfers of - Fruits
+GFTVR314	Estimated value from transfers of - Salt/spices
+GFTVR315	Estimated value from transfers of - Oil
+GFTVR316	Estimated value from transfers of - Sugar/honey
+GFTVR317 	Estimated value from transfers of - Prepared food
+GFSRR300	Main source of - Oil seeds
+SPGRSR00	Specify Main source of - Oil seeds
+GFSRR301	Main source of - Pulses/lentils/beans
+SPGRSR01	Specify Main source of - Pulses/lentils/beans
+GFSRR302	Main source of - Pasta/rice
+SPGRSR02	Specify Main source of - Pasta/rice
+GFSRR303	Main source of - Bread/Wheat flour
+SPGRSR03	Specify Main source of - Bread/Wheat flour
+GFSRR304	Main source of - Cereals
+SPGRSR04	Specify Main source of - Cereals
+GFSRR305	Main source of - Tubers/potatoes/root crops
+SPGRSR05	Specify Main source of - Tubers/potatoes/root crops
+GFSRR306	Main source of - Meat/meat products
+SPGRSR06	Specify Main source of - Meat/meat products
+GFSRR307	Main source of - Powdered/formula milk
+SPGRSR07	Specify Main source of - Powdered/formula milk
+GFSRR308	Main source of - Milk or milk products
+SPGRSR08	Specify Main source of - Milk or milk products
+GFSRR309	Main source of - Fresh fish
+SPGRSR09	Specify Main source of - Fresh fish
+GFSRR310	Main source of - Processed fish
+SPGRSR10	Specify Main source of - Processed fish
+GFSRR311	Main source of - Eggs
+SPGRSR11	Specify Main source of - Eggs
+GFSRR312	Main source of - Vegetables
+SPGRSR12	Specify Main source of - Vegetables
+GFSRR313	Main source of - Fruits
+SPGRSR13	Specify Main source of - Fruits
+GFSRR314	Main source of - Salt/spices
+SPGRSR14	Specify Main source of - Salt/spices
+GFSRR315	Main source of - Oil
+SPGRSR15	Specify Main source of - Oil
+GFSRR316 	Main source of - Sugar/honey
+SPGRSR16	Specify Main source of - Sugar/honey
+GFSRR317	Main source of - Prepared food
+SPGRSR17	Specify Main source of - Prepared food
+OQNTR319	Quantity consumed in last 15 days from own harvest or stock - Coffee and tea
+OQNTR320	Quantity consumed in last 15 days from own harvest or stock - Soft drinks
+OQNTR321	Quantity consumed in last 15 days from own harvest or stock - Alcohol
+OQNTR324	Quantity consumed in last 15 days from own harvest or stock - Other foods
+OWNVR319	Estimated value from own stock of - Coffee and tea
+OWNVR320	Estimated value from own stock of - Soft drinks
+OWNVR321	Estimated value from own stock of - Alcohol
+OWNVR324	Estimated value from own stock of - Other foods
+GQNTR319	Quantity consumed in last 15 days from gifts or transfers - Coffee and tea
+GQNTR320	Quantity consumed in last 15 days from gifts or transfers - Soft drinks
+GQNTR321	Quantity consumed in last 15 days from gifts or transfers - Alcohol
+GQNTR324	Quantity consumed in last 15 days from gifts or transfers - Other foods
+GFTVR319	Estimated value from transfers of - Coffee and tea
+GFTVR320	Estimated value from transfers of - Soft drinks
+GFTVR321	Estimated value from transfers of - Alcohol
+GFTVR324	Estimated value from transfers of - Other foods
+GFSRR318	Main source of - Packaged sweets
+SPGRSR18	Specify source of – Packaged sweets
+GFSRR319	Main source of - Coffee and tea
+SPGRSR19	Specify source of  - Coffee and tea
+GFSRR320	Main source of - Soft drinks
+SPGRSR20	Specify source of  - Soft drinks
+GFSRR321	Main source of - Alcohol
+SPGRSR21	Specify source of  - Alcohol
+GFSRR324	Main source of - Other foods
+SPGRSR324	Specify source of  - Other foods
+GFTVR318	Estimated value from transfers of - Packaged sweets
+OQNTR318	Quantity consumed in last 15 days from own harvest or stock - Packaged sweets	
+OWNVR318	Estimated value from own stock of - Packaged sweets
+GQNTR318	Quantity consumed in last 15 days from gifts or transfers - Packaged sweets
+SPGUR318	Specify source of  - Packaged sweets
+
+SPNDR301	Money value in rupees of purchases in last 30 days on tobacco/cigarettes. Missing value codes are negative.
+SPNDR302	Money value in rupees of purchases in last 30 days on personal care items. Missing value codes are negative.
+SPNDR303	Money value in rupees of purchases in last 30 days on firewood, kerosene, gas, batteries, candles. Missing value codes are negative.
+SPNDR304	Money value in rupees of purchases in last 30 days on internet use. Missing value codes are negative.
+SPNDR305	Money value in rupees of purchases in last 30 days on public transport. Missing value codes are negative.
+SPNDR306	Money value in rupees of purchases in last 30 days on security(guards)/house maid. Missing value codes are negative.
+BGYRR307	Amount spent in last 12 months on rent (house for residence). Missing value codes are negative.
+BGYRR312	Amount spent in last 12 months on dwelling maintenance. Missing value codes are negative.
+BGYRR320	Amount spent in last 12 months on cleaning materials. Missing value codes are negative.
+BGYRR313	Amount spent in last 12 months on rent (business, market stall). Missing value codes are negative.
+BGYRR314	Amount spent in last 12 months on business license/tax. Missing value codes are negative.
+BGYRR315	Amount spent in last 12 months on water rates/purchasing water. Missing value codes are negative.
+BGYRR316	Amount spent in last 12 months on electricity rates. Missing value codes are negative.
+BGYRR317	Amount spent in last 12 months on telephone rates & mobile phone card purchase. Missing value codes are negative.
+BGYRR319	Amount spent in last 12 months on vehicle maintenance. Missing value codes are negative.
+BGYRR321	Amount spent in last 12 months on fees and paperwork. Missing value codes are negative.
+BGYRR304	Amount spent in last 12 months on legal advice, support, aid. Missing value codes are negative.
+BGYRR305	Amount spent in last 12 months on bribes. Missing value codes are negative.
+BGYRR306	Amount spent in last 12 months on festivals/ celebrations/ Iddir/ community contribution. Missing value codes are negative.
+BGYRR311	Amount spent in last 12 months on one-off family events. Missing value codes are negative.
+SPYRR301	Amount spent in last 12 months on clothing - adult men. Missing value codes are negative.
+SPYRR302	Amount spent in last 12 months on clothing - adult women. Missing value codes are negative.
+SPYRR303	Amount spent in last 12 months on clothing - girls (not school uniform). Missing value codes are negative.
+SPYRR304	Amount spent in last 12 months on clothing - boys (not schooll uniform). Missing value codes are negative.
+SPYRR305	Amount spent in last 12 months on footwear - adult men. Missing value codes are negative.
+SPYRR306	Amount spent in last 12 months on footwear - adult women. Missing value codes are negative.
+SPYRR307	Amount spent in last 12 months on footwear – girls. Missing value codes are negative.
+SPYRR308	Amount spent in last 12 months on footwear – boys. Missing value codes are negative.
+SPYRR309	Amount spent in last 12 months on school uniform – boys. Missing value codes are negative.
+SPYRR310	Amount spent in last 12 months on school uniform – girls. Missing value codes are negative.
+SPYRR311	Amount spent in last 12 months on school fees or donations to school – boys. Missing value codes are negative.
+SPYRR312	Amount spent in last 12 months on school fees or donations to school – girls. Missing value codes are negative.
+SPYRR324	Amount spent in last 12 months on school fees or donations to school - adult men. Missing value codes are negative.
+SPYRR325	Amount spent in last 12 months on school fees or donations to school - adult women. Missing value codes are negative.
+SPYRR313	Amount spent in last 12 months on payment for tuition – boys. Missing value codes are negative.
+SPYRR314	Amount spent in last 12 months on payment for tuition – girls. Missing value codes are negative.
+SPYRR315	Amount spent in last 12 months on school books and stationery. Missing value codes are negative.
+SPYRR316	Amount spent in last 12 months on transport to school. Missing value codes are negative.
+SPYRR317	Amount spent in last 12 months on medical consultations and treatment. Missing value codes are negative.
+SPYRR318	Amount spent in last 12 months on medicine or drugs direct from the pharmacy. Missing value codes are negative.
+SPYRR319	Amount spent in last 12 months on traditional medicines. Missing value codes are negative.
+SPYRR320	Amount spent in last 12 months on other medical expenses. Missing value codes are negative.
+SPYRR321	Amount spent in last 12 months on cinema/entertainment/video/TV show. Missing value codes are negative.
+SPYRR322	Amount spent in last 12 months on presents or treats for children. Missing value codes are negative.
+SPYRR323	Amount spent in last 12 months on jewellery. Missing value codes are negative.
+SPYRR326	Amount spent in last 12 months on other transport costs for adults or children. Missing value codes are negative.
+SPYRR327	Amount spent in last 12 months on other non-food items. Missing value codes are negative.
+SPNMR303	Of money spent on clothing for girls - how much was for NAME? Codes are:
+00= None of it
+01= Less than half of it
+02= About half
+03= More than half of it
+04= All
+SPNMR304	Of money spent on clothing for boys - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR307	Of money spent on footwear for girls - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR308	Of money spent on footwear for boys - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR309	Of money spent on school uniform (boys) - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR310	Of money spent on school uniform (girls) - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR311	Of money spent on schooling fees (boys) - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR312	Of money spent on schooling fees (girls) - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR313	Of money spent on tuition fees (boys) - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR314	Of money spent on tuition fees (girls) - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR315	Of money spent on school books and stationery - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR316	Of money spent on transport to school - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR317	Of money spent on medical consultation & treatment - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR318	Of money spent on medicines or drugs direct from the pharmacy - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR319	Of money spent on traditional medicines - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR320	Of money spent on other medical expenditure - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR321	Of money spent on cinema/entertainment/video/tv show - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR322	Of money spent on presents or treats for children - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR323	Of money spent on jewellery - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR326	Of money spent on other transport costs - how much was for NAME? Codes are the same as used for SPNMR303.
+SPNMR327	Of money spent on other non-food items - how much was for NAME? Codes are the same as used for SPNMR303.
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3SocialCapital>	 
+IDR35		ID of respondent for >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionFive>	
+WHOHLPR3	If you had a problem who is the person who would be most likely to help you? Codes are:
+01= Parents
+02= Children
+03= Labour union
+04= Work colleagues
+05= Siblings
+06= Government
+07= Other relatives
+08= Neighbour
+09= Friends
+10= Teachers (school)
+11= Religious leader/ person
+12= Political leader
+13= NGO worker
+14= Community leader (informal)
+15= Community leader (formal)
+16= Women`s >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionGroups>	
+17= Farmer`s association
+18= No-one
+19= IDDIR
+20= Other
+SPECWHO1	Specify person who would help if you had a problem
+FINHLPR3	How many people can you rely on in time of need? Codes are:
+00= None
+01= 1 to 2 people
+03= 6 to 10 people
+04= 11 to 15 people
+06= 21 to 30 people
+07= Over 30 people
+The following questions have a scale response between 01 and 05 where 01=Strongly disagree, 02=Disagree, 03=More or Less, 04=Agree, 05= Strongly agree.
+R3CSV1		The nearest primary school provides a good quality education for children
+R3CSV2		The nearest health facility provides a good quality health service for children
+R3CSV3		The local police do their job well
+R3CSV4	People in this community can affect local government decisions that matter for people's lives
+R3CSV5	Most people in this community are basically honest
+R3CTR1	I believe the government does what is right for people like me
+R3CTR2	I am confident of the ability of government officials to do their job
+R3CTR4	I feel I can trust my neighbours to look after my house if I am away
+R3CTR5	I feel I can trust people in this community to look after NAME
+R3CTR6		I feel it is safe for NAME to go out on the street on his/her own
+MBRGRPR3	Is any member of your household an active member of an organisation, group or informal association? Codes are: 00= No, 01= Yes
+HHMEMR31	ID of the main person in the household who is a member of group 1
+GROUPR31	Code for group 1. Codes are:
+01= Raithu Mitra group
+02= Farmer`s co-operative
+03= BUA/WUG
+04= Watershed association
+05= Other Farmer`s Group
+06= Self-help group
+07= Education/Vidya committee
+08= Caste group/co-operative
+12= Chit fund, 14= Trader`s association
+15= Business group
+16= Youth group,
+17= NGO
+18= Religious group
+19= Bhajan Samaj group
+20= Cultural/sport group
+21= Mother`s committee
+22= Labour unions
+23= Women`s group
+24= Peasant association
+25= Service co-operatives
+26= IDDIR (Funeral association)
+27= Water association (about irrigation)
+28= Other (specify)
+29= Parent and Teacher Union
+30= Producers'/Milk Producers' association
+31= Iqqubs
+32= Girls` Club
+33= Women`s Association
+34= Farmer`s Association
+35= Political Group
+36= Neighbour >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionGroups>	/ neighbourhood associations
+37= Defence association
+SPECGRP1	Specify other group 1
+LEADMR31	Does this member hold a leadership or powerful position in group 1? Codes are: 00= No, 01= Yes
+PRPSTR31	Did any parent or close relative of this person hold this post before in group 1? Codes are: 00= No, 01= Yes
+HHMEMR32	ID of the main person in the household who is a member of group 2.
+GROUPR32	Code for group 2. Codes are the same as used for GROUPR31.
+SPECGRP2	Specify other group 2
+LEADMR32	Does this member hold a leadership or powerful position in group 2? Codes are: 00= No, 01= Yes
+PRPSTR32	Did any parent or close relative of this person hold this post before in group 2? Codes are: 00= No, 01= Yes
+HHMEMR33	ID of the main person in the household who is a member of group 3
+GROUPR33	Code for group 3. Codes are the same as used for GROUPR31.
+SPECGRP3	Specify other group 3
+LEADMR33	Does this member hold a leadership or powerful position in group 3? Codes are: 00= No, 01= Yes
+PRPSTR33	Did any parent or close relative of this person hold this post before in group 3? Codes are: 00= No, 01= Yes
+RELLIVR3	Do you have relatives living in this community? Codes are: 00= No, 01= Yes
+FRNCTYR3	Do you have a relative or friend living in a large city? Codes are: 00= No, 01= Yes
+AFTRSCR3	Do you know what NAME does after school/work? Codes are: 00= No, 01= Yes
+NMFRNDR3	Do you know the names of NAME's friends? Codes are: 00= No, 01= Yes 
+PRNTFRR3	Do you know the parents of NAME's friends? Codes are: 00= No, 01= Yes 
+TCHRR3	Do you know NAME's teacher?	 Codes are: 00= No, 01= Yes
+BULLDR3	Has NAME ever been bullied by peers? Codes are: 00= No, 01= Yes 
+TALKPLR3	Do you talk to your children about politics or political participation? Codes are: 00= No, 01= Yes 
+TALKPRR3	In the last 3 yrs have you or any household member talked with other people in your area about a serious problem affecting the community? Codes are: 00= No, 01= Yes
+VOTENTR3	In the last 3 yrs have you or any household member voted in the national elections? Codes are: 00= No, 01= Yes
+VOTELCR3	In the last 3 yrs have you or any household member voted in local elections? Codes are: 00= No, 01= Yes
+GIVCOMR3	In the last 3 yrs have you or any household member given gifts or cash to any community organisations or political >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionGroups>	? Codes are: 00= No, 01= Yes
+ACTPRBR3	In the last 3 yrs have you or any household member taken action with others about a serious problem affecting the community? Codes are: 00= No, 01= Yes
+PARTAWR3	In the last 3 yrs have you or any household member actively participated in an awareness raising campaign? Codes are: 00= No, 01= Yes
+PROTSTR3	In the last 3 yrs has anyone in your household taken part in a protest march or demonstration? Codes are: 00= No, 01= Yes
+INTRNTR3	Does any household member use the Internet? Codes are: 00= No, 01= Yes
+WHINTR31	Where do you use the internet? Codes are:
+01= At home
+02= Relative` s/ neighbour` s house
+03= School
+04= Internet café
+05= Community centre/ library
+06= Other (specify)
+7= Work/ Office
+SPCWHER1	Specify where you use the internet
+WHINTR32	Where do you use the internet? Codes are:
+01= At home
+02= Relative` s/ neighbour` s house
+03= School
+04= Internet café
+05= Community centre/ library
+06= Other (specify)
+7= Work/ Office
+SPCWHER2	Specify where you use the internet
+WHINTR33	Where do you use the internet? Codes are:
+01= At home
+02= Relative` s/ neighbour` s house
+03= School
+04= Internet café
+05= Community centre/ library
+06= Other (specify)
+7= Work/ Office
+SPCWHER3	Specify where you use the internet
+TMEINTR3	How much time do you or other household members spend on the internet? Codes are:
+01= Less than 2hrs per week
+02= 2 to 5hrs per week
+03= More than 5 hrs per week
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3EconomicChanges>	 
+IDR36		ID of respondent for >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionSix>	
+CMPHHR3	Compared to other households in this village how would you describe your household? Codes are:
+01= The richest
+02= Among the richest
+03= Richer than most households
+04= About average
+05= A little poorer than most households
+06= Among the poorest
+07= The poorest
+SPCMPHH	Specify other description of household
+SITCHR3	Do you feel your situation has changed since the last time we came to see you? Codes are: 00= No, 01= Yes
+WHYCHR3	Why do you think your situation has changed? Codes are:
+01= Harvests have been good
+02= Started growing new crops
+03= Tried new farming techniques
+04= Managed my crops or livestock well
+05= Accumulated livestock
+06= Accumulated other resources/assets/possessions
+07= My own health has improved
+08= Spouse` s health has improved
+09= Spouse works hard
+10= Have new spouse
+11= have more children
+12= Children older and more able to work
+13= Women in household drink less
+14= men in household drink less
+15= More people around to help (better networks)
+16= Job security
+17= Live in a nicer house
+18=  managed my business well
+19= Worked hard
+20= Own business or trade has been profitable
+21= Set up a new business or trade
+22= Started work or new job/non-farm work
+23= Food or Cash Aid
+24= Involvement in safety net programmes
+25= Panchyat is providing all facilities
+26= Migration
+27= Was willing to take risks
+28= Prices have risen
+29= Good luck
+30= God has helped
+31= Other
+32= S/he drinks less
+33= Government-run Employment Programs
+34= Spouse started work or a new job
+35= Received a raise for current job
+36= Both husband and wife work
+37= Involvement in farmers` union
+41= Harvests have been poor
+42= Tried new crops but they failed
+43= Tried new ways of farming but they failed
+44= Managed my crops or livestock poorly
+45= Have less livestock
+46= managed my business poorly
+47= Own business failed or didn`t do well
+48= tried new business trade but it failed
+49= Lost job
+50= Have fewer other resources (assets., possessions)
+51= I was lazy
+52= Spouse was lazy
+53= I have been ill/ibjured/disabled
+54= Spouse has been ill/ibjured/disabled
+55= Spouse died, 56= Children sick or died
+57= Children moved away
+58= Large family/too many children/ increased family size
+59= Men in household drink too much
+60= Women in household drink too much
+61= Less people around to help (poorer networks)
+62= Theft/robbery
+63= Too many loans
+64= Did not want to take risks
+65= Prices for goods have fallen
+66= Increase in price of inputs
+67= Increase in food prices
+68= House is not as nice as it used to be
+69= Old age
+70= Bad luck
+71= God has not helped
+72= Other (specify)
+SPWHYCH	Specify why your situation has changed
+EVNTR301	Has event happened since last visit? - theft or destruction. Codes are: 00= No, 01= Yes
+EVNTR310	Has event happened since last visit? - forced contributions/arbitrary taxation/protection money. Codes are: 00= No, 01= Yes
+EVNTR312	Has event happened since last visit? - large increase in input prices. Codes are: 00= No, 01= Yes
+EVNTR313	Has event happened since last visit? - large decrease in output prices. Codes are: 00= No, 01= Yes
+EVNTR346	Has event happened since last visit? - increase in output prices. Codes are: 00= No, 01= Yes
+EVNTR347	Has event happened since last visit? - increase in food prices. Codes are: 00= No, 01= Yes
+EVNTR314	Has event happened since last visit? - death of livestock. Codes are: 00= No, 01= Yes
+EVNTR316	Has event happened since last visit? - job loss/loss of income source/family enterprise. Codes are: 00= No, 01= Yes
+EVNTR323	Has event happened since last visit? - disputes with neighbours/PA members. Codes are: 00= No, 01= Yes
+LSTYR301	Did event happen in last year? - theft or destruction. Codes are: 00= No, 01= Yes
+LSTYR310	Did event happen in last year? - forced contributions/arbitrary taxation/protection money. Codes are: 00= No, 01= Yes
+LSTYR312	Did event happen in last year? - large increase in input prices. Codes are: 00= No, 01= Yes
+LSTYR313	Did event happen in last year? - large decrease in output prices. Codes are: 00= No, 01= Yes
+LSTYR346	Did event happen in last year? - increase in output prices. Codes are: 00= No, 01= Yes
+LSTYR347	Did event happen in last year?  - increase in food prices. Codes are: 00= No, 01= Yes
+LSTYR314	Did event happen in last year? - death of livestock. Codes are: 00= No, 01= Yes
+LSTYR316	Did event happen in last year? - job loss/loss of income source/family enterprise. Codes are: 00= No, 01= Yes
+LSTYR323	Did event happen in last year? - disputes with neighbours/PA members. Codes are: 00= No, 01= Yes
+RESR3101, RESR3201, RESR3301
+Responses to theft or destruction
+01= Ate less
+02= Bought less/reduction in household expenditure
+04= Field/moved away from the problem
+05= Insurance paid
+06= Migrated to work/find work
+07= Nothing
+08= Received help
+09= Received help from relatives/friends
+10= Received help from Government/NGO
+11= Sent children to be cared for by friends or relatives
+12= Sent children to work
+13= Sold possessions/belongings
+14= Suicide of family member
+15= Took children out of school
+16= Used credit
+17= Used savings
+18= Worked more/started work
+19= Other (specify)
+20= Sold animals
+21= Pawning/mortgage
+22= Started looking for a job
+23= Sold properties
+27= NAME withdrawn from school/sent to work
+SPECR101, SPECR201, SPECR301	
+	Specify other responses to theft or destruction
+RESR3110, RESR3210, RESR3310
+	Responses to forced contributions/arbitrary taxation/protection money. Codes are the same as used for RESR3101.
+SPECR110, SPECR210, SPECR310
+	Specify other responses to forced contributions/arbitrary taxation/protection money
+RESR3112, RESR3212, RESR312	
+Responses to large increases in input prices. Codes are the same as used for RESR3101.
+SPECR112, SPECR212, SPECR312
+Specify other responses to large increases in input prices
+RESR3113, RESR3213, RESR3313
+Responses to decreases in output prices. Codes are the same as used for RESR3101.
+SPECR113, SPECR213, SPECR313
+		Specify other responses to decreases in output prices
+RESR3146, RESR3246, RESR3346
+Responses to increase in output prices. Codes are the same as used for RESR3101.
+SPECR146, SPECR246, SPECR346
+		Specify other responses to increase in output prices
+RESR3147, RESR3247, RESR3347
+Responses to increase in food prices. Codes are the same as used for RESR3101.
+SPECR147, SPECR247, SPECR347
+Specify other responses to increase in food prices. 
+RESR3114, RESR3214, RESR3314
+		Responses to death of livestock. Codes are the same as used for RESR3101.
+SPECR114, SPECR214, SPECR314
+Specify other responses to death of livestock
+RESR3116, RESR3216, RESR3316	
+Responses to job loss/loss of income source/family enterprise. Codes are the same as used for RESR3101.
+SPECR116, SPECR216, SPECR316
+		Specify other responses to job loss/loss of income source/family enterprise
+RESR3123, RESR3223, RESR3323	
+Responses to disputes with neighbours/PA members. Codes are the same as used for RESR3101.
+RKEVR301, RKEVR302, RKEVR303
+ 	Most important events in the order of importance. Codes are:
+01= Theft or destruction
+10= Forced contributions/Arbitrary taxation/ Protection money
+12= Large increase in input prices
+13= Large decrease in output prices
+14= Livestock died
+16= Job loss/ source of income/ family enterprise
+23= Disputes with neighbours/ PA members regarding land or assets
+24= Drought
+25= Too much rain or flood
+26= Erosion, Cracks or landslide
+27= Frosts or hailstorm
+28= Pests or diseases that affected crops before they were harvested
+29= Crops failed
+30= Pests or diseases that led to storage losses
+31= Pests or diseases that affected livestock
+32= Fire or collapse of building
+34= Death of child` s father
+35= Death of child` s mother
+36= Death of another person from the household
+37= Illness of child` s father
+38= Illness of child` s mother
+39= Illness of other household member
+40= Divorce, separation or abandonment
+41= Birth/ new household member
+42= Child` s school enrolment- having to pay school fees
+45= Other (specify)
+47= Increase in the price of food that I buy
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3SocioeconomicStatus>	
+IDR37		ID of respondent for section 7
+OWNHSER3	Does anyone in your household own your house? Codes are: 00= No, 01= Yes
+MRTGR3	Does anyone in your household have a mortgage on your house? Codes are: 00= No, 01= Yes
+NUMRMR3	How many rooms are there in the house? Missing value codes are negative.
+KITCHR3	Do you have a separate kitchen/cooking area? Codes are: 00= No, 01= Yes
+ELECR3	Do you have electricity? Codes are: 00= No, 01= Yes
+WALLR3	Main material for wall. Codes are:
+01= Adobe/mud
+02= Bamboo/cane
+03= Brick/concrete
+04= Cement bags
+05= Fibreboard/chipboard
+06= Galvanised/corrugated iron
+07= Matting
+08= Mud & bricks
+09= Mud & stones
+10= Neohouzealla wattle
+11= Nipa leaves
+12= Plastic sheet
+13= Quicha
+14= Stone
+15= Wood/branches
+16= Other (specify)
+17= Mud & wood
+21= Cane and mud
+22= Wood and mud
+23= Wood/Tripley
+24= Adobe and stones
+25= Concrete blocks
+SPECWALL	Specify other material for wall
+ROOFR3	Main material for roof. Codes are:
+01= AC roofing sheets
+02= Asbestos sheets
+03= Bamboo/Cane
+04= Concrete/cement
+05= Earth/mud
+06= Galvanised/corrugated iron
+07= Grass
+08= Nipa leaves
+09= Palm leaves
+10= Plastic sheet
+11= Straw/thatch
+12= Sugar leaves
+13= Tar slabs
+14= Thuthuri sticks
+15= Tiles/slates
+16= Wood & mud/adobe
+17= Wood & stones
+18= Wood/planks
+19= Other (specify)
+20= Leaves
+21= Asbestos plates
+22= Corrugated asbestos sheets
+23= Cane &mud
+24= Mat
+25= Cardboard
+SPECROOF	Specify other material for roof
+FLOORR3	Main material for floor. Codes are:
+01= Cement/ tiles
+02= Cinder
+03= Concrete/cement
+04= Earth/sand
+05= Granite stone
+06= Laminated material
+07= Marble stone
+08= Polished stone
+09= Stone/brick
+10= Tar slabs
+11= Wood
+12= Other (specify)
+20= Vinyl floor
+21= False floor
+SPECFLR	Specify other material for floor
+DRWTRR3	What is the main source of drinking water for members of your household? Codes are:
+01= Bore well
+02= Bought water
+03= Piped into dwelling/yard/plot
+04= Piped into neighbours` dwelling
+05= Piped into relatives` dwelling/yard/plot
+06= Protected spring water
+07= Protected well
+08= Public standpipe
+09= Rain water
+10= Tube well in dwelling/yard/plot
+11= Unprotected well/spring/pond/river/stream/canal
+12= Unprotected water tank
+13= Water tank (Community/protected)
+14= Other (specify)
+SPECWATR	Specify other source of drinking water
+TOILETR3	What is the main kind of toilet facility used by members of your household? Codes are:
+01= Flush toilet/ septic tank
+02= Forest/field/open place
+05= Pit latrine (communal)
+06= Pit latrine (household` s)
+09= Toilet in health post
+10= Other (specify)
+SPECTOIL	Specify other kind of toilet facility
+COOKR3	What is the main type of fuel you use for cooking? Codes are:
+01= Bamboo
+02= Bio-gas
+03= Branches
+04= Charcoal
+05= Coal
+06= Cow dung
+07= Crop residue
+08= Gas/ electricity
+09= Kerosene/paraffin
+10= Leaves
+11= Rice husk
+13= Shavings/sawdust
+14= Straw/dead plants
+15= Other (specify)
+16= Wood
+SPECCOOK	Specify other fuel used for cooking
+HTUSDR3	Is heating used in this area? Codes are: 00= No, 01= Yes
+TYPHTR3	What is the main type of fuel you usually use for heating? Codes are the same as used for COOKR3.
+SPECHEAT	Specify other fuel used for heating
+INVESTR3	Have you invested in the improvement of your dwelling since we last came to see you? Codes are: 00= No, 01= Yes
+INVSTR31, INVSTR32, INVSTR33
+What have you invested in? Provide answers in the order of importance. Codes are:
+01= New/renovated bedrooms
+02= New/renovated kitchen
+03= New/renovated bathroom
+04= New/renovated living room
+05= Improved floor
+06= Improved wall finish
+07= Improved roof cover
+08= Rebuild dwelling
+09= Electric re-wiring
+10= Central heating/ gas servicing
+11= Sanitation
+12= Water supply
+13= Other (specify)
+15= Build new house
+16= Improve/build fence/wall around house
+17= Improve/new doors/windows
+SPECINV1, SPECINV2, SPECINV3
+		Specify what you have invested in
+TV7R3	Does anyone in the household own - working television? Codes are: 00= No, 01= Yes
+RADIO7R3	Does anyone in the household own - working radio? Codes are: 00= No, 01= Yes
+CAR7R3	Does anyone in the household own - working car/truck/automobile? Codes are: 00= No, 01= Yes
+MOTOR7R3	Does anyone in the household own - working motorbike/scooter? Codes are: 00= No, 01= Yes
+BIKE7R3	Does anyone in the household own - working bicycle? Codes are: 00= No, 01= Yes
+PHONE7R3	Does anyone in the household own - working landline telephone? Codes are: 00= No, 01= Yes
+MBPHN7R3	Does anyone in the household own - working mobile/cell phone? Codes are: 00= No, 01= Yes
+TABCH7R3	Does anyone in the household own - table & chair? Codes are: 00= No, 01= Yes
+SOFA7R3	Does anyone in the household own - sofa? Codes are: 00= No, 01= Yes
+FAN7R3	Does anyone in the household own - working fan? Codes are: 00= No, 01= Yes
+BEDST7R3	Does anyone in the household own - bedstead? Codes are: 00= No, 01= Yes
+FRIDG7R3	Does anyone in the household own - working refrigerator. Codes are: 00= No, 01= Yes
+MITAD7R3	Does anyone in the household own - gas or electric stove. Codes are: 00= No, 01= Yes
+CMPT7R3	Does anyone in the household own - Computer/laptop. Codes are: 00= No, 01= Yes
+VDEO7R3	Does anyone in the household own - Working videocassette player/DVD player. Codes are: 00= No, 01= Yes
+GMES7R3	Does anyone in the household own – Videogames. Codes are: 00= No, 01= Yes
+MCRO7R3	Does anyone in the household own – Microwave. Codes are: 00= No, 01= Yes
+WSHG7R3	Does anyone in the household own - Washing machine. Codes are: 00= No, 01= Yes
+DRYR7R3	Does anyone in the household own - Dryer machine. Codes are: 00= No, 01= Yes
+ITEM7R3	Does anyone in the household own - other item?. Codes are: 00= No, 01= Yes
+SPECITEM	Specify other item 
+NR3TV	How many does household own? - working television. Missing value codes are negative.
+NR3RADO	How many does household own? - working radio. Missing value codes are negative.
+NR3CAR	How many does household own? - working car/truck/automobile. Missing value codes are negative.
+NR3MOTO	How many does household own? - working motorbike/scooter. Missing value codes are negative.
+NR3BIKE	How many does household own? - working bicycle. Missing value codes are negative.
+NR3TELE	How many does household own? - working landline phone. Missing value codes are negative.
+NR3CELL	How many does household own? - working mobile/cell phone. Missing value codes are negative.
+NR3TABC	How many does household own? - table & chair. Missing value codes are negative.
+NR3SOFA	How many does household own? – sofa. Missing value codes are negative.
+NR3FAN	How many does household own? - working fan. Missing value codes are negative.
+NR3BEDS	How many does household own? – bedstead. Missing value codes are negative.
+NR3FRDG	How many does household own? – refrigerator. Missing value codes are negative.
+NR3STVE	How many does household own? - gas or electric stove. Missing value codes are negative.
+NR3COMP	How many does household own - computer/laptop. Missing value codes are negative.
+NR3VDEO	How many does household own - videocassette player/DVD player. Missing value codes are negative.
+NR3GAME	How many does household own – Videogames. Missing value codes are negative.
+NR3MCRO	How many does household own – Microwave. Missing value codes are negative.
+NR3WSHG	How many does household own - Washing machine. Missing value codes are negative.
+NR3DRYR	How many does household own - Dryer machine. Missing value codes are negative.
+NR3ITEM	How many does household own? - other item. Missing value codes are negative.
+FVVALR31, FVVALR32, FVVALR33, FVVALR34,, FVVALR35
+		Most important items in the household- in the order of importance. Codes are:
+01= Working television
+02= Working radio
+03= Working car/truck/automobile
+04= Working motorbike/scooter
+05= Working bicycle
+06= Working landline telephone
+07= Working mobile/cell phone
+08= Table & chair
+09= Sofa
+10= Working fan
+11= Bedstead
+12= Working refrigerator
+13= Gas or electric stove
+14= Computer/laptop
+15= Working videocassette player/ DVD player
+16= Videogames
+17= Microwave
+18= Washing machine
+19= Dryer machine
+20= Other (specify)
+SLVALR31	How much could most important item be sold for? Missing value codes are negative.
+SLVALR32	How much could second most important item be sold for? Missing value codes are negative.
+SLVALR33 	How much could third most important item be sold for? Missing value codes are negative.
+SLVALR34	How much could fourth most important item be sold for? Missing value codes are negative.
+SLVALR35	How much could fifth most important item be sold for? Missing value codes are negative.
+Section 8: 
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3ChildActivities>	
+
+IDR38		ID of respondent for Section 8
+CHSUPOTR3	While doing household chores or other work, is NAME supervising younger children? Codes are: 00= No, 01= Yes
+CHLWRKR3	Has NAME done anything in the last 12 months to get money or things for him/herself or their family? Codes are: 00= No, 01= Yes
+CHMSTMR3	Which activity did NAME spend most time on during the year? Codes are:
+01= Farm work outside your own household
+02- Domestic chores for another household
+03= Making handicrafts/piecework
+04= Selling goods or services
+05= Working for wage in non-agricultural activity
+06= Domestic chores or farm work inside household for which pocket 
+money received
+7= Other, 20= Caring for younger children
+21= Caring for elderly and/or sick /disabled  members of the family
+22= Domestic chores inside household for which pocket money received
+23= Looking after animals owned by the household for which pocket 
+money received
+24= Collecting firewood or water
+25= Non-agricultural labour for other families
+26= Farm work inside household for which pocket money received
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3ChildHealthAndDevelopment>	
+IDR39		ID of respondent for section 9
+NMEHLTR3	How is NAME's health? Codes are:
+01= Very poor
+02= Poor
+03= Average
+04= Good
+05= Very good
+TMINJR3	Since our last visit has NAME been seriously injured - if yes, how many times? Codes are:
+00= 0 times
+01= 1 time
+2= 2 times
+03= 3 times
+04= 4 times
+05= 5 times
+06= 6 or more times
+SRSINJR3	What was the most serious injury? Codes are:
+01= Cut or laceration
+02= Head injury or concussion or knocked out
+03= Broken bone (Fracture)
+04= Fall
+05= Burn
+06= Stab wound
+07= Animal bite
+08= Eye injury
+09= Multiple injuries
+10= Gunshot wound
+11= Drowning or near drowning
+12= Electric shock
+13= Snake bite
+14= Insect or spider bite
+15= internal injury
+16= Poisoning/intoxication
+17= Loss of limb or part of limb/amputation
+18= Abscess or infection
+19= Post traumatic shock or mental problem
+20= Other (specify)
+SPSRSINJ	Specify serious injury
+CASINJR3	What was the main cause of this injury? Codes are:
+01= Road traffic accident (in vehicle)
+02= Road traffic accident (riding bicycle)
+03= Road traffic accident (pedestrian)
+04= Fall
+05= Burn
+06= Assault, blows, hit
+07= Animal related (kicked, bitten)
+08= Electrocution
+09= Attempted suicide/self-harm
+10= Building collapse
+11= Use of dangerous tools, fireworks, explosives, arms
+12= Other (specify)
+SPCASING	Specify cause of injury
+DNGSRSR3	What was NAME doing when this injury happened? Codes are: 
+01= Farm work
+02= Non-farm work
+03= Household chores
+04= At school
+05= Sports (in or out of school)
+06= Playing (not sports)
+07= Travelling to/from school
+08= Travelling (other than to/from school)
+09= Nothing
+10= Other (specify)
+SPDNGSRS	Specify what NAME was doing when injury happened
+HOWSRSR3	How did the injury happen? Codes are:
+01= Someone else accidentally
+02= Someone else purposefully
+03= Crime related
+04= Self accidentally
+05= Self purposefully
+06= Animal (including fall from animal)
+07= Building collapse
+8= Natural disaster
+9= War/conflict related
+10= Other (specify)
+ SPHOWSRS	Specify how the injury happened
+RCVINJR3	Did NAME completely recover from this injury? Codes are:	00= No, 01= Yes
+LNGTRMR3	What are the long-term problems resulting from this injury? Codes are: 
+01= Permanent physical disability
+02= Mental health problem
+03= Frequent pain
+04= Convulsions
+05= Mental retardation
+06= Other (specify)
+SPLNGTRM 	Specify long-term problems resulting from injury
+PRVSNR3	Long-term illness or health problem - Poor vision. Codes are: 00= No, 01= Yes
+EYEGLSR3	Does NAME wear glasses? Codes are: 00= No, 01= Yes
+RSPRTRR3	Long-term illness or health problems - respiratory problems. Codes are: 00= No, 01= Yes
+SCR3VSN	Does health problem affect NAME's abilities at school? - poor vision. Codes are: 00= No, 01= Yes
+SCR3EYE	Does health problem affect NAME's abilities at school? - wearing eyeglasses. Codes are: 00= No, 01= Yes
+SCR3RSPR	Does health problem affect NAME's abilities at school? - respiratory problems. Codes are: 00= No, 01= Yes
+WCR3VSN	Does health problem affect NAME's abilities at work? - poor vision. Codes are: 00= No, 01= Yes
+WCR3EYE	Does health problem affect NAME's abilities at work? - wearing glasses. Codes are: 00= No, 01= Yes
+WCR3RSPR	Does health problem affect NAME's abilities at work? - respiratory problems. Codes are: 00= No, 01= Yes
+FDFRQR31	In the last 24 hours did NAME consume - any food before a morning meal. Codes are: 00= No, 01= Yes
+FDFRQR32	In the last 24 hours did NAME consume - a morning meal (breakfast). Codes are: 00= No, 01= Yes
+FDFRQR33	In the last 24 hours did NAME consume - any food between morning and midday meals. Codes are: 00= No, 01= Yes
+FDFRQR34	In the last 24 hours did NAME consume - a midday meal. Codes are: 00= No, 01= Yes
+FDFRQR35	In the last 24 hours did NAME consume - any food between midday and evening meals. Codes are: 00= No, 01= Yes
+FDFRQR36	In the last 24 hours did NAME consume - an evening meal. Codes are: 00= No, 01= Yes
+FDFRQR37	In the last 24 hours did NAME consume - any food after the main evening meal. Codes are: 00= No, 01= Yes
+FDTOTR3	Total times NAME ate in last 24 hours
+CHVEGR3	Is NAME a vegetarian? Codes are: 00= No, 01= Yes
+FDIVR301	In the last 24 hrs did NAME consume - injera, spaghetti or food made from teff, millet, sorghum, maize, rice or wheat? Codes are: 00= No, 01= Yes
+FDIVR302	In the last 24 hrs did NAME consume - pumpkin, carrots, squash, red or orange sweet potato? Codes are: 00= No, 01= Yes
+FDIVR303	In the last 24 hrs did NAME consume - potatoes, yams, taro, cassava or any other foods made from starchy roots or tubers? Codes are: 00= No, 01= Yes
+FDIVR304	In the last 24 hrs did NAME consume - dark green leafy vegetables? Codes are: 00= No, 01= Yes
+FDIVR305	In the last 24 hrs did NAME consume - any other vegetables? Codes are: 00= No, 01= Yes
+FDIVR306	In the last 24 hrs did NAME consume - ripe mangoes, ripe papayas? Codes are: 00= No, 01= Yes
+FDIVR307	In the last 24 hrs did NAME consume - other fruits? Codes are: 00= No, 01= Yes
+FDIVR308	In the last 24 hrs did NAME consume - liver, kidney, heart or other organ meat? Codes are: 00= No, 01= Yes
+FDIVR309	In the last 24 hrs did NAME consume - any other meat? Codes are: 00= No, 01= Yes
+FDIVR310	In the last 24 hrs did NAME consume - eggs? Codes are: 00= No, 01= Yes
+FDIVR311	In the last 24 hrs did NAME consume - fresh or dried fish or shellfish? Codes are: 00= No, 01= Yes
+FDIVR312	In the last 24 hrs did NAME consume - any foods made from legumes (beans, peas, lentils, nuts)? Codes are: 00= No, 01= Yes
+FDIVR313	In the last 24 hrs did NAME consume - cheese, yoghurt, milk or other milk products? Codes are: 00= No, 01= Yes
+FDIVR314	In the last 24 hrs did NAME consume - foods made with oil, fat or butter? Codes are: 00= No, 01= Yes
+FDIVR315	In the last 24 hrs did NAME consume - sugar, honey, sweets, sugary sweet drinks? Codes are: 00= No, 01= Yes
+DRFIZZR3	In the last 30 days how many times did NAME drink fizzy, sweet soft drinks? Codes are:
+01= Daily
+02= 2 to 3 times a week
+03= Once a week
+04= Every 2 weeks
+05= Less than every 2 weeks
+06= Never
+ETSALTR3	 In the last 30 days how many times did NAME eat salty and fatty foods or fried snacks? Codes are the same as used for DRFIZZR3.
+SUGRSWR3	In the last 30 days how many times did NAME eat sweet, sugary fatty foods such as cakes? Codes are the same as used for DRFIZZR3.
+PHYSACR3	In the last 7 days on how many days was NAME physically active for at least 60 minutes? Codes are:
+00= 0 days
+01= 1 day
+02= 2 days
+03= 3 days
+04= 4 days
+05= 5 days
+06= 6 days
+07= 7 days (every day)
+SITTNGR3	How much time does NAME spend sitting in a typical day? Codes are:
+01= Less than 1 hour per day
+02= 1 to 2 hours per day
+03= 3 to 4 hours per day
+04= 5 to 7 hours per day
+05= More than 7 hours per day 
+GOCHILR3	Where do you usually go with NAME if he/she is ill? Codes are:
+01= Government hospital
+02= Government health centre
+03= Government health clinic
+04= Private doctor/clinic
+05= Private hospital
+06= Other (specify)
+SPGOCHIL	Specify where you go with NAME if he/she is ill
+
+The following questions have a scale response between 01 and 05where 01= Very dissatisfied, 02= Dissatisfied,0 3= OK, More or Less, 04= Satisfied, 05= Very satisfied,
+TRTRECR3	Satisfaction with services - Treatment received
+DRGAVLR3	Satisfaction with services - Drug availability
+CLNFACR3	Satisfaction with services - Cleanliness of health facility
+RSPCSHR3	Satisfaction with services - Politeness and respect shown of health care staff
+WAITTMR3	Satisfaction with services - Waiting time until seen by health staff
+CNSTTMR3	Satisfaction with services - Consultation time with health care staff
+RSNOTKR3	Was there a time when NAME was ill or injured & you would have liked to go to a healthcare facility but did not? Codes are: 00= No, 01= Yes
+RSNTKR31	Other reason - direct costs. Codes are: 00= No, 01= Yes
+RSNTKR32	Other reason - indirect costs. Codes are: 00= No, 01= Yes
+RSNTKR33	Other reason - long distance, difficult access. Codes are: 00= No, 01= Yes
+RSNTKR34	Other reason - illness was not serious enough. Codes are: 00= No, 01= Yes
+RSNTKR35	Other reason - don't trust quality of health-care service. Codes are: 00= No, 01= Yes
+RSNTKR36	Other reason - embarrassed about health problem. Codes are: 00= No, 01= Yes
+RSNTKR37	Other reason - NAME would miss school or work. Codes are: 00= No, 01= Yes
+RSNTKR38	Other reason – specify. Codes are: 00= No, 01= Yes
+SPCNOTK	Specify other reason for not going to healthcare facility
+IMPRSR3	Most important reason for not going to a healthcare facility. Codes are:
+01= Direct costs
+02= Indirect costs
+03= Long distance, difficult access
+04= Illness was not serious enough
+05= Don`t trust quality or health-care service
+06= Embarrassed about health problem
+07= NAME would miss school or work
+08= Other (specify)
+SPCIMP		Specify reason for not going to a healthcare facility
+BPLCRDR3	Does this household have a BPL card? Codes are: 00= No, 01= Yes
+AWRAJVR3	Are you aware of the Rajiv Aarogyasri? Codes are: 00= No, 01= Yes
+HVRAJVR3	Does your family have Rajiv Aarogyasri Card? Codes are: 00= No, 01= Yes
+NUMRAJVR3 	Rajiv Aarogyasri Card Number 
+ACRAJVR3	Has anyone in the household accessed the Rajiv Aarogyasri benefit? Codes are: 00= No, 01= Yes
+AMRAJVR3	Approximate amount of Rajiv Aarogyasri benefit received. Missing value codes are negative.
+PSTOPCR3	Did household receive benefit for post operative care under Rajiv Aarogyasri? Codes are: 00= No, 01= Yes
+SMOKER3	Does anyone in your household smoke cigarettes, beedees or cigars? Codes are: 00= No, 01= Yes
+SMK01R3	Roster ID of smoker. Missing value codes are negative.
+SMK02R3	Roster ID of smoker. Missing value codes are negative.
+SMK03R3	Roster ID of smoker. Missing value codes are negative.
+SMK04R3	Roster ID of smoker. Missing value codes are negative.
+OTHRTBR3	Does anyone in your household use others forms of tobacco such as pan, masala, or gutka? Codes are: 00= No, 01= Yes
+OTHTBR31	Roster ID of tobacco user. Missing value codes are negative.
+OTHTBR32	Roster ID of tobacco user. Missing value codes are negative.
+OTHTBR33	Roster ID of tobacco user. Missing value codes are negative.
+OTHTBR34	Roster ID of tobacco user. Missing value codes are negative.
+FDHOMER3	Household's food situation in last 12 months. Codes are:
+01= We always eat enough of what we want
+02= We eat enough but not always what we would like
+03= We sometimes do not eat enough
+04= We frequently do not eat enough
+WRRYFDR3	In last 12 months - did you worry that household would run out of food before you get money to buy more? Codes are: 00= No, 01= Yes
+NOPREFR3	In last 12 months - was any household member not able to eat the foods you want because of lack of money? Codes are: 00= No, 01= Yes
+LIMTVRR3	In last 12 months - did any household member have to eat a limited range of foods due to lack of money? Codes are: 00= No, 01= Yes
+NOTWNTR3	In last 12 months - did any household member have to eat food you didn't want to eat because of no money to buy other types of food? Codes are: 00= No, 01= Yes 
+SMLLMLR3	In last 12 months - did any household member have to eat less than wanted because there was not enough food? Codes are: 00= No, 01= Yes 
+FEWMLR3	In last 12 months - did any household member reduce number of meals eaten per day because there was not enough food? Codes are: 00= No, 01= Yes 
+NOFOODR3	In last 12 months - was there ever no food to eat because of lack of money? Codes are: 00= No, 01= Yes 
+SLPHNGR3	In last 12 months - did any household member go to bed hungry due to not enough food? Codes are: 00= No, 01= Yes 
+DAYNGTR3	In last 12 months - did any household member not eat for a whole day and night because there was not enough food? Codes are: 00= No, 01= Yes 
+FRQWRYR3	How often - did you worry that household would run out of food before you could get money to buy more? Codes are:
+01= Rarely, one or two months in the year
+02= Sometimes, some months but not always
+03= Always or nearly always or all months
+FRQPRFR3	How often - was a household member not able to eat the foods you want because of lack of money? Codes are the same as used for FRQWRYR3.
+FRQLMTR3	How often - did a household member have to eat a limited range of foods due to lack of money? Codes are the same as used for FRQWRYR3.
+FRQNWNR3	How often - did a household member have to eat food you didn't want to eat because of no money to buy other types of food? Codes are the same as used for FRQWRYR3.
+FRQSMLR3	How often - did a household member have to eat less than wanted because there was not enough food? Codes are the same as used for FRQWRYR3.
+FRQFEWR3	How often - did a household member reduce number of meals eaten per day because there was not enough food? Codes are the same as used for FRQWRYR3.
+FRQNOFR3	How often - was there no food to eat because of lack of money? Codes are the same as used for FRQWRYR3.
+FRQHNGR3	How often - did a household member go to bed hungry due to not enough food? Codes are the same as used for FRQWRYR3.
+FRQDAYR3	How often - did a household member not eat for a whole day and night because there was not enough food? Codes are the same as used for FRQWRYR3.
+CHAFFTR3	Were the children in the household also affected? Codes are:
+			01= Children affected
+02= Not affected
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3Anthropometry>	 
+IDR310		ID of respondent for >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionOne>	0
+CHWT1R3	First child weight (kg). Missing value codes are negative.
+CHWT2R3	Second child weight (kg). Missing value codes are negative.
+CHWGHTR3	Agreed child weight (kg). Missing value codes are negative.
+CHHT1R3	First child height (cm). Missing value codes are negative.
+CHHT2R3	Second child height (cm). Missing value codes are negative.
+CHHGHTR3	Agreed child height (cm). Missing value codes are negative.
+CHNOMSR3	Why was child not measured? Codes are:
+01= Child not present
+02= Caretaker refused
+03= Child ill
+04= Child refused
+05= Other (specify)
+06= Child below 2 years old
+MTWT1R3	First maternal weight (kg) . Missing value codes are negative.
+MTWT2R3	Second maternal weight (kg). Missing value codes are negative.
+MTWGHTR3	Agreed maternal weight (kg). Missing value codes are negative.
+MTNOMSR3	Why was the mother not measured? Codes are:
+01= Mother not present
+02= Mother refused
+03= Mother ill
+04= Other (specify)
+CRTPRGR3	Are you currently pregnant or did you give birth in the last 2 months? Codes are: 00= No, 01= Yes
+S1IDR3		Code of younger sibling from roster. Code is: 90= Not a member of the household 
+S1DAYR3	Date of birth of younger sibling – day
+S1MTHR3	Date of birth of younger sibling – month. Codes are:
+01= January
+02= February
+03= March
+04= April
+05= May
+06= June
+07= July
+08= August
+09= September
+10= October
+11= November
+12= December
+S1YEARR3	Date of birth of younger sibling – year
+S1WGBRR3	How much did younger sibling weigh at birth. Missing value codes are negative.
+S1WGDCR3	Was the birth weight of younger sibling from documentation. Codes are: 00= No, 01= Yes
+S1WT1R3	First weight of younger sibling (kg). Missing value codes are negative.
+S1WT2R3	Second weight of younger sibling (kg). Missing value codes are negative.
+S1WGHTR3	Agreed weight of younger sibling (kg). Missing value codes are negative.
+S1HT1R3	First height of younger sibling (cm). Missing value codes are negative.
+S1HT2R3	Second height of younger sibling (cm). Missing value codes are negative.
+S1HGHTR3	Agreed height of younger sibling (cm). Missing value codes are negative.
+S1WGDCR3	Was the birth weight of younger sibling from documentation. Codes are: 00= No, 01= Yes
+S2IDR3		Code of older sibling from roster. Code is: 90= Not a member of the household S2DAYR3	Date of birth of older sibling – day
+S2MTHR3	Date of birth of older sibling – month. Codes are the same as used for S1MTHR3.
+S2YEARR3	Date of birth of older sibling – year
+S2WGBRR3	How much did older sibling weigh at birth. Missing value codes are negative.
+S2WGDCR3	Was the birth weight of older sibling from documentation. Codes are: 00= No, 01= Yes
+S2WT1R3	First weight of older sibling (kg). Missing value codes are negative.
+S2WT2R3	Second weight of older sibling (kg). Missing value codes are negative.
+S2WGHTR3	Agreed weight of older sibling (kg). Missing value codes are negative.
+S2HT1R3	First height of older sibling (cm). Missing value codes are negative.
+S2HT2R3	Second height of older sibling (cm). Missing value codes are negative.
+S2HGHTR3	Agreed height of older sibling (cm). Missing value codes are negative.
+S2NOMSR3	Why was older sibling not measured? Codes are the same as used for CHNOMSR3.
+BRTWGHR3	How much did NAME weigh at birth? Missing value codes are negative.
+WGHDOCR3	Was NAME's birth weight from documentation? Codes are: 00= No, 01= Yes
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3CaregiverFeelingsAttitudesPerceptions>	1: Caregiver Perceptions and Attitudes 
+
+IDR311		ID of respondent for >SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionOne>	1
+LADDERR3	Where on the ladder do you feel you personally stand at the present time?
+FARLADR3	Where do you think you will be on the ladder in 4 years time?
+
+The following questions have a scale response between 01 and 05 where 01= Strong disagree, 02= Disagree, 03= More or less, 04= Agree, 05= Strongly Agree
+CAG1R3		If I try hard I can improve my situation in life
+CPS1R3		I feel proud to show my friends or other visitors where I live
+CAG2R3		I like to make plans for my future
+CPS2R3		I am proud of my clothes
+CPS3R3		I feel proud of the job done by my (household head)
+CAG3R3		I have no choice about which school to send NAME to
+CSD1R3		When at the shops/market I am usually treated with fairness and with respect
+CPS4R3		The job I do makes me feel proud
+CAG4R3		If NAME gets really sick I can do little to help him/her get better
+CSD2R3		Other people in my street/village look down on me and my family
+CPS5R3		I feel proud of my children
+CSD3R3		My children's teachers are unfriendly or rude to me
+CAG5R3		I can do little to help NAME do well in school, no matter how hard I try
+ETNFEDR3	Are continuing education classes available for adults in your community? Codes are: 00= No 
+ETATNFR3	Have you ever attended continuing education classes? Codes are: 00= No 
+ETNOATR3	Why didn't you attend continuing education classes? Codes are:
+01= Fees are too high
+02= Materials are too expensive
+03= Did not know about service
+04= Don`t have nice enough clothing or shoes
+05= School is too far from home
+06= Transportation costs were too expensive
+07= It is not appropriate for men/women to continue in school
+08= Husband/ wife doesn`t allow me
+09= What you learn there is not useful
+10= Illness/handicap
+12= Facility was closed down or no facility
+13= Fails to make the grades
+14= Needed for paid work
+15= Needed for domestic or agricultural chores
+16= The way to school is unsafe
+17= problems with teachers
+18= problems with other learners
+19= Poor quality of teaching
+20= Other (specify)
+SPECFMED 	Specify reason for not attending continuing education classes 
+GRDLKER3	Ideally what level of education would you like NAME to complete? Codes are:
+00= None
+13= post-secondary, vocational
+14= University degree
+15= Masters/ Higher education
+16= Adult literacy
+17= Religious education
+18= Incomplete technical college
+19= Complete technical college
+30= Other (specify)
+SPECGRLK 	Specfiy level of education you would like NAME to complete 
+EXPGRDR3	Do you expect NAME will reach that level of education? Codes are: 00= No, 01= Yes
+CFUTJBR3	When NAME is about 20 years old what job do you think s/he will be doing? Codes are: 
+01= Accountant
+02- Actor/ Actress
+03= Artist
+04= Civil servant
+05= Computer operator
+06= Conductor
+07= Construction worker
+08= Cook
+09= Dentist
+10= District collector
+11= Doctor
+12= Domestic worker
+13= Driver
+14= Engineer
+15= Farmer
+16= Fireman/woman
+17= Fisherman
+18= Fulltime parent/housewife
+19= Labourer
+20= Lawyer
+21= Lecturer
+22= Market trader/shop assistant
+23= Mason
+24= Mechanic
+25= Nurse
+26= Painter/decorator
+27= Pilot,
+28= Policeman/woman
+29= Politician
+30= President of country
+31= Scientist
+32= Singer
+33= Military man/woman
+34= Sportsman/woman
+35= Tailor
+36= Taxi driver
+37= Teacher
+38= Trader/businessman/woman
+39= Traditional occupation
+40= Student/University student
+41= Veterinary
+42= Other (specify)
+43= Administrative assistant/secretary
+44= Religious leader/priest/sheikh
+45= Management
+SPECCFUT 	Specify other job that NAME might be doing
+Individual Files
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionHouseholdMemberLevelData>	
+These are the variables in the data file IN_YC_HouseholdMemberLevel.sav. This data file provides details at the household member level.
+CHILDID	Child ID
+ID	Roster ID
+MEMSEX	Sex of household member
+AGE	Age in completed years
+RELATE	Relationship to YL child
+00=YL child
+01=Biological parent
+02=Step-parent (partner of biological parent)
+03=Adoptive parent
+04=Foster parent
+05=Maternal grandparent
+06=Paternal grandparent
+07=Brother/sister (both parents the same
+08=Half-sibling (same father)
+09=Half-sibling (same mother)
+10=Step-sibling (no parent in common)
+11=Adoptive brother/sister
+12=Foster brother/sister
+13=Uncle/Aunt
+14=Cousin (inc. cousin brother & cousin sister)
+15=Nephew/niece
+16=Brother/sister-in-law (spouse of sibling)
+17=Great-grandparent (Mother's side)
+18=Great-grandparent (Father's side)
+19=Other relative
+20=Servant (farm-worker, maid, etc.)
+21=Tenant
+22=Other non-related
+23=Nanny (live-in)
+24=Adoptive parent (Adopt legal)
+25=Partner/spouse of YL child
+26=Father/Mother-in-law
+27=Child of YL child
+SPCRLATE	Specify relationship to YL child
+LIVHSE	Does this person still live in the household?
+01=Yes still lives in household
+02=No, lives elsewhere temporarily
+03=Person has died
+04=No, lives elsewhere permanently
+05=Household does not know this person
+HSSTRTR3	Has child begun formal school? Codes are: 00= No, 01= Yes
+STRYRR3	Age when child began formal school - years?
+STRMTHR3	Age when child began formal school - months?
+GRADER3	What was the highest grade that this child completed? Codes are:
+13= Incomplete technical college
+14= Complete technical college
+18= Other (specify)
+19= Masters/ Higher education
+SPECCGRD	Specify highest grade child completed
+STILLR3	Is this child currently in full-time education? Codes are:
+00= No
+01= Yes, attending regularly
+02= Yes, but attending irregularly
+WHYNOTR3	Why is this child currently not in full-time education? Codes are:
+01= Fees too expensive
+02= Books and /or other supplies too expensive
+03= Shoes/clothes/uniform for school too expensive
+04= Transport too expensive
+05= School too far from home
+06= Not safe to travel to school
+07= Lack of transport
+08= Truancy, child does not want to go, not interested
+09= Banned from school for behaviour reasons
+10= Banned from school because away for too long
+11= Banned from school because failed to achieve necessary 
+grade/level at school
+12= Quality of education at school poor
+13= Quality of care poor
+14= No sanitation facilities at school
+15= Bullying/abuse from peers
+16= Ill-treatment/abuse from teachers/principal
+17= No need for school for future job
+18= Need to learn a trade/skill
+19= Need to stay home to look after siblings
+20= Needed for domestic and/or agricultural work at home
+21= Have to do paid work to earn money
+22= It`s not appropriate for girls to go to/continue at school
+23=Marriage
+24= Disability/ Illness
+25= Family member ill/disabled/elderly
+26= Family issues
+27= Stigma & discrimination
+28= School not accessible for seasonal reasons
+29= Child too young
+31= Other (specify)
+SPECYNSC	Specify reason why child is not currently in full-time education
+AGEGRDR3	How old was this child when he/she completed/stopped full-time 
+education?
+GRDRPR3	What grade was child when he/she dropped out of school? Codes are the same as used for GRADER3.
+SCHNMER3	What is/was the name of his/her school?
+SCHCDER3	Code of school
+PERFR3	How is the child performing in full-time education? Codes are:
+01= Excellent
+02= Good
+03= Reasonably well
+04= Poorly
+05= Very bad
+FEESR3	How much do you spend on school fees and extra tuition for the child per year? Missing value codes are negative.
+DISABR3	Does this person have a permanent disability or long-term illness and how does it affect their ability to work? Codes are:
+00= No disability (able to work same as others of this age)
+01= Capable of most types of full-time work but some difficulty with 
+physical work
+02= Able to work full-time but only work requiring no physical 
+activity
+03= Can only do light work on a part-time basis
+04= Cannot work but able to care for themselves
+05= Cannot work and needs help with daily activities such as 
+	dressing, washing, etc
+06= Other (specify) 
+SPECDISB	Specify disability effect
+ACTR3	Most important activity. Codes are:
+		01= Self-employed (food crops)
+02= Self-employed (non-food)
+03= Self-employed (aquaculture)
+04= Self-employed (Livestock)
+05= Wage employment (agriculture)
+06= Annual farm servant
+07= Other agricultural work
+08= Self-employed (manufacturing)
+09= Self-employed (services)
+10= Self-employed (business)
+11= Self-employed (other non-agricultural)
+12= Wage employment (non-agricultural, unsalaried)
+13= Regular salaried employment
+14= Unemployed
+15= Household chores
+16= Other unpaid activity
+17= Household dependent
+18= Begging
+ 19= Other (specify)
+SPECACT	Specify most important activity
+MONTHSR3	Number of months in which this activity was done
+DAYSR3	Days per month that this activity was done
+HOURSR3	Hours per day that this activity was done
+SLEEPR3	hours per day – sleeping
+NMESLPR3	Was child able to choose whether or not to do this activity? – sleeping Codes are: 00= No, 01= Yes
+CHCARER3	hours per day - Caring for others
+HHCHRER3	hours per day - Domestic tasks
+NMEHHCR3	Was child able to choose whether or not to do this activity? - Domestic tasks, Codes are: 00= No, 01= Yes
+NPYWRKR3	hours per day - Tasks on family farm or other family business
+NMENPYR3	Was child able to choose whether or not to do this activity? - tasks on family farm or business, Codes are: 00= No, 01= Yes
+PAYWRKR3	hours per day - Paid work outside of household
+NMEPAYR3	Was child able to choose whether or not to do this activity? - paid work outside of household, Codes are: 00= No, 01= Yes
+SCHOOLR3	hours per day - At school
+STUDYR3	hours per day - Studying outside of school time
+PLAYR3	hours per day - Play time/general leisure
+NEG1DAY	How many days of employment was provided for this person March 2009 to June 2009?
+INEG1W	If not worked March 2009 to June 2009 - why not? 
+01= Not needed
+02= Already committed- long term contract
+03= No work available in village/community
+04= No work, budget constraints
+05= No work offered, other are working though
+06= No work, problem with Self of Work (SoW)
+07= Other castes discriminate against
+08= Work was too hard/too far
+09= Payment too low
+10= Working on other activities
+11= Too weak/sick
+12= Old
+13= Pregnant, Childbirth, Lactating
+14= Other (specify)
+
+SPINEG1W	Specify why person did not work March 2009 to June 2009
+INEG1WAG	How much was received for this work March 2009 to June 2009?
+INEG2DAY	How many days employment was provided for this person July 2008 to Feb 2009?
+INEG2W	If not worked July 2008 to Feb 2009 - why not?
+SPINEG2W	Specify why person did not work July 2008 to Feb 2009
+INEG2WAG	How much was received for this work July 2008 to Feb 2009?
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionCropsGrownByTheHousehold>	
+These are variables in the data file stblHHSec3Crops.sav. This data file provides details of the crops cultivated by the household .There are many records per child/household. Households may have none, one or more records in this data file.  Data can be linked to the household/child level data using the child identification variable CHILDID.
+
+CHILDID 	Identification 
+CROPID	Crop ID
+CROPR3	Crop cultivated by household in the last agricultural year. Codes are:
+02= Afaqi/Kathikala
+03= Avocado
+04= Bananas
+05= Barley
+06= Beetroot
+07= Berbere
+08= black/mixed teft
+09= Black pepper
+10= Cabbage
+11= Cactus
+12= Carrot
+13= Castor
+14= Chat
+15= Chick peas
+16= Chilles
+17= Coffee
+18= Cotton
+19= Cow peas
+20= Dagussa
+21= Eucalyptus
+22= Fasolia
+23= Field peas
+24= Flowers
+25= Fruits
+26= Garlic
+27= Gesho
+28= Ginger
+29= Godere
+30= Grams and pulses
+31= Grass
+32= Groundnuts
+33= Guava
+34= Hamicho
+35= Haricot beans
+36= Honey
+37= Jowar
+39= Karia
+40= Karibo/Keredo
+41= Kocho
+42= Lentils
+43= Linseed
+44= Maize
+45= Mango
+46= Mulberry
+47= Nueg
+48= Nuts
+49= Oats
+50= Onions
+51= Orange
+52= Other cereals
+53= Paddy rice
+54= Pineapple
+55= Potatoes
+56= Pumpkin
+57= Ragi
+58= Seasum
+59= Selata
+60= Sesame
+61= Shiefera/Haleko
+62= Shiro/ Germia
+63= Sinar/Germia
+64= Sorghum
+65= Spices
+66= Spinach
+67= Sugar
+68= Sunflower
+69= Sweet potatoes
+71= Tobacco
+72= Tomato
+73= Tumeric
+74= Vegetables
+75= Wheat
+78= White Teff
+79= Yam
+80= Zengada
+99= All other crops
+SPECCROP	Specify crop cultivated in last agricultural year
+QNTHRVR3	Total quantity of crop harvested in last agricultural year. Missing value codes are negative.
+VLSLDR3	Value of the total harvest of crop sold in the last agricultural year. Missing value codes are negative.
+CRPCSTR3	Estimated operational costs incurred in producing this crop in the last agricultural year. Missing value codes are negative.
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionMoneyOrGoodsGivenToIndividualsOutsideTheHousehold>	
+These are variables in the data file stblHHSec3Outgoings.sav. This data file provides details of the support the household has provided to external bodies/persons. There are many records per child/household. Data in this file are linked to data at the household/child level using the child identification variable.
+
+CHILDID	Child ID
+OUTID		Outgoing ID- line number
+REMRELR3	How is the recipient related to NAME? Codes are:
+00= YL child
+02= Biological parent
+03= Step-parent (partner of biological parent)
+04= Adoptive parent
+05= Maternal grandparent
+06= Paternal grandparent
+07= Brother/sister (both parents the same)
+08= Half-sibling
+09= Half-sibling (same mother)
+10= Step-sibling (no parent in common)
+11= Adoptive brother/sister
+12= Foster brother/sister
+13= Uncle/Aunt
+14= Cousin (inc. cousin brother & cousin sister)
+15= Nephew/niece
+16= Brother/sister-in-law (spouse of sibling)
+17= Great-grandparent (Mother`s side)
+18= Great-grandparent (Father`s side)
+19= Other relative
+20= Servant (farm-worker, maid, etc.)
+21= Tenant, 22= Other non-related
+23= Nanny (live-in), 24= Adoptive parent (Adopt legal)
+25= Partner/spouse of NAME
+26= Father/Mother-in-law
+27= Child of NAME
+SPCREMRL	Specify relationship of recipient to NAME
+REMESTR3	How much money did you send in the last 12 months? Missing value codes are negative.
+REMGODR3	Value of goods sent in the last 12 months. Missing value codes are negative.
+
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionHouseholdAssets>	
+These are variables in the data file stblHHSec3PrimaryAssets.sav. This data file provides details of the primary assets of the household. This data file records information about productive assets owned, rented or accessed by household members in the last 12 months.  They include both farm and non-farm productive assets. The number of records per household is variable.  Data in this file are linked to data at the household/child level using the child identification variable.
+CHILDID	Child ID
+PASSID	Asset number
+NUMASTR3	Number available (owned, rented or borrowed). Missing value codes are negative.
+ASSETR3	Asset - owned rented or borrowed. Codes are:
+01= Agricultural tools
+02= Cart/wheelbarrow
+03= Pesticide sprayer
+04= Plough
+05= Pump (motor or engine)
+06= Thresher
+07= Tractor
+08= Other farm equipment
+09= Barber tools
+10= Beauty salon equipment
+11= Blacksmith tools
+12= Cleaning/domestic work equipment
+13= Construction tools
+14= Entertainment equipment
+15= Food preparation equipment
+16= Gun
+17= Mechanic equipment
+18= Plumbing equipment
+19= Pottery equipment
+20= Protective clothing
+21= Sewing machine
+22= Teaching supplies
+23= Trading equipment
+24= Trading licence
+25= Transport
+26= Weaving equipment
+30= Other (specify)
+SPECPASS	Specify asset	
+ASTACTR3	For what activity is asset used? Codes are:
+01= Army
+02= Barber shop
+03= Beauty salon
+04= Blacksmith
+05= Casual/intermittent labour
+06= Child care
+07= Construction
+08= Domestic work/Cleaning/ Janitorial
+09= Entertainment services
+10= Factory work
+11= Farming/agriculture
+12= Food preparation/restaurant
+13= Forestry/logging
+14= Handicrafts or art
+15= Hunting
+16= Mechanic services
+17= Nursing/medicinal services
+18= Plumbing services
+19= Pottery
+20= Security guard
+21= Tailor/sewing
+22= Teaching
+23= Trading
+24= Transportation/driver/courier/taxi
+25= Weaving
+26= Other (specify)
+27= Collecting firewood/dung/fetching water to sell
+28= Civil servant
+29= Cash/food for work
+30= Fishing
+31= House renting
+32= Washerman
+SPCACT	Specify activity that asset is used for
+NUMOWNR3	How many of them do you actually own? Missing value codes are negative.
+VALASTR3	If you sold it/them today how much could you get? Missing value codes are negative.
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSupportFromNGOorGOPrograms>	
+These are variables in the data file stblHHSec3SupportProgrammes.sav. This data file provides details of the support the household receives from external sources. This data file records received from NGO or government programs since 2001 (1993 in the Julian calendar).  The number of records per household is variable.  Data in this file are linked to data at the household/child level using the child identification variable.
+
+CHILDID	Child ID
+SUPPRGID	Line number
+SUPKNDR3	What kind of support was provided? Codes are:
+01= Agricultural extension
+02= Child right protection
+03= PSNP- Public work programme- for cash
+04= PSNP- Public work programme- for food
+05= Credit & Saving
+06= Disability
+07= Education about HIV
+08= Family planning
+09= Health extension services
+10= Irrigation development
+11= Mother to child HIC/AIDS transmission
+12= Assistance to child education
+13= Training
+14= PSNP (direct support/food/cash aid)
+15= Drinking water provision/development
+16= Education support service
+17= Provision of sanitary facility such as toilet
+18= Orphan and destitute children support
+19= Other
+SPECKIND	Specify the kind of support provided
+SUPWHOR3	Who provided the support? Codes are:
+01= ACDI (Agric. Coop. Dev.Int`l
+02= ADRA (Adventist Dev/Relief Agency
+03= Africare
+04= AIDAB (Australian Int`l Dev Asst Bank
+05= Bureau of Agriculture
+06= Bureau of Health
+07= CARE
+08= Catholic Relief Services
+09= CIDA (Canadial Int`l Dev. Agency)
+10= Feed the Children
+11= Food for the Hungry Int`l
+12= Lutheran World Federation
+13= Micro finance institutions/DECSI, ASCI, Wisdom, Sidama, 
+Oromia, etc.
+14= Ministry of Education
+16= OXFAM
+17= Project Concern Int`l
+18= Redd Barna
+19= Relief Society of Tigray
+20= Save the Children
+21= UNHCR
+22= WFP (World Food Program)
+23= World Vision Relief and Dev
+24= SIDA
+25= ORDA (Oromia Development Association)
+26= TDA (Tigray Development Association)
+27= ADA (Amghara Development Association)
+28= USAID
+29= CPAR
+30= FHI (Family Health International)
+31= ILRI
+32= Medicine Sans Frontiers
+33= Bureau of Food Security (BFS)
+34= CCF
+35= Disaster Prevention and Preparedness Commission (DPPC)
+36= Government organisation or institution
+37= Oromiya Self Help Organisation (OSHO)
+38= Plan International Ethiopia, 39= Safety Nets Programme
+40= Agriculture Department
+41= DRDA, 42= Co-op Bank (inc. PACS)
+43= ICDS
+44= ITDA
+45= IKP
+46= SSA/Rajv Vidya Mission
+47= Net programmes
+48= NGOs
+49= Charity Institutions
+50= Other (specify)
+SPECSWHO	Specify who provided the support
+SUPSRTR3	In which year did the support begin? Missing value codes are negative.
+SUPENDR3	When did the support end? Missing value codes are negative.
+SUPFRQR3	How often did you get this support? Codes are:
+01= Every day
+02= Every week
+03= Every month
+04= Twice a year
+05= More than twice a year but less than monthly
+06= Yearly, 7= Other (specify)
+8= Less than once a year
+SPECSFRQ	Specify how often you got this support
+SUPRIDR3	Did the programme target any particular member of the household? Codes are: 80= More than one household member, 90= Person outside the household
+SUPEXPR3	Has the programme met your expectations? Codes are:
+01= Highly dissatisfied
+02= Dissatisfied
+03= Mediocre
+04= Satisfied
+05= Fully satisfied
+SPCEXP	Specify how the programme met your expectations
+SUPIMR301, SUPIMR302
+	What do you think the impact of the programme has been on NAME's well-being? Codes are:
+01= Better quality food
+02= More food
+03= More advice on caring practices
+04= More resources for educational purposes
+05= More healthcare treatment
+06= More time to study
+07= Less time on work activities
+08= Less time on household chores
+09= Other (specify)
+SPECIMP1, SPECIMP2
+Specify the impact of the programme on NAME's well-being
+Child Work
+These are variables in the data file stblHHSec8ChildWork.sav. This data file provides details of the work undertaken by the YL Child.  Data in this file are linked to data at the household/child level using the child identification variable.
+
+CHILDID	Child ID
+WORKID	Work ID -line number
+WRKACTR3	Paid work activity
+01= Farm work outside your own household
+02= Domestic chores for another household
+03= Making handicrafts/piecework
+04= Selling goods or services
+05= Working for wage in non-agricultural activity
+06= Domestic chores or farm work inside household for which pocket money received
+07= Other
+20= Caring for younger children
+21= Caring for elderly and/or sick/disabled members of the family
+22= Domestic chores inside household for which pocket money received
+23= Looking after animals owned by the household for which pocket money received
+24= Collecting firewood or water
+25= Non-agricultural labour for other families
+26= Farm-work insude household for which pocket money received
+SPECWORK	Specify paid work activity
+WRKPAYR3	What form of payment was received or is expected for this activity?
+01= Money
+02= In kind
+03= Both money & in kind
+04= Debt relief
+05= Other
+PAYNMER3	Did NAME get to keep all or some of the payment for this activity?
+00= No, none
+01= Yes, all of it
+02= Yes, some of it
+Data at Child Level - Child Questionnaire
+
+This section describes the variables and their codes found in the file IN_YC_ChildLevel which come directly from the Young Lives Child questionnaire.  The following codes are standard across most of the numeric variables in the dataset:
+77=Not known – this is where the respondent says they do not know;
+88=Not applicable – this is where the question is not applicable because of a response given to an earlier question;
+99=Missing – the question was missed during fieldwork or was not clearly recorded;
+79=Refused to answer – the respondent did not want to answer the question.
+For variables where these values are feasible for the question the missing value codes are negative.
+
+CHILDID	Child ID
+CDINT		Date of child interview
+
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionOne>	 – School, School Meals and Work Activities
+
+ENRSCHR3	Are you currently enrolled in school? Codes are: 00= No, 01= Yes
+MSSDSCR3	During the last Academic year, have you ever missed school for more than one week? Codes are: 00= No, 01= Yes
+TMABSTR3	If yes, how long was the largest period of time you were absent from school (days)?
+SCWHYR31, SCWHYR32, SCWHYR33
+What are the main reasons you missed school? Provide 3 answers in the order of importance. Codes are:
+01= Fees too expensive
+02= Books and/or other supplies too expensive
+03= Shoes/clothes uniform for school too expensive
+04= Transport too expensive/lack of transport
+05= Not safe
+06= Truancy, child did not want to go, not interested, prefer to 
+play
+07= Suspended from school for behaviour reasons
+08= Suspended from school because away for too long
+10= Suspended from school because failed to achieve necessary 
+grade/ level
+11= Bullying/abuse from peers
+12= Ill-treatment/abuse from teachers/principal
+13= Needed to stay at home to look after siblings
+14= Needed for domestic or agricultural work or family business 
+at home
+15= Had to do paid work to earn money
+16= Illness, injury
+17= Family issues (problems at home)
+18= Family member ill/disabled/elderly
+19= Family function
+20= Festivals
+21= Migration with parents
+22= School not accessible for seasonal reasons (river prohibits 
+access)
+23= Can`t understand the language in class
+24= Schooling is not useful for getting a job or later life
+25= Schooling is of low quality
+28= Teacher was absent/there was no teacher
+29= Can`t understand the content of lessons
+30= Other (specify)
+31= Couldn`t hear or see properly
+26= Too young
+SPSCWHY1, SPSCWHY2, SPSCWHY3
+		Specify other reasons for missing school-first reason
+STSMGDR3	Are/were all of students in your classroom in the same grade as you?
+		01= Just students from my grade
+02= Students from 2 grades
+03= Students from more than 2 grades
+BSTSCHR3	What do you like about being at school?
+01= My teachers are good and teach well
+02= Teachers there do not beat me
+03= Teachers are very friendly and helpful
+04= Participating in activities in class/interactive learning environment
+05= Learning useful skills and knowledge
+06= Uniforms are provided
+07= Better prospects for my future
+08= Feel proud to be in school
+09= I'm not bullied
+10= Having time to play
+11= Seeing my friends
+12= Good playground
+13= Library
+14= School physical environment in general
+15= Good atmosphere
+16= Food is very good
+17= Good sanitation/toilets
+18= Lessons are easy to understand
+19= Interested in study
+20= Nothing
+21= Other
+SPBSTSCH	Specify what you like about being at school
+WRSTSCR3	What don't you like about being at school. Codes are:
+01= Teachers` beating us
+02= Teachers or principal shouting at us
+03= Teachers discriminate against me
+04= Absenteeism amongst teachers
+05= Shortage of teachers
+06= Teachers change too often
+07= The teaching is poor
+08= Lack of writing materials
+09= I cannot help to support my family
+10= Other pupils teasing/bullying me
+11= The food provided is bad
+12= I find it hard to understand the language the teacher uses
+ 13= We don`t learn useful things
+14= Being in a noisy classroom
+15= Students fighting
+16= No food provided
+17= No uniforms are provided
+18= Poor infrastructure or facilities
+19= The school is dirty
+20= Poor physical environment
+21= No compound wall
+22= No drinking water tap
+23= Lack of teaching materials
+24= Lack of toilets
+25= Poor sanitation in toilets
+26= Lack of privacy in toilets
+27= School is too far away
+28= Being in a mixed school
+29= Too many students
+30= Nothing/no problems
+31= Having to sit in class all day in school is boring
+32= I feel ashamed about my performance/ I am not clever 
+enough
+33= Other (specify
+SPWRSTSC	Specify what you don't like about being at school
+CMPOTHR3	Now think about the other children in your class.  How do you think you are doing compared to them? Codes are:
+01= Very poor
+02= Poor
+03= Average
+04= Good
+05= Very good
+DNGSCHR3	Do you have any difficulties in getting to school? Codes are: 00= No, 01= Yes
+SCRISKR3	What is the main difficulty? Codes are:
+01= Traffic, crossing the road
+02= Harassment/abuse from other children
+03= Rebels/thieves
+04= Harassment from authorities
+05= Natural hazards
+06= Other (specify)
+07= Animals
+08= Kidnapping
+09= Sexual violence
+10= Fear of having an accident on the way to school
+11= Spirits/ghosts
+12= Having to cross dangerous places (rivers/ravines)
+SPSCRISK	Specify the main difficulty
+TCPHOTHR3	In that week did you see a teacher use physical punishment on other students? Codes are:
+00= Never
+01= Once or twice
+02= Most/all of the time
+TCPHYUR3	Did the teacher use physical punishment on you? Codes are the same as used for TCPHOTHR3.
+MDDYMLR3	Do you receive a midday meal at school? Codes are: 00= No, 01= Yes
+NOMDMLR3	If no, why no midday meal? Codes are:
+01= I do not regularly attend school
+02= Food is not served regularly
+03= Food supply is not regular to the centre
+04= School does not provide midday meal programme
+05= I have other midday meal source
+06= I do not want the midday meal food programme
+KNDFODR3	What kind of food do you get for your midday meal on most days? Codes are:
+01= A cooked hot meal
+02= Dry foods such as biscuits and bread
+CNSFODR3	Do you consume the food? Codes are: 00= No, 01= Yes
+NOCNSFR3	If no, why don't you consume food? Codes are:
+01= I do not regularly attend school
+02= Food is not served regularly
+03= Quantity given is not sufficient
+04= Unclean surroundings
+05= My family don`t want me to eat it
+06= Food is cooked by people my family don`t approve of
+07= I have other midday meal source
+LKFOODR3	If you regularly eat the midday meal, do you like the food you get? Codes are:
+01= Always
+02= Most of the time
+03= Sometimes
+04= Rarely
+05= Never
+CNSALLR3	Do you usually consume all the food served of the midday meal at school? 		Codes are:
+01= Yes, I eat the entire food by myself at school
+02= Yes, I eat some of the food directly at school and eat the rest outside of school
+03= I eat some of the food at school and take the rest home to share with my family
+04= I take all the food home and share it with my family
+05= Other (specify)
+SPCNSALL	Specify if you consume all food
+WSHHNDR3	If you regularly eat the midday meal, do you usually wash you hands before eating? Codes are the same as used for LKFOODR3.
+NOWASHR3	Why do you not wash your hands every time before you eat the midday meal? Codes are:
+01= There is no place to wash hands at school
+02= I usually do not wash hands before eating
+03= There is often no water to wash hands
+04= Other (specify)
+SPNOWASH	Specify why you don't wash your hands every time before midday meal
+CHWRKR3	Did you do anything to help your family, or to get money for yourself? Codes are: 00= No, 01= Yes
+MNPDACR3	Main paid activity. Codes are:
+01= Farm work outside your own household
+02= Domestic chores for another household
+03= making handicrafts/piece work
+04= Selling goods or services
+05= Working in wage in non-agricultural activities
+07= Other (specify)
+20= Caring for younger children
+21= Caring for elderly and/or sick/disabled members of the 
+family
+22= Domestic chores for pocket money
+23= Looking after animals owned by household for pocket money
+24= Collecting firewood or water
+25= Non-agricultural labour for other families NOT 
+workshop/factory
+26= Work for household on farm for pocket money
+MSTLKR3	What do you most like about this paid activity?
+01= Earning money/being able to cover personal expenses like school fees
+02= Supporting the family
+03= Skills and training
+04= Pride and respect
+05= Friendship/having fun
+06= Spending time with parents
+07= Spending time with other children
+08= Nothing
+09= Other
+10= Feeling independent
+11= They like the activity
+SPMSTLKE	Specify what you most like about this paid activity?
+LSTLKR3	What do you least like about this paid activity?
+01= Interrupts my attendance at school
+02= Less time to study or do homework
+03= Poor working environment
+04= Long hours
+05= Ill treatment/abuse from employers
+06= Low or unpredictable earnings
+07= Away from family or friends
+08= Too tiring/fatigue
+09= Poisonous insects/snakes
+10= Poor sanitation facilities
+11= Too dangerous
+12= Too difficult
+13= Nothing
+14= They do not like the activity
+15= Other
+16= Less time for school
+SPLSTLKE 	Specify what you least like about this paid activity?
+MISFWRR3	Since we last interviewed, have you ever missed school because you were working for money or goods? Codes are: 00= No, 01= Yes
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionTwo>	 - Feeling, Attitudes and Perceptions
+
+STNPRSR3	Where on the ladder do you feel you personally stand at the moment?
+
+The following questions have a scale response between 01 and 05 where 01= Strongly disagree, 02= Disagree, 03= More or less, 04= Agree, 05= Strongly agree
+CTRUSTR3	Most people in my neighbourhood can be trusted
+CGOVRGR3	I believe the government does what is right for people like me
+CSFEOWR3	I feel safe when I go out of the house on my own
+CSRVCMR3	I think it is important to serve my community
+CFRNSTR3	My friends will stand by me during difficult times
+CLEADR3	My friends look up to me as a leader
+CTRYHDR3	If I try hard I can improve my situation in life
+CASHSHR3	I am proud of my shoes or of having shoes
+CPLDECR3	Other people in my family make all the decisions about how I spend my time
+CFTRWRR3	I like to make plans for my future studies and work
+CCLTRGR3	I feel my clothing is right for all occasions
+CASHCLR3	I am proud of my clothes
+CEMBBKR3	I am often embarrassed because I do not have the right books, pencils or other equipment for school
+CWRUNIR3	I am proud that I have the correct uniform
+CBRJOBR3	If I study hard at school I will be rewarded by a better job in the future
+CASHWKR3	I am proud of the work I have to do
+CNOCHCR3	I have no choice about the work I do - I must do this sort of work
+NUMTHGR3	Compared to other families here, how many things does your family have? Codes are:
+01= Has more things than most families
+02= Has about the same amount of things as most families
+03= Has less things than most families
+PPLTRTR3	How do people in this area treat you? Codes are:
+		00= Badly
+01= Well
+ARESFER3	Is this area you live in safe for children? Codes are: 00= No, 01= Yes
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionThree>	 – Social Networks, Social Skills & Social Support
+ANYHLPR3	 If you had a problem is there someone who would help you? Codes are: 00= No, 01= Yes
+NMFRNDR3	Number of friends spoken to in the last week. Missing value codes are negative.
+LEADERR3	Do your friends look up to you as a leader? Codes are:
+		01= Always
+02= Sometimes
+03= Never
+INCGMER3	Do other children include you in their games? Codes are the same as used for LEADERR3.
+HRDTLKR3	Do you find it hard to talk to other children? Codes are the same as used for LEADERR3.
+HLPCHLR3	Do you help other children who have a problem? Codes are the same as used for LEADERR3.
+FTRWRKR3	What do you want to be when you grow up? Codes are:
+01= Accountant
+02= Actor/Actress
+03= Artist
+04= Civil servant
+05= Computer operator
+06= Conductor
+07= Construction worker
+08= Cook
+09= Dentist
+10= District collector
+11= Doctor
+12= Domestic worker
+13= Driver
+14= Engineer
+15= Farmer
+16= Fireman/woman
+17= Fisherman/woman
+18= Fulltime parent/housewife
+19= Labourer
+20= Lawyer
+21= Lecturer
+22= Market trader/shop assistant
+23= Mason
+24= Mechanic
+25= Nurse
+26= Painter/decorator
+27= Pilot
+28= Policeman/woman
+29= Politician
+30= President/Leader of country
+31= Scientist
+32= Singer
+33= Soldier
+34= Sportsman/woman
+35= Tailor
+36= Taxi driver
+37= Teacher
+38= Trader/businessman/woman
+39= Traditional occupation
+40= University student/other form of further education
+41= Vet
+42= Other (specify)
+43= Administrative assistant/secretary
+44= Religious leader/priest/sheikh
+45= manager/management
+SPFTRWRK	Specify what you want to be when you grow up
+WUSINR31, WUSINR32, WUSINR33
+Where do you use the Internet? Provide 3 answers in the order of importance. Codes are:
+01= I never use it
+02= At school
+03= At home
+04= At friend` s home
+05= At internet café (pay)
+0 6= At community centre or club 
+TMONINR3	On average how long do you spend on the internet per week? Code is: 80= More than 20 hours per week
+TMINHRR3	On average how long do you spend on the internet per week - hours? Code is: 80= More than 20 hours per week
+TMINMNR3	On average how long do you spend on the internet per week - hours? Code is: 80= More than 20 hours per week
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionFour>	 - Heads or Tails?
+
+RISKAVR3	Scenario chosen. Codes are:
+01= 50/50
+02= 40/100
+03= 30/130
+04= 20/160
+05= 10/190
+06= 0/200
+TMEDSCR3	What money would you accept today?
+
+>SUBSECTION <yls:roundThreeSubSection> <yls:studySectionSelfAdministeredSectionFive>	 – Self-Achievement and Development Instruments
+
+SASDAY	Date when this section is filled in - day
+SASMNT	Date when this section is filled in – month. Codes are:
+01= January
+02= February
+03= March
+04= April
+05= May
+06= June
+07= July
+08= August
+09= September
+10= October
+11= November
+12= December
+SASYEAR	Date when this section is filled in – year
+PPVTLOW	Lowest item responded to (possible values: from 0 to 204) Missing value codes are negative.
+PPVTHIGH	Highest item responded to (possible values: from 0 to 204) Missing value codes are negative.
+STRTHRPP	Start time – hour (possible values : 07 to 17)
+STRTMNPP	Start time – minutes (possible values : 00 to 59)
+PPFWLANG	Language used by fieldworker during administration. Codes are:
+01= Telugu
+02= English
+03= Urdu
+04= Hindi
+05= Kannada
+06= Oriya
+07= Other (specify)
+SPECFWLG	Specify other language used by fieldworker
+PPCDLANG	Language used by child during administration. Codes are the same as used for PPFWLANG.
+SPECCDLG	Specify other language used by child
+TESTLANG	Language in which the test was written. Codes are the same as used for PPFWLANG.
+SPECTSLG	Specify other language in which the test was written
+The PPVT (Peabody Picture Vocabulary Test) consists of 17 sets of 12 words each.  Children start the test at a particular set depending on their age.  They then move up or down depending on their responses.  The response is always between 01 and 04.
+PPVT001 to PPVT012
+Responses for Set 01 of PPVT – words are:
+Item	Word	Correct response
+001	Bus	4
+002	Drinking	3
+003	Hand	1
+004	Climbing	1
+005	Key	4
+006	Reading	1
+007	Closet	2
+008	Jumping	3
+009	Lamp	4
+010	Helicopter	2
+011	Smelling	2
+012	Fly	3
+SET01ERR	Number of errors from Set 01.
+PPVT013 to PPVT024	
+Responses for Set 02 of PPVT – words are:
+Item	Word	Correct response
+013	Digging	2
+014	Cow	1
+015	Drum	3
+016	Feather	1
+017	Painting	3
+018	Cage	2
+019	Knee	1
+020	Wrapping	4
+021	Fence	3
+022	Elbow	4
+023	Garbage	2
+024	Exercising	4
+SET02ERR	Number of errors from Set 02.
+PPVT025 to PPVT036
+Responses for Set 03 of PPVT – words are:
+Item	Word	Correct response
+025	Empty	1
+026	Shoulder	3
+027	Square	4
+028	Measuring	4
+029	Porcupine	1
+030	Arrow	2
+031	Peeling	3
+032	Fountain	2
+033	Accident	2
+034	Penguin	1
+035	Decorated	4
+036	Nest	3
+SET03ERR	Number of errors from Set 03
+PPVT037 to PPVT048
+Responses for Set 04 of PPVT – words are:
+Item	Word	Correct response
+037	Castle	2
+038	Sawing	4
+039	Cactus	3
+040	Farm	1
+041	Going	2
+042	Harp	1
+043	Astronaut	3
+044	Raccoon	4
+045	Juggling	4
+046	Envelope	2
+047	Tearing	3
+048	Claw	1
+SET04ERR	Number of errors from Set 04
+PPVT049 to PPVT060
+Responses for Set 05 of PPVT – words are
+Item	Word	Correct response
+049	Parachute	3
+050	Delivering	1
+051	Rectangle	1
+052	Diving	2
+053	Camper	4
+054	Target	2
+055	Writing	1
+056	Furry	4
+057	Drilling	2
+058	Hook	3
+059	Group	3
+060	Dripping	4
+SET05ERR	Number of errors from Set 05
+PPVT061 to PPVT072
+Responses for Set 06 of PPVT – words are
+Item	Word	Correct response
+061	Vehicle	4
+062	Oval	1
+063	Luggage	2
+064	Awarding	3
+065	Hydrant	4
+066	Swamp	3
+067	Calculator	2
+068	Signal	1
+069	Squash	4
+070	Globe	2
+071	Vegetable	3
+072	Frame	1
+SET06ERR	Number of errors from Set 06
+PPVT073 to PPVT084
+Responses for Set 07 of PPVT – words are
+Item	Word	Correct response
+073	Gigantic	2
+074	Nostril	4
+075	Vase	3
+076	Knight	1
+077	Towing	1
+078	Horrified	3
+079	Trunk	2
+080	Selecting	1
+081	Island	2
+082	Camcorder	4
+083	Heart	3
+084	Wrench	4
+SET07ERR	Number of errors from Set 07
+PPVT085 to PPVT096
+Responses for Set 08 of PPVT – words are
+Item	Word	Correct response
+085	Flamingo	2
+086	Tambourine	4
+087	Palm	1
+088	Surprised	4
+089	Canoe	3
+090	Interviewing	1
+091	Clarinet	4
+092	Exhausted	2
+093	Pitcher	3
+094	Reptile	2
+095	Polluting	3
+096	Vine	1
+SET08ERR	Number of errors from Set 08
+PPVT097 to PPVT108
+Responses for Set 09 of PPVT – words are
+Item	Word	Correct response
+097	Pedal	2
+098	Dissecting	2
+099	Bouquet	4
+100	Rodent	3
+101	Inhaling	4
+102	Valley	1
+103	Tubular	3
+104	Demolishing	4
+105	Tusk	1
+106	Adjustable	2
+107	Fern	1
+108	Hurdling	3
+SET09ERR	Number of errors from Set 09
+PPVT109 to PPVT120
+Responses for Set 10 of PPVT – words are
+Item	Word	Correct response
+109	Solo	4
+110	Citrus	2
+111	Inflated	3
+112	Lecturing	3
+113	Timer	1
+114	Injecting	1
+115	Links	4
+116	Cooperating	2
+117	Microscope	1
+118	Archery	2
+119	Garment	4
+120	Fragile	3
+SET10ERR	Number of errors from Set 10
+PPVT121 to PPVT132
+Responses for Set 11 of PPVT – words are
+Item	Word	Correct response
+121	Carpenter	2
+122	Dilapidated	4
+123	Hazardous	3
+124	Adapter	2
+125	Valve	3
+126	Isolation	1
+127	Feline	2
+128	Wailing	1
+129	Coast	4
+130	Appliance	1
+131	Foundation	4
+132	Hatchet	3
+SET11ERR	Number of errors from Set 11
+PPVT133 to PPVT144
+Responses for Set 12 of PPVT – words are
+Item	Word	Correct response
+133	Blazing	3
+134	Mammal	2
+135	Reprimanding	1
+136	Upholstery	4
+137	Hoisting	1
+138	Exterior	1
+139	Consuming	4
+140	Pastry	4
+141	Cornea	2
+142	Constrained	3
+143	Pedestrian	2
+144	Colt	3
+SET12ERR	Number of errors from Set 12
+PPVT145 to PPVT156
+Responses for Set 13 of PPVT – words are
+Item	Word	Correct response
+145	Syringe	4
+146	Transparent	3
+147	Ladle	2
+148	Replenishing	3
+149	Abrasive	1
+150	Parallelogram	3
+151	Cascade	4
+152	Lever	1
+153	Detonation	2
+154	Pillar	2
+155	Cultivating	1
+156	Aquatic	4
+SET13ERR	Number of errors from Set 13
+PPVT157 to PPVT168
+Responses for Set 14 of PPVT – words are
+Item	Word	Correct response
+157	Indigent	2
+158	Oasis	1
+159	Disappointed	4
+160	Perpendicular	3
+161	Poultry	4
+162	Confiding	1
+163	Periodical	2
+164	Filtration	1
+165	Primate	4
+166	Spherical	2
+167	Talon	3
+168	Octagon	3
+SET14ERR	Number of errors from Set 14
+PPVT169 to PPVT180
+Responses for Set 15 of PPVT – words are
+Item	Word	Correct response
+169	Incandescent	4
+170	Pilfering	2
+171	Trajectory	1
+172	Mercantile	3
+173	Derrick	4
+174	Ascending	2
+175	Monetary	3
+176	Entomologist	2
+177	Gaff	1
+178	Quintet	3
+179	Nautical	4
+180	Incarcerating	1
+SET15ERR	Number of errors from Set 15
+PPVT181 to PPVT192
+Responses for Set 16 of PPVT – words are
+Item	Word	Correct response
+181	Coniferous	4
+182	Wildebeest	1
+183	Caster	3
+184	Reposing	4
+185	Convex	1
+186	Gourmand	3
+187	Dromedary	2
+188	Diverging	4
+189	Incertitude	2
+190	Quiescent	3
+191	Honing	1
+192	Cupola	2
+SET16ERR	Number of errors from Set 16
+PPVT193 to PPVT204
+Responses for Set 17 of PPVT – words are
+Item	Word	Correct response
+193	Embossed	4
+194	Perambulating	2
+195	Arable	3
+196	Importunity	1
+197	Cenotaph	1
+198	Tonsorial	4
+199	Nidificating	3
+200	Terpsichorean	1
+201	Cairn	4
+202	Osculating	2
+203	Vitreous	3
+204	Lugubrious	2
+SET17ERR	Number of errors from Set 17
+FINHRPP	Finish time of PPVT – hour
+FINMNPP	Finish time of PPVT – minutes
+CEILING	Ceiling item (possible values from 12 to 204). Missing value codes are negative.
+MINERR	Minus errors (possible values from 0 to 100). Missing value codes are negative.
+RAWSCRE	Raw score. Missing value codes are negative.
+STDSCRE	Standard score. Missing value codes are negative.
+CONDPP	Were the conditions of the administration of the PPVT adequate? Codes are: 00= No, 01= Yes 
+VRBSTHR	Reading & Writing Test - Start Time – Hour
+VRBSTMN	Reading & Writing Test - Start time – Minutes
+VRBITM01	Reading Item. Codes are:
+01= Can`t read anything
+02= Reads letters
+03= Reads words
+04= Reads sentence
+VRBITM02	Writing Item. Codes are:
+01= No
+02= Yes, with difficulty or errors
+03= Yes, without difficulty or errors
+VRBENHR	Reading & Writing Test - End Time – Hour
+VRBENMN	Reading & Writing Test - End Time – Minutes
+EGRASTHR	Early Grade Reading Assessment - Start Time – Hour
+EGRASTMN	Early Grade Reading Assessment - Start Time – Minutes
+WRIDONEX	The child can read at least one example. Codes are: 01= Yes, 02= No
+WRIDREAD	Total words read at 60 seconds. Missing value codes are negative.
+WRIDINCR	Total incorrect words at 60 seconds. Missing value codes are negative.
+WRIDCRCT	Total correct words in 60 seconds. Missing value codes are negative.
+WRIDSECS	Number of seconds at completion. Missing value codes are negative.
+CANREAD	The child can read. Codes are: 01= Yes, 02= No
+CHRDREAD	Total words read at 60 seconds - Section B. Missing value codes are negative.
+CHRDINCR	Total incorrect words at 60 seconds - Section B. Missing value codes are negative.
+CHRDCRCT	Total correct words in 60 seconds -Section B. Missing value codes are negative.
+CHRDSECS	Number of seconds at completion - Section B. Missing value codes are negative.
+READPS01	Who is telling the story? Codes are: 01= Correct, 02- Incorrect
+READPS02	Why was the cat fat? Codes are: 01= Correct, 02= Incorrect
+READPS03	What is Sharada' s little brother's name? Codes are: 01= Correct, 02= Incorrect
+READPS04	What do Sharada and Ramesh like to do? Codes are: 01= Correct, 02= Incorrect
+READPS05	Why did Sharada and Ramesh say the cat was not alone? Codes are: 01= Correct, 02= Incorrect
+READPS06	Why do you think the cat was missing for a while? Codes are: 01= Correct, 02= Incorrect
+READPS07	How many kittens did the cat give birth to? Codes are: 01= Correct, 02= Incorrect
+READPS08	Where did Sharada and Ramesh find the cat? Codes are: 01= Correct, 02= Incorrect
+LSNTCM01	Who fell in the river first? Codes are: 01= Correct, 02= Incorrect
+LSNTCM02	Who fell in the river last? Codes are: 01= Correct, 02= Incorrect
+LSNTCM03	Why did the little chicken fall in the river? Codes are: 01= Correct, 02= Incorrect
+LSNTCM04	Where was the chicken before he fell in the river? Codes are: 01= Correct, 02= Incorrect
+LSNTCM05	Why did the little chicken cry for help? Codes are: 01= Correct, 02= Incorrect
+LSNTCM05	Why did the little chicken cry for help? Codes are: 01= Correct, 02= Incorrect
+LSNTCM06	How did the chicken and the mouse get out of the river? Codes are: 01= Correct, 02= Incorrect
+EGRAENHR	Early Grade Reading Assessment - End Time – Hour
+EGRAENMN	Early Grade Reading Assessment - End Time – Minutes
+VRBLNGAD	Language used by fieldworker during administration. Codes are the same as used for PPFWLANG.
+SPECLNAD	Specify other language used by fieldworker
+VRBLNGCH	Language used by child during administration. Codes are the same as used for PPFWLANG.
+SPECLNCH	Specify other language used by child
+VRBLNGTS	Language in which the text was written. Codes are the same as used for PPFWLANG.
+SPECLNTS	Specify other language the test was written in
+CNDSTHR	Maths achievement test - Start time – hour
+CNDSTMN	Maths achievement test - Start time – minutes
+MTHITM01	Maths item 1. Codes are: 01= Correct, 02= Incorrect
+
+MTHITM02	Maths item 2. Codes are: 01= Correct, 02= Incorrect
+MTHITM03	Maths item 3. Codes are: 01= Correct, 02= Incorrect
+MTHITM04	Maths item 4. Codes are: 01= Correct, 02= Incorrect
+MTHITM05	Maths item 5. Codes are: 01= Correct, 02= Incorrect
+MTHITM06	Maths item 6. Codes are: 01= Correct, 02= Incorrect
+MTHITM07	Maths item 7. Codes are: 01= Correct, 02= Incorrect
+MTHITM08	Maths item 8. Codes are: 01= Correct, 02= Incorrect
+MTHITM09	Maths item 9. Codes are: 01= Correct, 02= Incorrect
+CNDENHR	Maths achievement test - end time – hour
+CNDENMN	Maths achievement test - end time – minutes
+CMPSTHR	Maths Computing - Start time – hour
+CMPSTMN	Maths Computing - Start time – minutes
+MTHITM10	Maths item 10. Missing value codes are negative.
+MTHITM11	Maths item 11. Missing value codes are negative.
+MTHITM12	Maths item 12. Missing value codes are negative.
+MTHITM13	Maths item 13. Missing value codes are negative.
+MTHITM14	Maths item 14. Missing value codes are negative.
+MTHITM15	Maths item 15. Missing value codes are negative.
+MTHITM16	Maths item 16. Missing value codes are negative.
+MTHITM17	Maths item 17. Missing value codes are negative.
+MTHITM18	Maths item 18. Missing value codes are negative.
+MTHITM19	Maths item 19. Missing value codes are negative.
+MTHITM20	Maths item 20. Missing value codes are negative.
+MTHITM21	Maths item 21. Missing value codes are negative.
+MTHITM22	Maths item 22. Missing value codes are negative.
+MTHITM23	Maths item 23. Missing value codes are negative.
+MTHITM24	Maths item 24. Missing value codes are negative.
+MTHITM25	Maths item 25. Missing value codes are negative.
+MTHITM26	Maths item 26. Missing value codes are negative.
+MTHITM27	Maths item 27. Missing value codes are negative.
+MTHITM28	Maths item 28. Missing value codes are negative.
+MTHITM29	Maths item 29. Missing value codes are negative.
+MTHLST5	Last item completed after 4 minutes. Missing value codes are negative.
+MTHLST10	Last item completed after 8 minutes. Missing value codes are negative.
+CMPENHR	Maths Computing - End time – hour
+CMPENMN	Maths Computing - End time – minutes
+MTHLNGAD	Language used by fieldworker during administration. Codes are the same as used for PPFWLANG.
+SPECMTAD	Specify language used by fieldworker
+MTHLNGCH	Language used by child during administration. Codes are the same as used for PPFWLANG.
+SPECMTCH	Specify language used by child
+MTHLNGTS	Language in which the test was written. Codes are the same as used for PPFWLANG.
+SPECMTTS	Specify language the test was written in
+EASDAY	Date section completed – day
+EASMNT	Date section completed – month. Codes are:
+01= January
+02= February
+03= March
+04= April
+05= May
+06= June
+07= July
+08= August
+09= September
+10= October
+11= November
+12= December
+EASYEAR	Date section completed – year
+
+>SUBSECTION;
+>SECTION <yls:roundThreeStudySection> <yls:studySectionR3ChildActivities>	
+These are variables in the data file stblSec1Activities.sav. This data file provides details of the YL children` s activities. The number of records per household is variable – there is one record per activity.  Data in this file are linked to data at the household/child level using the child identification variable.  This is taken from the Child Questionnaire.
+CHILDID	Child ID
+WORKID	Work ID - line number
+ACTR3		What were these activities? Codes are:
+01= Farm work outside your own household
+02= Domestic chores for another household
+03= making handicrafts/piece work
+04= Selling goods or services
+05= Working in wage in non-agricultural activities
+07= Other (specify)
+20= Caring for younger children
+21= Caring for elderly and/or sick/disabled members of the 
+family
+22= Domestic chores for pocket money
+23= Looking after animals owned by household for pocket money
+24= Collecting firewood or water
+25= Non-agricultural labour for other families NOT 
+workshop/factory
+26= Work for household on farm for pocket money
+SPCACT	Specify these activities
+ACTOWNR3	Do you do this activity for your household or for someone else? Codes are:
+01= Own household
+02= Another household or business
+ACTMNYR3	Do you get any money or things for doing this activity? Codes are: 00= No, 01= Yes
+ACTHPYR3	How happy do you feel about doing this activity? Codes are:
+01= Very sad
+02= A bit sad
+03= Neither happy, nor sad
+04= A bit happy
+05= Very happy
+
+>SUBSECTION;
+>SECTION;
+ 
+A
+ABAPSPR3	19
+ABDPIPR3	19
+ABNCLPR3	19
+ABOTHRR3	19
+ACCPDSR3	34
+ACRAJVR3	63
+ACTHPYR3	89
+ACTMNYR3	89
+ACTOWNR3	89
+ACTPRBR3	44
+ACTR3	26, 88
+ACTR301	32
+ACTR302	32
+ACTR303	32
+ACTR304	32
+ACTR305	32
+ACTR306	32
+ACTR307	32
+ACTR308	32
+ACTR309	32
+ACTR310	32
+ACTR311	32
+ACTR312	32
+ACTR313	32
+ACTR314	32
+ADSGRR31	16
+ADSGRR32	16
+ADSGRR33	16
+ADSWLR31	18
+ADSWLR32	19
+ADSWLR33	19
+AFTRSCR3	44
+ALMNYR3	34
+AMNTLNR3	32
+AMRAJVR3	63
+AMTCHRR3	44
+ANFDCSR3	29
+ANIMALR3	27
+ANYHLPR3	86
+ARESFER3	86
+ASIMEDR3	16
+ASSETR3	72
+ASTACTR3	73
+ATSCR300	7
+ATSCR301	7
+ATSCR302	7
+ATSCR303	7
+ATSCR304	7
+ATSCR305	7
+ATSCR306	7
+ATSCR307	7
+ATSCR308	7
+ATSCR309	7
+ATSCR394	7
+ATSCR395	7
+ATSCR396	7
+ATSCR397	7
+ATSCR398	7
+ATSCR399	7
+AWBCCOR3	36
+AWMICOR3	36
+AWRAJVR3	63
+AWSCCOR3	35
+AWSTCOR3	35
+AYANR301	27
+AYANR302	27
+AYANR303	27
+AYANR304	27
+AYANR305	27
+AYANR306	27
+AYANR307	27
+AYANR308	27
+AYANR309	27
+AYANR310	27
+AYANR311	27
+AYANR312	27
+AYANR313	27
+AYANR314	27
+AYANR315	27
+AYANR316	27
+AYANR317	27
+AYANR318	27
+AYANR319	27
+AYANR320	28
+B
+BEDST7R3	55
+BGYRR304	39
+BGYRR305	39
+BGYRR306	39
+BGYRR307	38
+BGYRR311	39
+BGYRR312	38
+BGYRR313	38
+BGYRR314	38
+BGYRR315	38
+BGYRR316	38
+BGYRR317	38
+BGYRR319	38
+BGYRR320	38
+BGYRR321	39
+BIKE7R3	54
+BIODADR3	2
+BIOMUMR3	2
+BNBCCOR3	36
+BNCMEYR3	35
+BNCRPRR3	35
+BNDWCRR3	35
+BNIKPR3	35
+BNKACTR3	34
+BNMICOR3	36
+BNPMRYR3	35
+BNSCCOR3	36
+BNSGSYR3	35
+BNSTCOR3	36
+BPLCRDR3	63
+BRTWGHR3	66
+BULLDR3	44
+BYENRR31	17
+BYENRR32	17
+BYENRR33	17
+BYENRR34	17
+C
+CAG1R3	66
+CAG2R3	66
+CAG3R3	66
+CAG4R3	66
+CAG5R3	67
+CANREAD	101
+CAR7R3	54
+CAREIDR3	2
+CASHCLR3	86
+CASHSHR3	85
+CASHWKR3	86
+CASINJR3	59
+CBAPSPR3	19
+CBDPIPR3	19
+CBNCLPR3	19
+CBOTHRR3	19
+CBRJOBR3	86
+CCLTRGR3	85
+CDINT	80
+CEILING	100
+CEMBBKR3	86
+CFRNSTR3	85
+CFTRWRR3	85
+CFUTJBR3	68
+CGOVRGR3	85
+CHAFFTR3	64
+CHARTYR3	34
+CHCARER3	57
+CHCSTER3	3
+CHDCRER3	36
+CHDMVER3	4
+CHENRR31	17
+CHENRR32	17
+CHENRR33	17
+CHENRR34	17
+CHFERTR3	25
+CHHGHTR3	65
+CHHT1R3	64
+CHHT2R3	65
+CHILDID	2, 69, 74, 77, 79, 80
+CHLWRKR3	57
+CHMSTMR3	57
+CHNOMSR3	65
+CHRDCRCT	101
+CHRDINCR	101
+CHRDREAD	101
+CHRDSECS	101
+CHSLKR31	15
+CHSLKR32	15
+CHSLKR33	15
+CHSPKLR3	3
+CHSUPOTR3	57
+CHVEGR3	60
+CHWGHTR3	64
+CHWRKR3	84
+CHWT1R3	64
+CHWT2R3	64
+CLEADR3	85
+CLNFACR3	62
+CMPENHR	103
+CMPENMN	103
+CMPHHR3	45
+CMPOTHR3	82
+CMPSTHR	103
+CMPSTMN	103
+CMPT7R3	55
+CNDENHR	103
+CNDENMN	103
+CNDSTHR	102
+CNDSTMN	102
+CNOCHCR3	86
+CNSALLR3	84
+CNSFODR3	83
+CNSTTMR3	62
+CONDPP	100
+COOKR3	53
+COSTR301	33
+COSTR302	33
+COSTR303	33
+COSTR304	33
+COSTR305	33
+COSTR306	33
+COSTR307	33
+COSTR308	33
+COSTR309	33
+COSTR310	33
+COSTR311	33
+COSTR312	33
+COSTR313	33
+COSTR314	33
+CPLDECR3	85
+CPS1R3	66
+CPS2R3	66
+CPS3R3	66
+CPS4R3	66
+CPS5R3	67
+CRAINR31	22, 24
+CRAINR32	24
+CRAINR33	24
+CRAINR34	24
+CRDRYR31	24
+CRDRYR32	24
+CRDRYR33	24
+CRDRYR34	24
+CRDTNDR3	32
+CROPID	69
+CROPR3	69
+CRPCSTR3	72
+CRTPRGR3	65
+CSD1R3	66
+CSD2R3	67
+CSD3R3	67
+CSFEOWR3	85
+CSRVCMR3	85
+CSSCR300	10
+CSSCR301	10
+CSSCR302	10
+CSSCR303	10
+CSSCR304	10
+CSSCR305	10
+CSSCR306	10
+CSSCR307	10
+CSSCR308	10
+CSSCR309	10
+CSSCR394	10
+CSSCR395	10
+CSSCR396	10
+CSSCR397	10
+CSSCR398	10
+CSSCR399	10
+CSTWELR3	16
+CTLSTCR3	25
+CTRUSTR3	85
+CTRYHDR3	85
+CWRUNIR3	86
+D
+DADALR3	2
+DADIDR3	2
+DAYNGTR3	64
+DAYSR3	27
+DEBTR3	30
+DISABR3	26
+DNGSCHR3	13, 83
+DNGSRSR3	59
+DRFIZZR3	61
+DRGAVLR3	62
+DRPOUTR3	14
+DRWTRR3	53
+DRYR7R3	55
+DSCDR300	11
+DSCDR301	11
+DSCDR302	11
+DSCDR303	11
+DSCDR304	11
+DSCDR305	11
+DSCDR306	11
+DSCDR307	11
+DSCDR308	11
+DSCDR309	11
+DSCDR394	11
+DSCDR395	11
+DSCDR396	11
+DSCDR397	11
+DSCDR398	11
+DSCDR399	11
+DSSCR300	10
+DSSCR301	10
+DSSCR302	10
+DSSCR303	10
+DSSCR304	10
+DSSCR305	10
+DSSCR306	10
+DSSCR307	10
+DSSCR308	10
+DSSCR309	10
+DSSCR394	11
+DSSCR395	11
+DSSCR396	11
+DSSCR397	10
+DSSCR398	10
+DSSCR399	10
+DTOPIR3	2
+DVDSTCR3	34
+E
+EARNR301	32
+EARNR302	32
+EARNR303	32
+EARNR304	33
+EARNR305	33
+EARNR306	33
+EARNR307	33
+EARNR308	33
+EARNR309	33
+EARNR310	33
+EARNR311	33
+EARNR312	33
+EARNR313	33
+EARNR314	33
+EASDAY	104
+EASMNT	104
+EASYEAR	104
+EGRAENHR	102
+EGRAENMN	102
+EGRASTHR	101
+EGRASTMN	101
+ELECR3	51
+EM15DYR3	36
+ENRSCHR3	80
+ETATNFR3	67
+ETNFEDR3	67
+ETNOATR3	67
+ETSALTR3	61
+EVNTR301	47
+EVNTR310	47
+EVNTR312	47
+EVNTR313	47
+EVNTR314	47
+EVNTR316	47
+EVNTR323	47
+EVNTR346	47
+EVNTR347	47
+EXPGRDR3	68
+EXT5KMR3	36
+EYEGLSR3	60
+F
+FAN7R3	55
+FARLADR3	66
+FDFRQR31	60
+FDFRQR32	60
+FDFRQR33	60
+FDFRQR34	60
+FDFRQR35	60
+FDFRQR36	60
+FDFRQR37	60
+FDHOMER3	63
+FDIVR301	60
+FDIVR302	61
+FDIVR303	61
+FDIVR304	61
+FDIVR305	61
+FDIVR306	61
+FDIVR307	61
+FDIVR308	61
+FDIVR309	61
+FDIVR310	61
+FDIVR311	61
+FDIVR312	61
+FDIVR313	61
+FDIVR314	61
+FDIVR315	61
+FDTOTR3	60
+FEESR3	7
+FEWMLR3	64
+FINHLPR3	42
+FINHRPP	100
+FINMNPP	100
+FISHNGR3	25
+FLOORR3	52
+FNDSCHR3	15
+FRIDG7R3	55
+FRMSHRR3	25
+FRNCTYR3	44
+FRQDAYR3	64
+FRQFEWR3	64
+FRQHNGR3	64
+FRQLMTR3	64
+FRQNOFR3	64
+FRQNWNR3	64
+FRQPRFR3	64
+FRQSMLR3	64
+FRQWRYR3	64
+FRSTRYR3	25
+FTRWRKR3	86
+FVVALR31	56
+FVVALR32	56
+FVVALR33	56
+FVVALR34	56
+FVVALR35	56
+G
+GETLNR3	32
+GIVCOMR3	44
+GMES7R3	55
+GOCHILR3	62
+GRADER3	5
+GRDER300	9
+GRDER301	9
+GRDER302	9
+GRDER303	9
+GRDER304	9
+GRDER305	9
+GRDER306	9
+GRDER307	9
+GRDER308	9
+GRDER309	9
+GRDER394	9
+GRDER395	9
+GRDER396	9
+GRDER397	9
+GRDER398	9
+GRDER399	9
+GRDLKER3	67
+GRDRPR3	6
+GREDR31	15
+GREDR32	15
+GREDR33	15
+GREDR34	15
+GRENRR31	17
+GRENRR32	17
+GRENRR33	17
+GRENRR34	17
+GRLEDUR3	15
+GROUPR31	42
+GROUPR32	43
+GROUPR33	43
+H
+HHCHRER3	57
+HHJBNMR3	36
+HHMEMR31	42
+HHMEMR32	43
+HHMEMR33	43
+HLPCHLR3	86
+HOURSR3	27
+HOWRSR3	31
+HOWSRSR3	59
+HRDTLKR3	86
+HSSTRTR3	5
+HTUSDR3	54
+HVRAJVR3	63
+I
+ID	5, 57, 78
+ID8	91
+IDBCCOR3	36
+IDCMEYR3	35
+IDCRPRR3	35
+IDDWCRR3	35
+IDIKPR3	35
+IDMICOR3	36
+IDPMRYR3	35
+IDR31	2
+IDR310	64
+IDR311	66
+IDR31B	3
+IDR32	5
+IDR33	20
+IDR34	37
+IDR35	41
+IDR36	45
+IDR37	51
+IDR38	57
+IDR39	58
+IDSCCOR3	36
+IDSGSYR3	35
+IDSTCOR3	36
+IMCMEYR3	35
+IMCRPRR3	35
+IMDWCRR3	35
+IMIKPR3	35
+IMPMRYR3	35
+IMPRSR3	62
+IMSGSYR3	35
+INCGMER3	86
+INCLSDR3	25
+INDSTYR3	25
+INEG1W	78
+INEG1WAG	78
+INEG2DAY	78
+INEG2W	78
+INEG2WAG	78
+INFARMR3	25
+INHETNR3	34
+INSCNTR3	34
+INTRNTR3	44
+INVESTR3	54
+INVSTR31	54
+INVSTR32	54
+INVSTR33	54
+IRRGTR3	24
+ITEM7R3	55
+K
+KGSCBR31	18
+KGSCBR32	18
+KITCHR3	51
+KNDFODR3	83
+L
+LABSHRR3	25
+LADDERR3	66
+LEADERR3	86
+LEADMR31	43
+LEADMR32	43
+LEADMR33	44
+LFEINSR3	34
+LIMTVRR3	63
+LKCHCRR3	36
+LKFOODR3	84
+LKMPRR31	15
+LKMPRR32	15
+LKMPRR33	15
+LKYLNGR3	15
+LKYPRBR3	15
+LKYSCHR3	14
+LKYTMER3	15
+LKYTRNR3	15
+LKYWHOR3	14
+LNDBGHR3	20
+LNGINSR3	12
+LNGLFTR3	5
+LNGTRMR3	60
+LSNTCM01	102
+LSNTCM02	102
+LSNTCM03	102
+LSNTCM04	102
+LSNTCM05	102
+LSNTCM06	102
+LSTLKR3	90
+LSTYR301	47
+LSTYR310	47
+LSTYR312	48
+LSTYR313	48
+LSTYR314	48
+LSTYR316	48
+LSTYR323	48
+LSTYR346	48
+LSTYR347	48
+LVHRINR3	3
+M
+MBNCLR31	19
+MBNCLR32	19
+MBNCLR33	19
+MBNCLR34	19
+MBPHN7R3	55
+MBRGRPR3	42
+MCRO7R3	55
+MDDYMLR3	83
+MDSCLR31	19
+MDSCLR32	20
+MDSCLR33	20
+MDSCLR34	20
+METHODR3	25
+MINERR	100
+MISFWRR3	90
+MISSCHR3	13
+MITAD7R3	55
+MLTCLR31	20
+MLTCLR32	20
+MLTCLR33	20
+MLTCLR34	20
+MNBENFR3	15
+MNPDACR3	84
+MONTHSR3	27
+MOTOR7R3	54
+MRTGR3	51
+MSSDSCR3	80
+MSTLKR3	89
+MTHITM01	102
+MTHITM02	102
+MTHITM03	102
+MTHITM04	102
+MTHITM05	102
+MTHITM06	102
+MTHITM07	103
+MTHITM08	103
+MTHITM09	103
+MTHITM10	103
+MTHITM11	103
+MTHITM12	103
+MTHITM13	103
+MTHITM14	103
+MTHITM15	103
+MTHITM16	103
+MTHITM17	103
+MTHITM18	103
+MTHITM19	103
+MTHITM20	103
+MTHITM21	103
+MTHITM22	103
+MTHITM23	103
+MTHITM24	103
+MTHITM25	103
+MTHITM26	103
+MTHITM27	103
+MTHITM28	103
+MTHITM29	103
+MTHLNGAD	103
+MTHLNGCH	104
+MTHLNGTS	104
+MTHLST10	103
+MTHLST5	103
+MTNOMSR3	65
+MTWGHTR3	65
+MTWT1R3	65
+MTWT2R3	65
+MUMALR3	2
+MUMIDR3	2
+N
+NEG1DAY	78
+NEWLNDR3	21
+NMAMR301	28
+NMAMR302	28
+NMAMR303	28
+NMAMR304	28
+NMAMR305	28
+NMAMR306	28
+NMAMR307	28
+NMAMR308	28
+NMAMR309	28
+NMAMR310	28
+NMAMR311	28
+NMAMR312	28
+NMAMR313	28
+NMAMR314	28
+NMAMR315	28
+NMAMR316	28
+NMAMR317	28
+NMAMR318	28
+NMAMR319	28
+NMAMR320	28
+NMEHHCR3	57
+NMEHLTR3	58
+NMELFTR3	5
+NMENPYR3	57
+NMESLPR3	57
+NMFRNDR3	44, 86
+NMSCR300	9
+NMSCR301	9
+NMSCR302	9
+NMSCR303	9
+NMSCR304	9
+NMSCR305	9
+NMSCR306	9
+NMSCR307	9
+NMSCR308	9
+NMSCR309	9
+NMSCR394	10
+NMSCR395	10
+NMSCR396	10
+NMSCR397	10
+NMSCR398	10
+NMSCR399	10
+NOAGLNR3	21
+NOASKLR3	31
+NOCNSFR3	84
+NOCSWLR3	16
+NOFOODR3	64
+NOJBNMR3	36
+NOLOANR3	32
+NOMDMLR3	83
+NONAGWR3	25
+NOPREFR3	63
+NOTWNTR3	63
+NOWASHR3	84
+NPYWRKR3	57
+NR3BEDS	55
+NR3BIKE	55
+NR3CAR	55
+NR3CELL	55
+NR3COMP	55
+NR3DRYR	56
+NR3FAN	55
+NR3FRDG	55
+NR3GAME	56
+NR3ITEM	56
+NR3MCRO	56
+NR3MOTO	55
+NR3RADO	55
+NR3SOFA	55
+NR3STVE	55
+NR3TABC	55
+NR3TELE	55
+NR3TV	55
+NR3VDEO	56
+NR3WSHG	56
+NREGEGS	36
+NSTPDSR3	34
+NUMASTR3	72
+NUMOWNR3	73
+NUMRAJVR3	63
+NUMRMR3	51
+NUMTHGR3	86
+O
+OBTNLNR3	31
+OREMITR3	34
+OTCOSTR3	30
+OTHPRVR3	34
+OTHPUBR3	34
+OTHRTBR3	63
+OTHTBR31	63
+OTHTBR32	63
+OTHTBR33	63
+OTHTBR34	63
+OTHTRNR3	34
+OTINC1R3	25
+OUTCNTR3	34
+OUTID	77
+OWNHSER3	51
+OWNLNDR3	20
+P
+PARTAWR3	44
+PASSID	72
+PAYNMER3	79
+PAYWRKR3	57
+PDSDHLR3	34
+PDSKRSR3	34
+PDSOILR3	34
+PDSOTHR3	34
+PDSRCER3	34
+PDSSGRR3	34
+PEMVFRR3	4
+PERFR3	6
+PEYLIVR3	4
+PEYMVER3	5
+PHONE7R3	55
+PHYSACR3	61
+PLANR301	30
+PLANR302	30
+PLANR303	31
+PLAYR3	57
+PLCSTR3	22
+PLINCR3	22
+PLVLUR3	22
+PPCDLANG	92
+PPFWLANG	91
+PPLTRTR3	86
+PPVT001	92
+PPVT012	92
+PPVT013	92
+PPVT024	92
+PPVT025	93
+PPVT036	93
+PPVT037	93
+PPVT048	93
+PPVT049	94
+PPVT060	94
+PPVT061	94
+PPVT072	94
+PPVT073	95
+PPVT084	95
+PPVT085	95
+PPVT096	95
+PPVT097	96
+PPVT108	96
+PPVT109	96
+PPVT120	96
+PPVT121	97
+PPVT132	97
+PPVT133	97
+PPVT144	97
+PPVT145	98
+PPVT156	98
+PPVT157	98
+PPVT168	98
+PPVT169	98
+PPVT180	98
+PPVT181	99
+PPVT192	99
+PPVT193	99
+PPVT204	99
+PPVTHIGH	91
+PPVTLOW	91
+PRDABSR3	13
+PRIDADR3	2
+PRIMUMR3	2
+PRIRRR3	24
+PRNTFRR3	44
+PROTSTR3	44
+PRPSTR31	43
+PRPSTR32	43
+PRPSTR33	44
+PRTAUDR3	37
+PRVSNR3	60
+PSCHLVR3	18
+PSTOPCR3	63
+PY15DYR3	37
+Q
+QNTHRVR3	71
+R
+R3CSV1	42
+R3CSV2	42
+R3CSV3	42
+R3CSV4	42
+R3CSV5	42
+R3CTR1	42
+R3CTR2	42
+R3CTR4	42
+R3CTR5	42
+R3CTR6	42
+RADIO7R3	54
+RAISER3	31
+RAWSCRE	100
+RCVINJR3	60
+READPS01	101
+READPS02	101
+READPS03	101
+READPS04	101
+READPS05	101
+READPS06	102
+READPS07	102
+READPS08	102
+RELIGSR3	34
+RELLIVR3	44
+REMESTR3	77
+REMGODR3	77
+REMRELR3	77
+RENTHSR3	34
+RESR3101	48
+RESR3110	49
+RESR3112	49
+RESR3113	49
+RESR3114	49
+RESR3116	49
+RESR312	49
+RESR3123	50
+RESR3146	49
+RESR3147	49
+RESR3201	48
+RESR3210	49
+RESR3212	49
+RESR3213	49
+RESR3214	49
+RESR3216	49
+RESR3223	50
+RESR3246	49
+RESR3247	49
+RESR3301	48
+RESR3310	49
+RESR3313	49
+RESR3314	49
+RESR3316	49
+RESR3323	50
+RESR3346	49
+RESR3347	49
+RISKAVR3	90
+RJNSCHR3	14
+RKEVR301	50
+RKEVR302	50
+RKEVR303	50
+RKIN01R3	25
+RKIN02R3	25
+RKIN03R3	25
+RKIN04R3	25
+RKIN05R3	25
+RKIN06R3	25
+RKIN07R3	25
+RKIN08R3	25
+RKIN09R3	26
+RKIN10R3	26
+ROOFR3	51
+RSNLFTR3	5
+RSNOTKR3	62
+RSNTKR31	62
+RSNTKR32	62
+RSNTKR33	62
+RSNTKR34	62
+RSNTKR35	62
+RSNTKR36	62
+RSNTKR37	62
+RSNTKR38	62
+RSPCSHR3	62
+RSPRTRR3	60
+RSSCBR31	17
+RSSCBR32	17
+RTRPNSR3	33
+S
+S1DAYR3	65
+S1HGHTR3	66
+S1HT1R3	66
+S1HT2R3	66
+S1IDR3	65
+S1MTHR3	65
+S1WGBRR3	65
+S1WGDCR3	65, 66
+S1WGHTR3	66
+S1WT1R3	65
+S1WT2R3	65
+S1YEARR3	65
+S2HGHTR3	66
+S2HT1R3	66
+S2HT2R3	66
+S2IDR3	66
+S2MTHR3	66
+S2NOMSR3	66
+S2WGBRR3	66
+S2WGDCR3	66
+S2WGHTR3	66
+S2WT1R3	66
+S2WT2R3	66
+S2YEARR3	66
+SASDAY	91
+SASMNT	91
+SASYEAR	91
+SCHCDER3	6
+SCHMINR3	13
+SCHNMER3	6
+SCHOOLR3	57
+SCLAUDR3	37
+SCLSECR3	34
+SCR3EYE	60
+SCR3RSPR	60
+SCR3VSN	60
+SCRISKR3	13, 83
+SCWHYR31	80
+SCWHYR32	80
+SCWHYR33	80
+SEECRER3	3
+SEEDADR3	2
+SEEMUMR3	3
+SET01ERR	92
+SET02ERR	93
+SET03ERR	93
+SET04ERR	94
+SET05ERR	94
+SET06ERR	95
+SET07ERR	95
+SET08ERR	96
+SET09ERR	96
+SET10ERR	97
+SET11ERR	97
+SET12ERR	97
+SET13ERR	98
+SET14ERR	98
+SET15ERR	99
+SET16ERR	99
+SET17ERR	100
+SITCHR3	45
+SITTNGR3	62
+SLDLNDR3	21
+SLEEPR3	57
+SLPHNGR3	64
+SLVALR31	56
+SLVALR32	56
+SLVALR33	56
+SLVALR34	56
+SLVALR35	56
+SMK01R3	63
+SMK02R3	63
+SMK03R3	63
+SMK04R3	63
+SMLLMLR3	64
+SMOKER3	63
+SOFA7R3	55
+SPABOTHR	19
+SPADSGR1	16
+SPADSGR2	16
+SPADSGR3	16
+SPADSWL1	18
+SPADSWL2	19
+SPADSWL3	19
+SPCACT	73, 89
+SPCAN20	28
+SPCASING	59
+SPCEXP	76
+SPCHOWRS	31
+SPCHSLK1	15
+SPCHSLK2	15
+SPCHSLK3	15
+SPCIMP	63
+SPCMPHH	45
+SPCNEWLN	21
+SPCNOTK	62
+SPCNSALL	84
+SPCOTCST	30
+SPCRDPRG	35
+SPCREMRL	77
+SPCUSE	21
+SPCWHER1	44
+SPDNGSRS	59
+SPECACT	27
+SPECACTV	32
+SPECAQ01	100
+SPECAQ02	100
+SPECCDLG	92
+SPECCFUT	69
+SPECCGRD	5
+SPECCOOK	54
+SPECCPR1	24
+SPECCPR2	24
+SPECCPR3	24
+SPECCPR4	24
+SPECCRD1	24
+SPECCRD2	24
+SPECCRD3	24
+SPECCRD4	24
+SPECCROP	71
+SPECDISB	26
+SPECFLR	53
+SPECFMED	67
+SPECFOD1	38
+SPECFWLG	91
+SPECGRLK	68
+SPECGRP2	43
+SPECGRP3	43
+SPECHEAT	54
+SPECIMP1	76
+SPECIMP2	76
+SPECINV1	54
+SPECINV2	54
+SPECINV3	54
+SPECITEM	55
+SPECKIND	74
+SPECLNAD	102
+SPECLNCH	102
+SPECLNTS	102
+SPECMOVE	5
+SPECMTAD	103
+SPECMTCH	104
+SPECMTTS	104
+SPECPASS	73
+SPECR101	49
+SPECR110	49
+SPECR112	49
+SPECR113	49
+SPECR114	49
+SPECR116	49
+SPECR146	49
+SPECR147	49
+SPECR201	49
+SPECR210	49
+SPECR212	49
+SPECR213	49
+SPECR214	49
+SPECR216	49
+SPECR246	49
+SPECR247	49
+SPECR301	49
+SPECR310	49
+SPECR312	49
+SPECR313	49
+SPECR314	49
+SPECR316	49
+SPECR346	49
+SPECR347	49
+SPECROOF	52
+SPECSFRQ	76
+SPECSWHO	76
+SPECTOIL	53
+SPECTSLG	92
+SPECWALL	51
+SPECWATR	53
+SPECWHO1	42
+SPECWORK	79
+SPECYNSC	6
+SPFNDSCHR	15
+SPFTRWRK	88
+SPGOCHIL	62
+SPHOWSRS	60
+SPINEG1W	78
+SPINEG2W	78
+SPKGSCB1	18
+SPKGSCB2	18
+SPLKMPR1	15
+SPLKMPR2	15
+SPLKMPR3	15
+SPLKYLNG	15
+SPLNGINS	12
+SPLNGTRM	60
+SPLSTLKE	90
+SPMBNCL1	19
+SPMBNCL2	19
+SPMBNCL3	19
+SPMBNCL4	19
+SPMDSCL1	20
+SPMDSCL2	20
+SPMDSCL3	20
+SPMDSCL4	20
+SPMLTCL1	20
+SPMLTCL4	20
+SPMLTCLL2	20
+SPMLTCLL3	20
+SPMNBENF	16
+SPMSTLKE	90
+SPNDR301	38
+SPNDR302	38
+SPNDR303	38
+SPNDR304	38
+SPNDR305	38
+SPNDR306	38
+SPNMR303	40
+SPNMR304	40
+SPNMR307	40
+SPNMR308	40
+SPNMR309	40
+SPNMR310	40
+SPNMR311	40
+SPNMR312	40
+SPNMR313	40
+SPNMR314	40
+SPNMR315	40
+SPNMR316	40
+SPNMR317	40
+SPNMR318	41
+SPNMR319	41
+SPNMR320	41
+SPNMR321	41
+SPNMR322	41
+SPNMR323	41
+SPNMR326	41
+SPNMR327	41
+SPNOASKL	32
+SPNOCSWL	16
+SPNOLOAN	32
+SPNOWASH	84
+SPNSTPDS	35
+SPOTHPRV	34
+SPOTHPUB	34
+SPOTHTRN	34
+SPOTINC1	25
+SPPEYLIV	4
+SPPLAN01	30
+SPPLAN02	31
+SPPLAN03	31
+SPRSSCB1	17
+SPRSSCB2	18
+SPSCRISK	13, 83
+SPSCWHY1	81
+SPSCWHY2	81
+SPSCWHY3	81
+SPSRSINJ	59
+SPSSSCB1	18
+SPSSSCB2	18
+SPSWSCB1	18
+SPSWSCB2	18
+SPTRNSCH	13
+SPTYSC00	8
+SPTYSC01	8
+SPTYSC02	8
+SPTYSC03	8
+SPTYSC04	8
+SPTYSC06	8
+SPTYSC07	8
+SPTYSC08	8
+SPTYSC09	8
+SPTYSC94	9
+SPTYSC95	9
+SPTYSC96	9
+SPTYSC97	9
+SPTYSC98	8
+SPTYSC99	8
+SPWHMVAW	4
+SPWHSCH1	12
+SPWHSCH2	12
+SPWHSCH3	12
+SPWHYABS	14
+SPWHYCH	47
+SPWRSTSC	82
+SPYRR301	39
+SPYRR302	39
+SPYRR303	39
+SPYRR304	39
+SPYRR305	39
+SPYRR306	39
+SPYRR307	39
+SPYRR308	39
+SPYRR309	39
+SPYRR310	39
+SPYRR311	39
+SPYRR312	39
+SPYRR313	39
+SPYRR314	39
+SPYRR315	39
+SPYRR316	39
+SPYRR317	39
+SPYRR318	40
+SPYRR319	40
+SPYRR320	40
+SPYRR321	40
+SPYRR322	40
+SPYRR323	40
+SPYRR324	39
+SPYRR325	39
+SPYRR326	40
+SPYRR327	40
+SREAPPR3	32
+SRSINJR3	58
+SSSCBR31	18
+SSSCBR32	18
+STCDR300	12
+STCDR301	12
+STCDR302	12
+STCDR303	12
+STCDR304	12
+STCDR305	12
+STCDR306	12
+STCDR307	12
+STCDR308	12
+STCDR309	12
+STCDR394	12
+STCDR395	12
+STCDR396	12
+STCDR397	12
+STCDR398	12
+STCDR399	12
+STDSCRE	100
+STILLR3	5
+STNMR300	11
+STNMR301	11
+STNMR302	11
+STNMR303	11
+STNMR304	11
+STNMR305	11
+STNMR306	11
+STNMR307	11
+STNMR308	11
+STNMR309	11
+STNMR394	11
+STNMR395	11
+STNMR396	11
+STNMR397	11
+STNMR398	11
+STNMR399	11
+STNPRSR3	85
+STRMTHR3	5
+STRTHRPP	91
+STRTMNPP	91
+STRYRR3	5
+STSPDSR3	34
+STUDYR3	57
+SUBCSTR3	3
+SUGRSWR3	61
+SUPENDR3	76
+SUPEXPR3	76
+SUPFRQR3	76
+SUPIMR301	76
+SUPIMR302	76
+SUPKNDR3	74
+SUPPRGID	74
+SUPRIDR3	76
+SUPSRTR3	76
+SUPWHOR3	74
+SVRPAYR3	34
+SWGMCHR3	30
+SWSCBR31	18
+SWSCBR32	18
+T
+TABCH7R3	55
+TALKPLR3	44
+TALKPRR3	44
+TCPHOTHR3	83
+TCPHYUR3	83
+TESTLANG	92
+TMEDSCR3	90
+TMEINTR3	44
+TMINHRR3	88
+TMINJR3	58
+TMINMNR3	88
+TMONINR3	88
+TOILETR3	53
+TOTLNDR3	20
+TRADER3	25
+TRNSCHR3	13
+TRNSPR3	25
+TRTRECR3	62
+TTLNDR32	21
+TV7R3	54
+TYPHTR3	54
+TYSCR300	8
+TYSCR301	8
+TYSCR302	8
+TYSCR303	8
+TYSCR304	8
+TYSCR305	8
+TYSCR306	8
+TYSCR307	8
+TYSCR308	8
+TYSCR309	7
+TYSCR394	9
+TYSCR395	9
+TYSCR396	9
+TYSCR397	8
+TYSCR398	8
+TYSCR399	8
+U
+UNEMALR3	37
+USELNDR3	21
+V
+VALASTR3	73
+VDEO7R3	55
+VETCSTR3	29
+VLAMR301	28
+VLAMR302	29
+VLAMR303	29
+VLAMR304	29
+VLAMR305	29
+VLAMR306	29
+VLAMR307	29
+VLAMR308	29
+VLAMR309	29
+VLAMR310	29
+VLAMR311	29
+VLAMR312	29
+VLAMR313	29
+VLAMR314	29
+VLAMR315	29
+VLAMR316	29
+VLAMR317	29
+VLAMR318	29
+VLAMR319	29
+VLAMR320	29
+VLRPR300	37
+VLRPR301	37
+VLRPR302	37
+VLRPR303	37
+VLRPR304	37
+VLRPR305	37
+VLRPR306	37
+VLRPR307	37
+VLRPR308	37
+VLRPR309	37
+VLRPR310	37
+VLRPR311	37
+VLRPR312	37
+VLRPR313	37
+VLRPR314	37
+VLRPR315	38
+VLRPR316	38
+VLRPR317	38
+VLRPR318	38
+VLRPR319	38
+VLRPR320	38
+VLRPR321	38
+VLRPR324	38
+VLSLDR3	71
+VLSVGSR3	29
+VOTELCR3	44
+VOTENTR3	44
+VRBENHR	101
+VRBENMN	101
+VRBITM01	101
+VRBITM02	101
+VRBLNGAD	102
+VRBLNGCH	102
+VRBLNGTS	102
+VRBSTHR	100
+VRBSTMN	101
+W
+WAITTMR3	62
+WALLR3	51
+WCR3EYE	60
+WCR3RSPR	60
+WCR3VSN	60
+WGAGFHR3	25
+WGHDOCR3	66
+WHINTR31	44
+WHMVAWR3	3
+WHOHLPR3	41
+WHSCHR31	12
+WHSCHR32	12
+WHSCHR33	12
+WHYABSR3	13
+WHYCHR3	45
+WHYNOTR3	5
+WHYRJNR3	14
+WMCH5YR3	36
+WMRFEMR3	37
+WRGPMPR3	30
+WRIDCRCT	101
+WRIDINCR	101
+WRIDONEX	101
+WRIDREAD	101
+WRIDSECS	101
+WRKACTR3	79
+WRKNRGR3	36
+WRKPAYR3	79
+WROSGPR3	36
+WRRYFDR3	63
+WRSTSCR3	81
+WSHG7R3	55
+WSHHNDR3	84
+WUSINR31	88
+Y
+YNOADQ01	100
+YNOADQ02	100
+YRENRR31	17
+YRENRR32	17
+YRENRR33	17
+YRENRR34	17
+ 
+

@@ -3,6 +3,7 @@
 This folder contains scripts that support a workflow for moving from SPSS files, to DDI XML files, to an RDF Linked Data model of a study.
 
 Through this process:
+
 * SPSS files are converted into DDI XML using the [R spssddi](http://cran.r-project.org/web/packages/spssDDI/index.html) package. 
 * DDI XML files are read through a php script which:
 ** Uses an RDF model to represent the variables and their related questions
@@ -17,7 +18,14 @@ When dealing with sensitive micro-data this tool should only be run locally.
 
 ## Status
 
-Initial development. Steps 1 - 3 working. RDF Conversion not yet working.
+Working
+
+## ToDo
+
+* Codelists do not currently get very intuitive names. Explore whether we can give them clearer names. 
+* A given variable may have different code-lists. We should annotate to mention country in which a code-list is used.
+** This will help future applications select the right codelist to use for dimensions.
+
 
 ## Requirements
 
@@ -56,3 +64,5 @@ You can specify on the command line if you want to use a different context file 
 
 ## Know issues 
 In testing against [Young Lives](http://www.younglives.org.uk) data files from the UK Data Archive problems were found using the Command Line 'R' interface. This was resolved by running the convert.r file in [R Studio](http://rstudio.org/)
+
+

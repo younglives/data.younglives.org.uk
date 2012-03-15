@@ -5,6 +5,7 @@ $QB_prefix = "http://purl.org/linked-data/cube#";
 $QB_MeasureProperty = new Resource($QB_prefix."MeasureProperty");
 $QB_AttributeProperty = new Resource($QB_prefix."AttributeProperty");
 $QB_DimensionProperty = new Resource($QB_prefix."DimensionsProperty");
+$QB_ComponentProperty = new Resource($QB_prefix."ComponentProperty");
 $QB_DataStructureDefinition = new Resource($QB_prefix."DataStructureDefinition");
 $QB_codeList = new Resource($QB_prefix."codeList");
 $QB_structure = new Resource($QB_prefix."structure");
@@ -15,6 +16,7 @@ $QB_measure = new Resource($QB_prefix."measure");
 $QB_DataSet = new Resource($QB_prefix."DataSet"); //The class
 $QB_dataSet = new Resource($QB_prefix."dataSet"); //The property
 $QB_Observation = new Resource($QB_prefix."Observation");
+$QB_measureType = new Resource($QB_prefix."measureType");
 
 //qb:Attachable qb:AttributeProperty qb:CodedProperty qb:ComponentProperty qb:ComponentSet qb:ComponentSpecification qb:DataSet qb:DataStructureDefinition qb:DimensionProperty qb:MeasureProperty qb:Observation qb:Slice qb:SliceKey
 // qb:attribute qb:codeList qb:component qb:componentAttachment qb:componentProperty qb:componentRequired qb:concept qb:dataSet qb:dimension qb:measure qb:measureDimension qb:measureType   qb:observation qb:order qb:slice qb:sliceKey qb:sliceStructure qb:structure qb:subSlice
@@ -116,5 +118,76 @@ $RDF_li = new Resource(RDF_NAMESPACE_URI . RDF_LI);
 $RDF_nodeID = new Resource(RDF_NAMESPACE_URI . RDF_NODEID);
 $RDF_datatype = new Resource(RDF_NAMESPACE_URI . RDF_DATATYPE);
 $RDF_seeAlso = new Resource(RDF_NAMESPACE_URI . RDF_SEEALSO);
+
+
+
+
+// OWL concepts
+$OWL_AnnotationProperty = new Resource(OWL_NS . 'AnnotationProperty');
+$OWL_AllDifferent = new Resource(OWL_NS . 'AllDifferent');
+$OWL_allValuesFrom = new Resource(OWL_NS . 'allValuesFrom');
+$OWL_backwardCompatibleWith = new Resource(OWL_NS . 'backwardCompatibleWith');
+$OWL_cardinality = new Resource(OWL_NS . 'cardinality');
+$OWL_Class = new Resource(OWL_NS . 'Class');
+$OWL_complementOf = new Resource(OWL_NS . 'complementOf');
+$OWL_Datatype = new Resource(OWL_NS . 'Datatype');
+$OWL_DatatypeProperty = new Resource(OWL_NS . 'DatatypeProperty');
+$OWL_DataRange = new Resource(OWL_NS . 'DataRange');
+$OWL_DatatypeRestriction = new Resource(OWL_NS . 'DatatypeRestriction');
+$OWL_DeprecatedClass = new Resource(OWL_NS . 'DeprecatedClass');
+$OWL_DeprecatedProperty = new Resource(OWL_NS . 'DeprecatedProperty');
+$OWL_distinctMembers = new Resource(OWL_NS . 'distinctMembers');
+$OWL_differentFrom = new Resource(OWL_NS . 'differentFrom');
+$OWL_disjointWith = new Resource(OWL_NS . 'disjointWith');
+$OWL_equivalentClass = new Resource(OWL_NS . 'equivalentClass');
+$OWL_equivalentProperty = new Resource(OWL_NS . 'equivalentProperty');
+$OWL_FunctionalProperty = new Resource(OWL_NS . 'FunctionalProperty');
+$OWL_hasValue = new Resource(OWL_NS . 'hasValue');
+$OWL_incompatibleWith = new Resource(OWL_NS . 'incompatibleWith');
+$OWL_imports = new Resource(OWL_NS . 'imports');
+$OWL_intersectionOf = new Resource(OWL_NS . 'intersectionOf');
+$OWL_InverseFunctionalProperty = new Resource(OWL_NS . 'InverseFunctionalProperty');
+$OWL_inverseOf = new Resource(OWL_NS . 'inverseOf');
+$OWL_maxCardinality = new Resource(OWL_NS . 'maxCardinality');
+$OWL_minCardinality = new Resource(OWL_NS . 'minCardinality');
+$OWL_Nothing = new Resource(OWL_NS . 'Nothing');
+$OWL_ObjectClass = new Resource(OWL_NS . 'ObjectClass');
+$OWL_ObjectProperty = new Resource(OWL_NS . 'ObjectProperty');
+$OWL_ObjectRestriction = new Resource(OWL_NS . 'ObjectRestriction');
+$OWL_oneOf = new Resource(OWL_NS . 'oneOf');
+$OWL_onProperty = new Resource(OWL_NS . 'onProperty');
+$OWL_Ontology = new Resource(OWL_NS . 'Ontology');
+$OWL_priorVersion = new Resource(OWL_NS . 'priorVersion');
+$OWL_Property = new Resource(OWL_NS . 'Property');
+$OWL_Restriction = new Resource(OWL_NS . 'Restriction');
+$OWL_sameAs = new Resource(OWL_NS . 'sameAs');
+$OWL_sameClassAs = new Resource(OWL_NS . 'sameClassAs');
+$OWL_sameIndividualAs = new Resource(OWL_NS . 'sameIndividualAs');
+$OWL_samePropertyAs = new Resource(OWL_NS . 'samePropertyAs');
+$OWL_someValuesFrom = new Resource(OWL_NS . 'someValuesFrom');
+$OWL_SymmetricProperty = new Resource(OWL_NS . 'SymmetricProperty');
+$OWL_Thing = new Resource(OWL_NS . 'Thing');
+$OWL_TransitiveProperty = new Resource(OWL_NS . 'TransitiveProperty');
+$OWL_unionOf = new Resource(OWL_NS . 'unionOf');
+$OWL_versionInfo = new Resource(OWL_NS . 'versionInfo');
+
+
+
+
+// DC concepts
+$DC_contributor = new Resource(DC_NS . 'contributor');    
+$DC_coverage = new Resource(DC_NS . 'coverage');  
+$DC_creator = new Resource(DC_NS . 'creator');  
+$DC_date = new Resource(DC_NS . 'date');  
+$DC_description = new Resource(DC_NS . 'description');  
+$DC_format = new Resource(DC_NS . 'format');  
+$DC_identifier = new Resource(DC_NS . 'identifier');  
+$DC_language = new Resource(DC_NS . 'language');  
+$DC_publisher = new Resource(DC_NS . 'publisher');  
+$DC_rights = new Resource(DC_NS . 'rights');  
+$DC_source = new Resource(DC_NS . 'source');  
+$DC_subject = new Resource(DC_NS . 'subject');  
+$DC_title = new Resource(DC_NS . 'title');  
+$DC_type = new Resource(DC_NS . 'type');  
 
 ?>

@@ -1,8 +1,9 @@
 Namespace,URI
-*,http://data.younglives.org.uk/data/younglivesStudyStructure/
+*,http://data.younglives.org.uk/data/studyStructure/
 var,http://data.younglives.org.uk/data/variables/
-yls,http://data.younglives.org.uk/data/younglivesStudyStructure/
-studymeta,http://data.younglives.org.uk/data/incubator/studyMetaData/
+yls,http://data.younglives.org.uk/data/studyStructure/
+stats,http://data.younglives.org.uk/data/statistics/
+studymeta,http://data.younglives.org.uk/data/metadata/
 qb,http://purl.org/linked-data/cube#
 sdmx,http://purl.org/linked-data/sdmx#
 sdmx-dimension,http://purl.org/linked-data/sdmx/2009/dimension#

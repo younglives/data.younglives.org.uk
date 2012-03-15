@@ -1,0 +1,85 @@
+tell application "Microsoft Word"
+	set findRange to find object of selection
+	tell findRange
+
+	execute find find text "Section 11: Self- Administered Questionnaire" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdminHeader>	" replace replace all		
+	execute find find text "Support from NGO or GO programs" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSupportFromNGOorGOPrograms>	" replace replace all
+	execute find find text "Section 9: Heads or Tails? Risk Aversion and Time Discounting Questions" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHeadsOrTailsRiskAversionAndTimeDiscountingQuestions>	" replace replace all
+	execute find find text "Section 9: Child Health" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>	" replace replace all
+	execute find find text "Section 9: Pets " replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionPets>	" replace replace all	
+
+	execute find find text "Section 8 –Children Girls Only" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionChildrenGirlsOnly>	" replace replace all
+	execute find find text "Section 8 - Achievement And Development Instruments" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionAchievementAndDevelopmentInstruments>	" replace replace all
+	execute find find text "Section 7 – Socio-Economic Status" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySocioEconomicStatus>	" replace replace all
+	execute find find text "Section 7: Socio-Economic Status" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySocioEconomicStatus>	" replace replace all
+	execute find find text "Section 7 – Household Issues" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdIssues>	" replace replace all
+	execute find find text "Section 6 – Migration" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionMigration> 	" replace replace all
+	execute find find text "Section 6 – Economic Changes and Recent Life History" replace with ">SECTION <yls:roundThreeStudySection> <yls:studyEconomicChangesAndRecentLifeHistory>	" replace replace all
+	execute find find text "Section 6: Economic Changes and Recent Life History" replace with ">SECTION <yls:roundThreeStudySection> <yls:studyEconomicChangesAndRecentLifeHistory>	" replace replace all
+	execute find find text "Section 6" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionSix>	" replace replace all
+	execute find find text "Section 5 – Social Networks Social Skills & Social Support" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSocialNetworksSocialSkillsAndSocialSupport>	" replace replace all
+	execute find find text "Section 5 – Social Capital" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSocialCapital>	" replace replace all
+	execute find find text "Section 5: Social Capital" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSocialCapital>	" replace replace all	
+	execute find find text "SECTION 5" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFive>	" replace replace all
+	execute find find text "Section 4: Child Health" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionChildHealth>	" replace replace all
+	execute find find text "Section 4 – Household Food and Non-Food Consumption & Expenditure" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdFoodAndNonFoodConsumptionAndExpenditure>	" replace replace all
+	execute find find text "Section 4: Household Food And Non-Food Consumption & Expenditure" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdFoodAndNonFoodConsumptionAndExpenditure>	" replace replace all
+	execute find find text "Section 4" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionFour>	" replace replace all
+	execute find find text "Section 3 – Livelihoods And Asset Framework " replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionLivelihoodsAndAssetFramework>	" replace replace all
+
+	execute find find text "Section 3: Livelihoods And Asset Framework" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionLivelihoodsAndAssetFramework>	" replace replace all
+
+	execute find find text "Section 3 - School" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSchool>	" replace replace all
+	execute find find text "Section 3" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionThree>	" replace replace all
+	execute find find text "Section 2 – Household" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAndChildEducation>	" replace replace all
+	execute find find text "Section 2 – Household and Child Education" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAndChildEducation>	" replace replace all
+	execute find find text "Section 2 – Household Education" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAndChildEducation>	" replace replace all
+	execute find find text "Section 2 – Feelings and Attitudes" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionFeelingsAndAttitudes>	" replace replace all
+	execute find find text "Section 2" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionTwo>	" replace replace all
+	execute find find text "Section 11 – Caregiver Perceptions and Attitudes" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionCaregiverPerceptionsAndAttitudes>	" replace replace all
+	execute find find text "SECTION 10: Achievement and Development Instruments" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionAchievementAndDevelopmentInstruments>	" replace replace all
+	execute find find text "Section 10 – Anthropometry" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionAnthropometry>	" replace replace all
+	execute find find text "Section 10: Anthropometry" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionAnthropometry>	" replace replace all	
+	execute find find text "Section 11: Caregiver Perceptions and Attitudes" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionCaregiverPerceptionsAndAttitudes>" replace replace all
+	execute find find text "Section 12: Mothers Health" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionMothersHealth>" replace replace all
+
+	execute find find text "Section 1 – Parental Background" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionParentalBackground>	" replace replace all
+	execute find find text "Section 1 – Child’s Time Use and Activities" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionChildsTimeUseAndActivities>	" replace replace all
+	execute find find text "Section 1B – MIGRATION (YOUNGER COHORT ONLY)" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionChildMigration>" replace replace all
+	execute find find text "Section 1" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionSelfAdministeredSectionOne>	" replace replace all
+	execute find find text "Preliminary Interview" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionPreliminaryInterview>	" replace replace all
+	execute find find text "Plots With No Crops" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionPlotsWithNoCrops>	" replace replace all
+	execute find find text "Plots No Crops" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionPlotsWithNoCrops>	" replace replace all
+	execute find find text "Peabody Picture Vocabulary Test (Ppvt) (Siblings)" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionPeabodyPictureVocabularyTest>	" replace replace all
+	execute find find text "Money or goods given to individuals outside the household" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionMoneyOrGoodsGivenToIndividualsOutsideTheHousehold>	" replace replace all
+	execute find find text "Land owned or rented by the household" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionLandOwnedOrRentedByTheHousehold>	" replace replace all
+	execute find find text "Houeshold Member Level Data" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdMemberLevelData>	" replace replace all
+	execute find find text "Groups" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionGroups>	" replace replace all
+	execute find find text "Data Handlers" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionDataHandlers>	" replace replace all
+	execute find find text "Crops grown by the household" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionCropsGrownByTheHousehold>	" replace replace all
+	execute find find text "Crops grown by the household" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionCrowsGrownByHousehold>	" replace replace all
+	execute find find text "Credit Support Program" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionCreditSupportProgram>	" replace replace all
+	execute find find text "Child Work Activities" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionChildWorkActivities>	" replace replace all
+	execute find find text "Child Activities" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionChildActivities>	" replace replace all
+	execute find find text "Household Assets" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdAssets>	" replace replace all	
+	execute find find text "Household Income- Daily Wage" replace with ">SECTION 
+<yls:roundThreeStudySection> <yls:studySectionHouseholdIncomeDailyWage>	" replace replace all	
+	execute find find text "Household Income- Monthly Wage" replace with ">SECTION 
+<yls:roundThreeStudySection> <yls:studySectionHouseholdIncomeMonthlyWage>	" replace replace all
+	execute find find text "Household Income- Non-Monetary Earnings" replace with ">SECTION 
+<yls:roundThreeStudySection> <yls:studySectionHouseholdIncomeNonMonetaryEarnings>	" replace replace all
+	execute find find text "Household Income- Perceived Monetary Income" replace with ">SECTION 
+<yls:roundThreeStudySection> <yls:studySectionHouseholdIncomePerceivedMonetaryIncome>	" replace replace all
+	execute find find text "Household Income- Perceived Wage Income" replace with ">SECTION 
+<yls:roundThreeStudySection> <yls:studySectionHouseholdIncomePerceivedWageIncome>	" replace replace all
+	execute find find text "Donated Food" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionDonatedFood>	" replace replace all	
+	execute find find text "Household Income- Monetary Income" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionHouseholdIncomeMonetaryIncome>	" replace replace all	
+	execute find find text "Cognitive Development and Achievement" replace with ">SECTION <yls:roundThreeStudySection> <yls:studySectionAchievementAndDevelopmentInstruments>	" replace replace all	
+
+
+
+	
+	execute find find text "Index of Variables" replace with ">SECTION;" replace replace all
+
+end tell
+end tell

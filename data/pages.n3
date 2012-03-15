@@ -1,0 +1,384 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix yls: <http://data.younglives.org.uk/vocab/younglivesStudyStructure#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ylp: <http://data.younglives.org.uk/pages/>.
+
+ylp:grapher rdfs:label "The Young Lives Grapher";
+rdfs:comment """The Young Lives Grapher has been developed to help visualise [RDF Linked Data Cubes](http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html). 
+
+When pointed at a 'Data Structure Definition' which describes some particular set of statistics, the grapher looked to find what measures and dimensions are available, and takes a best guess to display a bar chart or line chart selected from the available statistics. If then offers you the opportunity to configure the generated graph to view exactly the data you are interested in.
+
+Generated graphs can be linked to, or embedded into other websites. 
+
+## Use it
+
+The grapher uses the Google Charts library to display charts. You can hover over points to see the statistics they represent, or hover over truncated titles to view the full title of an element. 
+
+## Configure it: Using the grapher
+
+To customise a graph look for the 'configure' tab at the bottom of the graph window. From here you can select the dimension which will be displayed on the horizontal axis (the vertical access will always be the measure defined by the data structure definition you are currently looking at). You can also choose which values to fix on the graph (e.g. to display data from only one particular year), or which to leave variable (by selecting 'Show all').
+
+Usually you should fix all but one of the values.
+
+At the top of the configuration tab you can select the chart type, and you can give your chart a descriptive title. 
+
+When you have set all the configuration options you want then you can select 'Update' to save your changes and return to your new group.
+
+## Share it: Embedding graphs in your own website
+
+The share tab of the grapher allows you to:
+
+* Link to a particular graph
+* Embed a graph in your webpage or blog as an iframe
+* Include a link that will open a pop-up graph
+
+When you click the share tab you will be able to select which type of sharing you are interested in. If you are planning to e-mail a graph link to someone, you may want to use a URL shortening service like [TinyUrl.com](http://www.tinyurl.com) to make sure the long link doesn't break when e-mailed. 
+
+If you are embedding into another website, you will need to make sure the site you are embedding into does not strip out iframe and script tags. Some blogging platforms and content management systems may need an extra plugin installed (e.g. [embed iframe](http://wordpress.org/extend/plugins/embed-iframe/) for wordpress) or configuration options set to allow you to embed from the data.younglives.org.uk site. 
+
+## Common questions
+
+### Where does the data come from?
+All the statistics the grapher displays are pre-calculated and input into a linked data store in advance. It is not analysing data on the fly, and can only present statistics it finds available in the data stores it knows about. 
+
+### I picked some dimensions in the configuration tab, but the widget says 'Suspect duplicated data found...' and don't display anything
+
+The graphs can only show a limited number of different dimensions on a single graph (e.g. one dimension on the X axis, one on the Y Axis, and another by grouping bars or lines by colour). If your selections mean that the grapher has to try and deal with more dimensions than it can cope with for your chosen chart type, it will display this error. 
+
+Try fixing some of the dimensions in the configuration options rather than choosing 'Show all'
+
+### What does this measure or dimension mean?
+ 
+The current grapher only displays the titles of statistics. In the future we hope to make more the underlying linked data to provide more contextual information about underlying measures and dimensions. 
+
+### Is the source code available?
+
+The source code is available as an ontowiki module and can currently be found in the [IKMLinkedResearch repository on GitHub](https://github.com/neontribe/IKMLinkedResearch). It will be migrated to it's own repository soon. 
+
+""".
+
+ylp:about rdfs:label "About data.younglives.org.uk";
+	rdfs:comment """
+## What is available
+The Young Lives study has gathered three rounds of data from detailed household and child surveys in Peru, India, Ethiopia and Vietnam. Full anonymised survey data is made available for researchers in the SPSS statistical software format through the UK Public Data Archive, and on CD from the Principal Investigators in study countries. You can [find out more about accessing the survey micro-data datasets here](http://www.younglives.org.uk/what-we-do/access-our-data). 
+
+The data.younglives.org.uk website is an experimental approach to make additional Young Lives data available using [Linked Open Data standards](http://en.wikipedia.org/wiki/Linked_data). On this site you will find a range of selected statistics and meta-data about the young lives study. Whilst we have been exploring how a research project might create and use linked data, we have also been working to create user-friendly interfaces on top of the raw linked data to make it more accessible.  
+
+### Statistics 
+This site contains selected statistics generated in 2011 with data from Round 1, 2 and 3 of the Young Lives Study published using the [RDF Data Cube vocabulary](http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html).
+
+You can find these statistics in the data by looking for [Data Structure Definitions](/resource/instances/?init=1&list=instances&m=http%3A%2F%2Fdata.younglives.org.uk&instancesconfig=%7B%22filter%22%3A%5B%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22rdfsclass%22%2C%22rdfsclass%22%3A%22http%3A%5C%2F%5C%2Fpurl.org%5C%2Flinked-data%5C%2Fcube%23DataStructureDefinition%22%7D%5D%7D) which pick out the different measures available. For example, 'percentage of survey respondents enrolled in school at age 8'. When you view a [Data Structure Definitions](/resource/instances/?init=1&list=instances&m=http%3A%2F%2Fdata.younglives.org.uk&instancesconfig=%7B%22filter%22%3A%5B%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22rdfsclass%22%2C%22rdfsclass%22%3A%22http%3A%5C%2F%5C%2Fpurl.org%5C%2Flinked-data%5C%2Fcube%23DataStructureDefinition%22%7D%5D%7D) you will have the option to select the 'Young Lives Graph' tab which launches our custom graphing tool.
+
+Many statistics have been broken down by a number of different dimensions, from the gender of the child, to the education level of the child's mother. You can configure the graph to show the dimensions you are most interested in, and you can then link direct to your customised graph, or embed it in your own website. 
+
+#### More on the grapher
+You can [read more about the Grapher here](/pages/grapher)
+
+### Study Meta-data 
+The Young Lives study is based around a number of core themes. These are represented on the data site as a '[SKOS Vocabulary](http://www.w3.org/2004/02/skos/)' which [you can browse here](http://data.younglives.org.uk/data/themes/) (click the '+' next to any 'top concept' to start navigating down into the content tree. 
+
+In the future we hope this will be accessible through an interactive topic map.
+
+### Publications Meta-data 
+The Young Lives project has resulted in many different publications and resources. We have drawn upon linked data from [Research for Development](http://www.dfid.gov.uk/r4d/), and the [Young Lives publication database](http://www.younglives.org.uk/our-publications) to present linked data catalogue records for each of these publications - connecting these to the topic map, and to a range of automatically generated tags. 
+
+Picking a concept, and then looking for 'Instances linking here' will allow you to find all the publications with abstracts mentioning a particular topic.  
+
+In the future, publications will also be accessible from the topic map.
+
+## Working with OntoWiki
+
+We have created this site on top of the OntoWiki Linked Data platform. This provides a framework for browsing linked data. There are two main types of page you will encounter:
+
+### Resource Pages
+
+These have titles that start 'Properties of...' and they display all the facts (properties) in our knowledge base linked to a particular 'resource'. 
+
+A resource is anything we can identify using a URL (web link), and you can see which resource you are currently looking at by choosing 'Resource > Show/Hide Location Bar' just under the 'Properties of...' title. On data.younglives.org.uk you will find resources for Statistics, Publications, Data Structure Definitions, and Concepts amongst other things. 
+
+The properties of a resource can be links to another resource, or can be text. When properties are links you can click them and follow the links.
+
+At the bottom of a resource page you will find some extra boxes of information designed to help you navigate the site. Most resources will display a list of 'Similar instances' - other resources like them. Some will also display 'Instances that link here': this allows you to find links in the knowledge base that go in the opposite direction - from some other resource to the one you are looking at. Linked data links are directional. 
+
+If you want to see the raw linked data that goes to make up a resource you can explore this on the 'Source' tab. 
+
+### Instance lists
+If you hover over 'Similar Instances' or 'Instances linking here' you will see a small icon appear: the 'view as list' icon. Clicking this icon will take you to a list view of resources. 
+
+You can also access a list view of resources from the Navigation menu, and by using the search feature to generate a list of search results.
+
+When viewing an instance list, you can:
+
+* **Choose what properties of the listed resources to display** by clicking properties in the 'Show properties' box at the bottom of the page. 
+* **Add extra filters** using the filter box at the bottom of the page. You can search within the list you have loaded, or you can add structured filters from the 'Edit' menu of the filter box. This allows you to filter the list by any of the properties held in the knowledge base.
+* **Page through your results** and choose how many results are displayed at once
+
+Clicking any particular item in the list will take you to it's resource page. To preview what that resource page will include you can also click the + icon next to the resource to dynamically load that data. 
+
+
+## Working with Linked Data
+
+The data.younglives.org.uk website is managed using OntoWiki which provides an interface for humans to browse automatically generated pages built from the underlying linked data.
+
+However, there is no one single way of representing linked data, and there are many different ways to access and use the data and meta-data on this site.
+
+You can find out more about linked data at [http://linkedinfo.ikmemergent.net](http://linkedinfo.ikmemergent.net).
+
+### Dereferenceable URIs
+
+When accessed by a computer that understands and requests linked data, pages on this site will return structured linked data. 
+
+### SPARQL Access
+
+[SPARQL](http://en.wikipedia.org/wiki/SPARQL) is a query language for working with linked data. You can run SPARQL queries against our data [here](/queries/editor). 
+
+### Data dumps
+
+Hovering over the 'data.younglives.org.uk' knowledge base in the 'Knowledge base' and clicking the hover icon will give you access to the 'Export' menu where you can fetch a copy of the full knowledge base in RDF Turtle format.
+
+Note: we are aware that other download formats (e.g. RDF/XML) may not always work due the size of the knowledge base. This appears to be an issues with the underlying OntoWiki tool. 
+""".
+
+
+
+ylp:Ethiopia rdfs:label "Ethiopia: Country Page";
+	rdfs:comment """This site contains selected findings from the third round of data collection by Young Lives in Ethiopia, carried out from late 2009 to early 2010. These statistics include some of the key indicators of childhood poverty and show changes that have taken place in the children’s lives over the course of the Young Lives study.
+
+The Round 3 Survey Report, 'Understanding Changes in the Lives of Poor Children: Initial findings from Ethiopia', presents many of these statistics in tables along with a narrative description of the study results. From this prototype linked data site you can generate customised graphs of selected statistics and you can access underlying data. 
+
+[Find out more about using data.younglives.org.uk here](/pages/about).
+
+## Selected Findings from Ethiopia
+
+### Access to Sanitation
+In 2009, about 58% of the households surveyed had access to sanitation facilities (a pit latrine or flush toilet), up from 22% in 2002. Using the graph below you can explore how the rate of improvement in access to sanitation varied according to the location (urban or rural), ethnicity, or level of maternal education of our sample.
+
+Select the 'Configure' bar in the graph widget below to change the break-down displayed on the graph.
+
+<iframe src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-15984d83-17aa-4591-9667-748ddbdde997&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Access+to+Sanitation+by+Location&config%5Bgraph_type%5D=linechart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Flocation&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-Ethiopia_PercentageOfHouseholdsWithAccessToSanitation&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FEthiopia&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-15984d83-17aa-4591-9667-748ddbdde997" style="width:633px;height:500px;" scrolling="no" frameborder="0"></iframe>
+
+### Shocks
+
+One of the topics included in the Young Lives surveys is sudden changes in the situation families live in, or shocks. The graph below shows the percentage of households experiencing different types of shocks. It defaults to showing a break-down by 'Consumption Quintiles' ranging from the 1st Quintile (the poorest), to the 5th Quintile (the least poor). The consumption quintiles were calculated for households based on their 2006 data. 
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-ea38c22d-672b-42b6-900b-6b416e266b72&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=2009+Shocks+Experienced+by+Consumption+Quintile&config%5Bgraph_type%5D=columnchart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2F2006ConsumptionQuintiles&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-PercentageOfHouseholdsExperiencingShocksAndOrAdverseEventsInPast3Years&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FEthiopia&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear%5D=2009&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2FtypeOfShockOrAdverseEvent&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-ea38c22d-672b-42b6-900b-6b416e266b72"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+You can use the configure option to view the data for 2006, or to access a break-down by another variable such as the urban/rural location of the households. 
+
+#### Use this graph
+If you want to display a copy of this graph on your own website, you can use the 'Share' link to get embed code to do that. You can choose whether to allow other people to configure it, or if you just want to make it available in a static form based on the variables you have picked. Don't forget to change the title of the graph to fit the way you have configured it!
+
+### Stunting
+
+Stunting and wasting are important dimensions of child poverty because of the recognised link to other outcomes such as cognitive development. The Young Lives study has surveyed two cohorts of children. The older cohort were aged 8 for our 2002 survey. The younger cohort were aged 8 for our 2009 survey. This allows us to compare how stunting at age 8 has changed in our research sites over the course of time. 
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-2e9d77cd-5195-4a54-8c77-fc7665c794fc&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Change+in+Stunting+at+Age+8+by+Ethnicity+Indicator&config%5Bgraph_type%5D=columnchart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fethiopia_EthnicityIndicator&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-StuntingAtAge8PerCent&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FEthiopia&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-2e9d77cd-5195-4a54-8c77-fc7665c794fc"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+When we explore the statistics for Ethiopia we see a remarkable improvement in the Children's nutritional status, possibly because of the support programmes provided, including food aid, the public work programme, the Agricultural Extension Programme, and the Health Extension Services. 
+
+### Further statistics
+
+You can find further [statistics for Ethiopia here](http://data.younglives.org.uk/resource/instances/?init=1&list=instances&m=http%3A%2F%2Fdata.younglives.org.uk&instancesconfig=%7B%22filter%22%3A%5B%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22search%22%2C%22searchText%22%3A%22Ethiopia%22%7D%2C%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22box%22%2C%22id%22%3A%22filterbox1%22%2C%22property%22%3A%22http%3A%5C%2F%5C%2Fwww.w3.org%5C%2F1999%5C%2F02%5C%2F22-rdf-syntax-ns%23type%22%2C%22isInverse%22%3Afalse%2C%22propertyLabel%22%3A%22type%22%2C%22filter%22%3A%22equals%22%2C%22value1%22%3A%22http%3A%5C%2F%5C%2Fpurl.org%5C%2Flinked-data%5C%2Fcube%23DataStructureDefinition%22%2C%22value2%22%3Anull%2C%22valuetype%22%3A%22uri%22%2C%22literaltype%22%3Anull%2C%22hidden%22%3Afalse%2C%22negate%22%3Afalse%2C%22objects%22%3A%5B%7B%7D%2Cnull%5D%7D%5D%7D).
+
+When you select a 'Data Structure Definition' to view you can select the 'View on Graph' tab to get to the [interactive graph tool](/pages/grapher). The grapher makes a best-guess attempt to display an interesting graph, but you may need to use the configure options to select which dimensions it uses to display a useful graph. 
+
+""".
+
+
+
+
+ylp:India rdfs:label "India: Country Page";
+        rdfs:comment """This site contains selected findings from the third round of data collection by Young Lives in India, carried out from late 2009 to early 2010. These statistics include some of the key indicators of childhood poverty and show changes that have taken place in the children’s lives over the course of the Young Lives study.
+
+The Round 3 Survey Report, '[The Impact of Growth on Childhood Poverty in Andhra Pradesh: Initial Findings from India Round 3 Survey](http://www.younglives.org.uk/our-publications/country-reports/the-impact-of-growth-on-childhood-poverty-in-andhra-pradesh-initial-findings-from-india-round-3-survey)', presents many of these statistics in tables along with a narrative description of the study results. From this prototype linked data site you can generate customised graphs of selected statistics and you can access underlying data. 
+
+[Find out more about using data.younglives.org.uk here](/pages/about).
+
+## Selected Findings from India
+
+### Access to Clean Water and Sanitation
+At a general level, the round three data shows some improving access for households to both water and sanitation. However what is most noticeable is that although by 2009, nearly all households report access to safe drinking water, only a third of households report access to improved sanitation, and the increase over the period was much smaller.
+There has been the strongest growth in access to safe water in rural areas (from a much lower base), and by 2009 the difference between rural and urban areas was small. A wide gap persists, however, in access to sanitation: while nine in ten households in urban areas have access to improved sanitation, fewer than one in five children in rural areas live in households reporting access to sanitation.
+
+Two interactive graphs are shown below. The first for access to clean water, and the second for access to sanitation. By default the graphs are broken down by 'Location' (urban or rural), but you can use the 'configure' option on these graphs to explore how these statistics break down by different dimensions, such as ethnicity, or region. 
+
+
+<iframe src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-07e2f67e-234f-4b10-a590-0449d1986de4&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Access+to+safe+drinking+water+by+location&config%5Bgraph_type%5D=linechart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Flocation&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-IndiaPercentageOfHouseholdsWithAccessToSafeDrinkingWater&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FIndia&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-07e2f67e-234f-4b10-a590-0449d1986de4" style="width:633px;height:500px;" scrolling="no" frameborder="0"></iframe>
+
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-5bf241b7-7257-4c78-acf7-da5d46bf9e80&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Access+to+Sanitation+by+location&config%5Bgraph_type%5D=linechart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Flocation&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-IndiaPercentageOfHouseholdsWithAccessToSanitation&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FIndia&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear&shareable=false&configurable=false&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-5bf241b7-7257-4c78-acf7-da5d46bf9e80"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+### Shocks
+
+One of the topics included in the Young Lives surveys is sudden changes in the situation families live in, or shocks. The graph below shows the percentage of households experiencing different types of shocks. It defaults to showing a break-down by 'Consumption Quintiles' ranging from the 1st Quintile (the poorest), to the 5th Quintile (the least poor). The consumption quintiles were calculated for households based on their 2006 data. 
+
+The movement of households in and out of poverty is often influenced by adverse events which may affect their incomes and livelihoods, force the sale of assets, undermine consumption, or cause families to incur debt. There is a significant variation in the prevalence of some shocks between rounds. In particular drought, which affected over a quarter of the sample households between 2002 and 2006 only affected 7.5% of the households in the succeeding three years. This pattern is important, not only to highlight the unpredictability of shocks (and their severity), but also to interpret the changes in many patterns seen in the data thus far. The second major pattern to note is the widespread effect of inflation in food prices between 2006 and 2009: over three-quarters of the sample households report being affected during this period
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-e1cd7599-c846-454a-82f0-e73adf6afabe&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Shock+and+Adverse+Events+in+2009&config%5Bgraph_type%5D=columnchart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2F2006ConsumptionQuintiles&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-PercentageOfHouseholdsExperiencingShocksAndOrAdverseEventsInPast3Years&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FIndia&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear%5D=2009&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2FtypeOfShockOrAdverseEvent&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-e1cd7599-c846-454a-82f0-e73adf6afabe"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+You can use the configure option to view the data for 2006, or to access a break-down by another variable such as the urban/rural location of the households. 
+
+#### Use this graph
+If you want to display a copy of this graph on your own website, you can use the 'Share' link to get embed code to do that. You can choose whether to allow other people to configure it, or if you just want to make it available in a static form based on the variables you have picked. Don't forget to change the title of the graph to fit the way you have configured it!
+
+### Stunting
+
+Stunting and wasting are important dimensions of child poverty because of the recognised link to other outcomes such as cognitive development. The Young Lives study has surveyed two cohorts of children. The older cohort were aged 8 for our 2002 survey. The younger cohort were aged 8 for our 2009 survey. This allows us to compare how stunting at age 8 has changed in our research sites over the course of time. 
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-99c1ee97-96f6-41b6-95ff-9bd9056df375&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Stunting+at+Age+8&config%5Bgraph_type%5D=columnchart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Flocation&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-StuntingAtAge8PerCent&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FIndia&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-99c1ee97-96f6-41b6-95ff-9bd9056df375"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+### Further statistics
+
+You can find further [statistics for India here](http://data.younglives.org.uk/resource/instances/?init=1&list=instances&m=http%3A%2F%2Fdata.younglives.org.uk&instancesconfig=%7B%22filter%22%3A%5B%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22search%22%2C%22searchText%22%3A%22India%22%7D%2C%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22box%22%2C%22id%22%3A%22filterbox1%22%2C%22property%22%3A%22http%3A%5C%2F%5C%2Fwww.w3.org%5C%2F1999%5C%2F02%5C%2F22-rdf-syntax-ns%23type%22%2C%22isInverse%22%3Afalse%2C%22propertyLabel%22%3A%22type%22%2C%22filter%22%3A%22equals%22%2C%22value1%22%3A%22http%3A%5C%2F%5C%2Fpurl.org%5C%2Flinked-data%5C%2Fcube%23DataStructureDefinition%22%2C%22value2%22%3Anull%2C%22valuetype%22%3A%22uri%22%2C%22literaltype%22%3Anull%2C%22hidden%22%3Afalse%2C%22negate%22%3Afalse%2C%22objects%22%3A%5B%7B%7D%2Cnull%5D%7D%5D%7D).
+
+When you select a 'Data Structure Definition' to view you can select the 'View on Graph' tab to get to the [interactive graph tool](/pages/grapher). The grapher makes a best-guess attempt to display an interesting graph, but you may need to use the configure options to select which dimensions it uses to display a useful graph. 
+
+""".
+
+
+
+
+
+ylp:Vietnam rdfs:label "Vietnam: Country Page";
+        rdfs:comment """This site contains selected findings from the third round of data collection by Young Lives in Vietnam, carried out from late 2009 to early 2010. These statistics include some of the key indicators of childhood poverty and show changes that have taken place in the children’s lives over the course of the Young Lives study.
+
+The Round 3 Survey Report, '[How Do Children Fare in the New Millennium? Initial Findings from Vietnam Round 3 Survey](http://www.younglives.org.uk/our-publications/country-reports/how-do-children-fare-in-the-new-millennium-initial-findings-from-vietnam)', presents many of these statistics in tables along with a narrative description of the study results. From this prototype linked data site you can generate customised graphs of selected statistics and you can access underlying data. 
+
+[Find out more about using data.younglives.org.uk here](/pages/about).
+
+## Selected Findings from Vietnam
+
+### Access to Clean Water
+Access to safe water in the urban sector has largely been universal (99 per cent), and therefore the progress made in 
+supplying safe water was mostly because of the rural sector (which increased from 75 per cent in 2006 to 80 per cent 
+in 2009). 
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-c1c02b67-9c7c-4488-ba38-2380a9530230&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Access+to+Clean+Drinking+Water+by+Location&config%5Bgraph_type%5D=linechart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Flocation&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-VietnamPercentageOfHouseholdsWithAccessToSafeDrinkingWater&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FVietnam&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-c1c02b67-9c7c-4488-ba38-2380a9530230"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+
+#### Use this graph
+If you want to display a copy of this graph on your own website, you can use the 'Share' link to get embed code to do that. You can choose whether to allow other people to configure it, or if you just want to make it available in a static form based on the variables you have picked. Don't forget to change the title of the graph to fit the way you have configured it!
+
+### Wealth Index
+The wealth index used by Young Lives is an important measure of a household’s the socio-economic status, and is calculated as a simple average of the following three components: 1) housing quality; 2) access to a set of consumer durables (scaled); and 3) access to services, expressed as a figure between 0 and 1. 
+
+Over the years from Round 1 to Round 3 (2002 to 2009), the wealth index increased for all the groups of households considered. However, as with poverty, notable disparities between regions and ethnic groups persist. While the average wealth index of the Young Lives households in Da Nang is high, the corresponding figure for the Northern Uplands is just half that. In all the rounds of the surveys, the wealth index is positively associated with the level of schooling of the caregivers  of the Young Lives children, so households with better-educated parents are likely to have higher wealth levels.
+
+The graph below shows the change in the wealth index over time broken down by Maternal Education Level, but using the configure option you can change this to show a break down by location (Urban/Rural), by region, or by Ethnicity. 
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-a372ab41-8f10-4e1a-9122-b566252717b6&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Wealth+Index+Changes+Over+Time+by+Mother's+Education+Level&config%5Bgraph_type%5D=linechart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2FvietnamMotherEducationLevel&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-AverageWealthIndexScore&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FVietnam&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-a372ab41-8f10-4e1a-9122-b566252717b6"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+### Shocks
+Economic and livelihood shocks hit both poor and non-poor households in all the regions in the years to 2009, but the biggest increases happened in the Central Coast region, in both the rural and the urban sectors, perhaps due to the economic slowdown. There is also a general trend of increasing numbers of households reporting environmental shocks, and illness and family death are also frequently reported as adverse events (by 26 per cent of households), reflecting our 
+finding from other Young Lives countries about how significant a burden ill health is for poor families.
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-b82cd758-02b9-47ea-a196-e43b6f37433f&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=&config%5Bgraph_type%5D=columnchart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fregion&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-PercentageOfHouseholdsExperiencingShocksAndOrAdverseEventsInPast4Years&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FVietnam&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear%5D=2009&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2FtypeOfShockOrAdverseEvent&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-b82cd758-02b9-47ea-a196-e43b6f37433f"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+You can configure the graph above to show a particular shock across all years, or to break down the impact of shocks by some other dimension such as Consumption Quintiles (1 = Poorest; 5 = Least Poor). 
+
+### Further statistics
+
+You can find further [statistics for Vietnam here](http://data.younglives.org.uk/resource/instances/?init=1&list=instances&m=http%3A%2F%2Fdata.younglives.org.uk&instancesconfig=%7B%22filter%22%3A%5B%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22search%22%2C%22searchText%22%3A%22Vietnam%22%7D%2C%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22box%22%2C%22id%22%3A%22filterbox1%22%2C%22property%22%3A%22http%3A%5C%2F%5C%2Fwww.w3.org%5C%2F1999%5C%2F02%5C%2F22-rdf-syntax-ns%23type%22%2C%22isInverse%22%3Afalse%2C%22propertyLabel%22%3A%22type%22%2C%22filter%22%3A%22equals%22%2C%22value1%22%3A%22http%3A%5C%2F%5C%2Fpurl.org%5C%2Flinked-data%5C%2Fcube%23DataStructureDefinition%22%2C%22value2%22%3Anull%2C%22valuetype%22%3A%22uri%22%2C%22literaltype%22%3Anull%2C%22hidden%22%3Afalse%2C%22negate%22%3Afalse%2C%22objects%22%3A%5B%7B%7D%2Cnull%5D%7D%5D%7D).
+
+When you select a 'Data Structure Definition' to view you can select the 'View on Graph' tab to get to the [interactive graph tool](/pages/grapher). The grapher makes a best-guess attempt to display an interesting graph, but you may need to use the configure options to select which dimensions it uses to display a useful graph. 
+
+""".
+
+
+
+
+ylp:Peru rdfs:label "Peru: Country Page";
+        rdfs:comment """This site contains selected findings from the third round of data collection by Young Lives in Peru, carried out from late 2009 to early 2010. These statistics include some of the key indicators of childhood poverty and show changes that have taken place in the children’s lives over the course of the Young Lives study.
+
+The Round 3 Survey Report, '[Tracking Disparities: Who Gets Left Behind? Initial Findings from Peru Round 3 Survey](http://www.younglives.org.uk/our-publications/country-reports/tracking-disparities-who-gets-left-behind-initial-findings-from-peru)', presents many of these statistics in tables along with a narrative description of the study results. From this prototype linked data site you can generate customised graphs of selected statistics and you can access underlying data. 
+
+[Find out more about using data.younglives.org.uk here](/pages/about).
+
+## Selected Findings from Peru
+
+### Access to Clean Water and Sanitation
+Coverage of clean water and sanitation  has increased sharply among the sample households. The improvement in access to safe drinking water occurred mostly between 2006 and 2009, while the improvements in sanitation occurred both between 2002 and 2006 as well as between 2006 and 2009. Access to sanitation shows a greater improvement for households living in rural areas, those with less educated mothers and those where mothers are of indigenous origin.
+
+The first interactive graph below shows the increase in access to clean water, and the second shows increases in access to sanitation. You can configure these graphs to break down statistics by a number of different dimensions. 
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-ee1802ff-31e6-49cf-9481-d08d7847e5b0&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Access+to+Safe+Drinking+Water+by+Region&config%5Bgraph_type%5D=linechart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fregion&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-PeruPercentageOfHouseholdsWithAccessToSafeDrinkingWater&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FPeru&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-ee1802ff-31e6-49cf-9481-d08d7847e5b0"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-0b6c045f-8452-40c9-bb46-da44f8768dd7&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Access+to+Sanitation+by+Location&config%5Bgraph_type%5D=linechart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Flocation&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-PeruPercentageOfHouseholdsWithAccessToSanitation&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FAll_cohorts&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FPeru&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-0b6c045f-8452-40c9-bb46-da44f8768dd7"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+
+#### Use this graph
+If you want to display a copy of this graph on your own website, you can use the 'Share' link to get embed code to do that. You can choose whether to allow other people to configure it, or if you just want to make it available in a static form based on the variables you have picked. Don't forget to change the title of the graph to fit the way you have configured it!
+
+### Children's Time Use
+In the Younger Cohort very few children are engaged in paid work. However, most (71 per cent) do household chores, on which they spend on average a bit more than an hour a day. In rural areas a higher percentage of children care for family members, do householdchores and engage in unpaid work on the family farm or business. They also spend less time studying than children in urban areas. Similar patterns can be found when one focuses on children whose mothers are of 
+indigenous origin or children of less educated mothers.
+
+Choose configure on the graph below to explore data for different years for a particular type of time use, or to access a break dow of the data by different dimensions. 
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-ff01f07c-d5be-454b-abd6-966dc6b1ec57&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Children's+Time+Use+by+Location&config%5Bgraph_type%5D=columnchart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fgender&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-TimeUseAverageHour&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcohort%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FOld_cohort&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FPeru&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear%5D=2009&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2FhowTimeIsSpent&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-ff01f07c-d5be-454b-abd6-966dc6b1ec57"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+### Subjective Wellbeing
+In keeping with its multidimensional approach to poverty, Young Lives assesses children’s subjective well-being. 
+The results are quite different in the Younger and Older Cohorts, suggesting that the developmental stages 
+they are experiencing are linked with their responses. In general, the Younger Cohort reported higher self evaluations of their own lives. There were almost no differences between boys and girls but a large difference between children from households in the bottom quintile of consumption who were over twice as likely to report having a ‘bad life’ compared with children from households in the top consumption quintile. There were also differences linked with maternal education and mother’s first language, as well as area of residence,favouring better-educated, Spanish-speaking and urban children. For the Older Cohort there were differences favouring girls and children of mothers with higher education. 
+
+<iframe
+        src="http://data.younglives.org.uk/extensions/younglives/graphing/grapher/grapher.html?dsd=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-05e324a1-4f2e-4cd9-b862-f8236f48dd09&sparql_endpoint=http%3A%2F%2Fdata.younglives.org.uk%2Fservice%2Fsparql&config%5Bgraph_title%5D=Subjective+Wellbeing+Positions+by+Gender+(2009%2C+Older+Cohort)&config%5Bgraph_type%5D=columnchart&config%5BxDimension%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fgender&config%5ByMeasure%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fmeasure-SubjectiveWellbeingPercentageInALadderPositionGroup&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fcountry%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FPeru&config%5Bfixed%5D%5Bhttp%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2Fyear%5D=2009&config%5BxGroup%5D=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2Fstructure%2Fcomponents%2FladderPositionGroup&shareable=true&configurable=true&r=http%3A%2F%2Fdata.younglives.org.uk%2Fdata%2Fstatistics%2FSumaryStatistics-05e324a1-4f2e-4cd9-b862-f8236f48dd09"
+        style="width:633px;height:500px;"
+        scrolling="no"
+        frameborder="0"></iframe>
+
+### Further statistics
+
+You can find further [statistics for Peru here](http://data.younglives.org.uk/resource/instances/?init=1&list=instances&m=http%3A%2F%2Fdata.younglives.org.uk&instancesconfig=%7B%22filter%22%3A%5B%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22search%22%2C%22searchText%22%3A%22Peru%22%7D%2C%7B%22action%22%3A%22add%22%2C%22mode%22%3A%22box%22%2C%22id%22%3A%22filterbox1%22%2C%22property%22%3A%22http%3A%5C%2F%5C%2Fwww.w3.org%5C%2F1999%5C%2F02%5C%2F22-rdf-syntax-ns%23type%22%2C%22isInverse%22%3Afalse%2C%22propertyLabel%22%3A%22type%22%2C%22filter%22%3A%22equals%22%2C%22value1%22%3A%22http%3A%5C%2F%5C%2Fpurl.org%5C%2Flinked-data%5C%2Fcube%23DataStructureDefinition%22%2C%22value2%22%3Anull%2C%22valuetype%22%3A%22uri%22%2C%22literaltype%22%3Anull%2C%22hidden%22%3Afalse%2C%22negate%22%3Afalse%2C%22objects%22%3A%5B%7B%7D%2Cnull%5D%7D%5D%7D).
+
+When you select a 'Data Structure Definition' to view you can select the 'View on Graph' tab to get to the [interactive graph tool](/pages/grapher). The grapher makes a best-guess attempt to display an interesting graph, but you may need to use the configure options to select which dimensions it uses to display a useful graph. 
+
+""".
