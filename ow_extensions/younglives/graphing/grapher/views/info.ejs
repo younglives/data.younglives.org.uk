@@ -1,0 +1,20 @@
+<div class="inner">
+    <h3>Dimensions</h3>
+    <ul class="dimensions">
+        <% $.each(dsd_components.getDimensions(), function(k, dim){ %>
+            <li>
+                <h4><%= dim.label %></h4>
+                <% if (dim.comment) { %><p><%= dim.comment %></p><% } %>
+            </li>
+        <% }) %>
+    </ul>
+    <h3>Measures</h3>
+    <ul class="measures">
+        <% $.each(dsd_components.getMeasures(), function(k, mea){ %>
+            <li>
+                <h4><%= mea.label %></h4>
+                <% if (mea.comment) { %><p><%= mea.comment %></p><% } %>
+            </li>
+        <% }) %>
+    </ul>
+</div>

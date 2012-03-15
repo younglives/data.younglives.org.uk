@@ -6,8 +6,8 @@ steal(
     'resources/jquery.view.ejs', // EJS View Templates
     'resources/jquerytools/src/tabs/tabs.js', //jquery.tools Tabs
     'resources/jquery.sparql.js', // SPARQL Query Generation
-    //{path:'resources/jquery.fixture.js',
-    // ignore:true}, // Add fixtures in development mode
+    {path:'resources/jquery.fixture.js',
+     ignore:true}, // Add fixtures in development mode
     'resources/urlEncode.js' // URLEncoding Utility
 
 )
@@ -103,6 +103,7 @@ steal(
                         $this.bind('graphDataLoaded',
                             function(){
                                 $this.yl_grapher('drawGraph');
+                                $this.yl_grapher('drawInfo');
                                 // Set up the configurator if available
                                 if (settings.configurable) {
                                     $this.yl_grapher('initConfigurator');
@@ -144,16 +145,17 @@ steal(
                     .prefix('qb', ns.qb)
                     .prefix('rdfs', ns.rdfs)
                     .prefix('rdf', ns.rdf)
-                    .select(['?dataset', '?obs', '?propertyLabel',
+                    .select(['?dataset', '?datasetLabel', '?obs', '?propertyLabel',
                                  '?valueLabel', '?value', '?property',
                                  '?propertyType', '?propertyOrder'])
                     .where('?dataset', 'qb:structure', '<' + settings.dsd + '>')
                     .where('?obs', 'qb:dataSet', '?dataset')
                     .where('?obs', '?property', '?value')
                     .where('?property', 'rdf:type', '?propertyType')
-                    //.where('?propertyType', 'rdfs:subClassOf', 'qb:ComponentProperty')
                     .where('?property', 'rdfs:label', '?propertyLabel')
                     .optional()
+                        .where('?dataset', 'rdfs:label', '?datasetLabel')
+                        .where('?property', 'rdfs:comment', '?propertyComment')
                         .where('?propertyClass', 'qb:dimension', '?property')
                         .where('?propertyClass', 'qb:order', '?propertyOrder')
                         .where('?value', 'rdfs:label', '?valueLabel')
@@ -215,6 +217,7 @@ steal(
                                    label:ob.propertyLabel.value,
                                    order:ob.propertyOrder?ob.propertyOrder.value:null,
                                    uri:ob.property.value,
+                                   comment:ob.propertyComment?ob.propertyComment.value:null,
                                    type: typeof(cast_val),
                                    observations:[]
                                 };
@@ -429,15 +432,24 @@ steal(
                     $.error('No Grapher plugin has been registered with an id of ' + settings.config.graph_type);
                 }
             }, //END drawGraph
+            
+            /**
+             * Draw information about the data into the info tab
+             */
+            drawInfo: function(){
+              var $this = $(this),
+                data = $this.data('grapher'),
+                infotab = $('#info', $this);
+                infotab.html($.View('views/info.ejs', data));
+            },
 
             /**
              *Set up the sharing interface
              */
             initSharing: function(){
-                var $this = $(this)
-                        data = $(this).data('grapher');
-
-                var shareui = $('#share', $this);
+                var $this = $(this),
+                    data = $this.data('grapher'),
+                    shareui = $('#share', $this);
 
                 // Call for an update of the sharing code whenever
                 // an input element changes
