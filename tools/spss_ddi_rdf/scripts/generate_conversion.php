@@ -24,12 +24,14 @@ echo "Processing ";
 if ($handle = opendir($path."/../data/spss/")) {
 
     while (false !== ($file = readdir($handle))) {
-		$file_parts = pathinfo($file);
-		if($file_parts['extension'] == "sav") {
-			$name = $file_parts['filename'];
-			$instructions .= str_replace("~NAME~",$name,str_replace("~FILE~",$file,$r_function_template));
-			$n++;
-			echo ".";
+		if(strlen($file) > 2) {
+			$file_parts = pathinfo($file);
+			if($file_parts['extension'] == "sav") {
+				$name = $file_parts['filename'];
+				$instructions .= str_replace("~NAME~",$name,str_replace("~FILE~",$file,$r_function_template));
+				$n++;
+				echo ".";
+			}
 		}
     }
     closedir($handle);

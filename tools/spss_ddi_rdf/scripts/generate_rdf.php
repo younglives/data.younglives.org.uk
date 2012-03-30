@@ -26,7 +26,7 @@ if(!$ns['studymeta']) { log_message("Please make sure config.csv includes a name
 if(!$ns['var']) { log_message("Please make sure config.csv includes a namespace for 'var' to profile a prefix for variables",1);}
 
 //Get our list of files and now loop through them to process
-$files = directory_list();
+$files = directory_list("../data/ddi/");
 
 foreach($files as $file => $name) {
 	
@@ -89,19 +89,27 @@ function parse_file($filename, $name, $context, $ns, &$questions, &$codelists) {
 	$xpath->registerNamespace("s","ddi:studyunit:3_0");
 	$xpath->registerNamespace("l","ddi:logicalproduct:3_0");
 	$variables = $dom->getElementsByTagName("Variable");
+	
+	//Add details of the file this came from. Replace - with /
+	$questions->add(new Statement(resource_or_literal($ns['*'].$name,$ns),$RDF_type,resource_or_literal($ns['*']."studyFile",$ns)));
+	$questions->add(new Statement(resource_or_literal($ns['*'].$name,$ns),$RDFS_label,resource_or_literal(str_replace("-","/",$name))));
+	$questions->add(new Statement(resource_or_literal($ns['*'].$name,$ns),$RDFS_comment,resource_or_literal("Young Lives raw data is archived with the UK Data Archive in SPSS Format")));
+	//Add our additional triples to the file also
+	foreach(array_merge((array)$context['*'], (array)$context[$name]) as $additional) {
+		$questions->add(new Statement(resource_or_literal($ns['*'].$name,$ns),resource_or_literal($additional['p'],$ns),resource_or_literal($additional['o'],$ns)));
+	}
+	
+	
 
 	foreach($variables as $variable) {
 		$var_name = $variable->getElementsByTagName("Name")->item(0)->nodeValue;
-			log_message(" - variable: {$var_name}");
+			log_message(" $filename - variable: {$var_name}");
 		$var_label = $variable->getElementsByTagName("Label")->item(0)->nodeValue;
 		$var_definition = $variable->getElementsByTagName("VariableDefinition")->item(0)->nodeValue;
 		$model_var = new Resource($ns['var'].$var_name);
 		
 		//$questions->add(new Statement($model_var,$RDF_type,$QB_MeasureProperty));
 		$questions->add(new Statement($model_var,$RDF_type,resource_or_literal($ns['*'].'Variable',$ns)));
-		if(strpos("?",$var_label)) { 
-			$questions->add(new Statement($model_var,$RDF_type,resource_or_literal($ns['*'].'Question',$ns)));			
-		}
 		$questions->add(new Statement($model_var,$SKOS_notation,new Literal($var_name)));
 		//$questions->add(new Statement($model_var,$RDF_type,$RDF_Property));
 		$questions->add(new Statement($model_var,$RDFS_label,new Literal($var_label,"en")));
@@ -148,7 +156,7 @@ function parse_file($filename, $name, $context, $ns, &$questions, &$codelists) {
 
 function parse_codelist(&$xpath,$representation_id,$context,$ns,&$questions,&$codelists) {
 	global $category_cache;
-	include("models.php");
+	include("../../shared_functions/models.php");
 	log_message("Checking for codelist ". $representation_id,0);
 	$codelist_prefix = $ns['*']."codelist-";
 	$code_prefix = $ns['*']."code-";

@@ -37,7 +37,7 @@ function directory_list($directory = null, $restrict_type = "xml") {
  * If neither : or http are present, assume we have a literal. 
  * This function checks if we have a full URI already, and if not tries to created it. 
  */ 
-function resource_or_literal($resource,$ns) {
+function resource_or_literal($resource,$ns = null) {
 
 	if(stripos(" ".$resource,"http")) { 
 		$output = new Resource($resource);	
@@ -115,5 +115,5 @@ function add_namespaces($model,$ns) {
  * Prepare a variable string to use
  */
 function format_var_string($string) {
-   return str_replace("%","pc",str_replace("\"","", str_replace("/","",str_replace("'","",str_replace(",","-",str_replace("(","-",str_replace(")","-",str_replace(" ","",ucwords($string)))))))));
+   return str_replace("&","",str_replace(".","",str_replace("%","pc",str_replace("\"","", str_replace("/","",str_replace("'","",str_replace(",","-",str_replace("(","-",str_replace(")","-",str_replace(" ","",ucwords($string)))))))))));
 }
