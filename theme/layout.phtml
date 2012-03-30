@@ -9,9 +9,11 @@
  */
 
 ?>
-<?php echo $this->doctype('XHTML1_STRICT') ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php echo $this->doctype('XHTML1_TRANSITIONAL') ?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB">
 <head xmlns:update="http://ns.aksw.org/update/">
+	<meta name="description" content="Young Lives Open Data including country summary reports"/>
+	<meta name="language" content="en-GB"/>
     <?php echo $this->headTitle() ?>
     <?php echo $this->headMeta() ?>
     <?php echo $this->headLink() ?>
@@ -33,7 +35,7 @@
         <meta name="Keywords" content="<?php echo $this->metaKeywords ?>" />
     <?php }  ?>
     
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     
     <!-- ontowiki stylesheets -->
     <link rel="stylesheet" href="<?php echo $this->themeUrlBase ?>styles/default.css" type="text/css" media="screen" />
@@ -98,18 +100,18 @@
     	<div class="center">
         
     		<h1>
-            	<span>Young Lives</span>
-                <a href="http://www.younglives.org.uk" title="">
-                	<img src="<?php echo $this->themeUrlBase ?>images/young/logo.png" alt="" />
+            	<span>Young Lives Data</span>
+                <a href="/" title="">
+                	<img src="<?php echo $this->themeUrlBase ?>images/young/data_logo.png" alt="" />
                 </a>
             </h1>
             <div id="young-header-right">
                 <ul id="nav">
-                    <li><a href="http://www.younglives.org.uk/who-we-are">Who we are</a></li>
-                    <li><a href="http://www.younglives.org.uk/what-we-do">What we do</a></li>
-                    <li><a href="http://www.younglives.org.uk/where-we-work">Where we work</a></li>
-                    <li><a href="http://www.younglives.org.uk/our-themes">Our themes</a></li>
-                    <li><a href="http://www.younglives.org.uk/our-publications">Our publications</a></li>
+					<li><a href="/pages/Ethiopia">Ethiopia</a></li>
+					<li><a href="/pages/India">India</a></li>
+					<li><a href="/pages/Peru">Peru</a></li>
+					<li><a href="/pages/Vietnam">Vietnam</a></li>
+					<li><a href="http://www.younglives.org.uk" target="_blank">Young Lives</a></li>
                 </ul>
             </div>
          	<div class="clear"></div>
@@ -237,10 +239,10 @@
                     <p>Discover more about the unique multidisciplinary nature of the Young Lives project and its work&#13;</p>
                     
                     <ul class="arrow-list">
-                        <li><a href="http://www.younglives.org.uk/what-we-do/our-policy-work" title="Our policy work">Our policy work</a></li>
-                        <li><a href="http://www.younglives.org.uk/what-we-do/research-methods" title="Research methods">Research methods</a></li>
-                        <li><a href="http://www.younglives.org.uk/what-we-do/access-our-data" title="Access our data">Access our data</a></li>
-                        <li class="last"><a href="http://www.younglives.org.uk/what-we-do/childrens-voices" title="Children's voices">Children's voices</a></li>
+                        <li><a target="_blank" href="http://www.younglives.org.uk/what-we-do/our-policy-work" title="Our policy work">Our policy work</a></li>
+                        <li><a target="_blank" href="http://www.younglives.org.uk/what-we-do/research-methods" title="Research methods">Research methods</a></li>
+                        <li><a target="_blank" href="http://www.younglives.org.uk/what-we-do/access-our-data" title="Access our data">Access our data</a></li>
+                        <li class="last"><a target="_blank" href="http://www.younglives.org.uk/what-we-do/childrens-voices" title="Children's voices">Children's voices</a></li>
                     </ul>
                 </div>
             </div>
@@ -252,10 +254,10 @@
                     <p>Find out more about our 4 diverse cultural, geographic, economic and political study contexts </p>
     
                     <ul class="arrow-list">
-                        <li><a href="http://www.younglives.org.uk/where-we-work/ethiopia" title="Ethiopia">Ethiopia</a></li>
-                        <li><a href="http://www.younglives.org.uk/where-we-work/india" title="India (Andhra Pradesh)">India (Andhra Pradesh)</a></li>
-                        <li><a href="http://www.younglives.org.uk/where-we-work/peru" title="Peru">Peru</a></li>
-                        <li class="last"><a href="http://www.younglives.org.uk/where-we-work/vietnam" title="Vietnam">Vietnam</a></li>
+                        <li><a target="_blank" href="http://www.younglives.org.uk/where-we-work/ethiopia" title="Ethiopia">Ethiopia</a></li>
+                        <li><a target="_blank" href="http://www.younglives.org.uk/where-we-work/india" title="India (Andhra Pradesh)">India (Andhra Pradesh)</a></li>
+                        <li><a target="_blank" href="http://www.younglives.org.uk/where-we-work/peru" title="Peru">Peru</a></li>
+                        <li class="last"><a target="_blank" href="http://www.younglives.org.uk/where-we-work/vietnam" title="Vietnam">Vietnam</a></li>
                     </ul>
             	</div>
             </div>
@@ -267,10 +269,10 @@
                     <p><img src="http://www.younglives.org.uk/young-lives/box3Image" alt="Young Lives" title="Young Lives" height="87" width="222" /></p> 
                     <p>Explore our work by themes that are central to children and young people&#8217;s lives in the modern world</p>
                     <ul class="arrow-list">
-                        <li><a href="http://www.younglives.org.uk/our-themes/dynamics-of-childhood-poverty" title="Dynamics of childhood poverty">Dynamics of childhood poverty</a></li>
-                        <li><a href="http://www.younglives.org.uk/our-themes/childrens-experiences-of-poverty" title="Children's experiences of poverty">Children's experiences of poverty</a></li>
-                        <li><a href="http://www.younglives.org.uk/our-themes/school-work-time-use" title="Schooling, time-use and life transitions">Schooling, time-use and life transitions</a></li>
-                        <li class="last"><a href="http://www.younglives.org.uk/our-themes/cross-cutting-analysis" title="Cross-cutting analysis">Cross-cutting analysis</a></li>
+                        <li><a target="_blank" href="http://www.younglives.org.uk/our-themes/dynamics-of-childhood-poverty" title="Dynamics of childhood poverty">Dynamics of childhood poverty</a></li>
+                        <li><a target="_blank" href="http://www.younglives.org.uk/our-themes/childrens-experiences-of-poverty" title="Children's experiences of poverty">Children's experiences of poverty</a></li>
+                        <li><a target="_blank" href="http://www.younglives.org.uk/our-themes/school-work-time-use" title="Schooling, time-use and life transitions">Schooling, time-use and life transitions</a></li>
+                        <li class="last"><a target="_blank" href="http://www.younglives.org.uk/our-themes/cross-cutting-analysis" title="Cross-cutting analysis">Cross-cutting analysis</a></li>
                     </ul>
                 </div>
             </div>
@@ -280,23 +282,23 @@
                 <h3>Find out more</h3>
                     <ul id="young-tools">
                          <li id="more-news">
-                            <a href="http://www.younglives.org.uk/what-we-do/news-and-events" title="News &amp; Events">
+                            <a target="_blank" href="http://www.younglives.org.uk/what-we-do/news-and-events" title="News &amp; Events">
                                 News &amp; Events
                             </a>
                         </li> 
                         <li id="more-newsletter">
-                            <a href="http://www.younglives.org.uk/who-we-are/find-out-more" title="E-newsletter / e-alerts">
+                            <a target="_blank" href="http://www.younglives.org.uk/who-we-are/find-out-more" title="E-newsletter / e-alerts">
                                 E-newsletter / e-alerts
                             </a>
         
                         </li> 
                         <li id="more-podcasts">
-                            <a href="http://www.younglives.org.uk/who-we-are/find-out-more" title="iTunes U podcasts">
+                            <a target="_blank" href="http://www.younglives.org.uk/who-we-are/find-out-more" title="iTunes U podcasts">
                                 iTunes U podcasts
                             </a>
                         </li> 
                         <li id="more-contact">
-                            <a href="http://www.younglives.org.uk/who-we-are/contact-details" title="Contact us" accesskey="6">
+                            <a target="_blank" href="http://www.younglives.org.uk/who-we-are/contact-details" title="Contact us" accesskey="6">
                                 Contact us
                             </a>
                         </li> 

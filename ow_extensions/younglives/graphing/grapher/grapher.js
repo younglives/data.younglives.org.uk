@@ -1,19 +1,21 @@
 steal(
-    {path:'https://www.google.com/jsapi'}, //Google JS Api
-    'resources/jquery-1.6.4.js', // Use jQuery
-    'resources/jquery.ba-bbq.js', // Ben Allmans back button and query parser
-    'resources/underscore.js', // Underscore.js
-    'resources/jquery.view.ejs', // EJS View Templates
-    'resources/jquerytools/src/tabs/tabs.js', //jquery.tools Tabs
-    'resources/jquery.sparql.js', // SPARQL Query Generation
-//    {path:'resources/jquery.fixture.js',
-//     ignore:true}, // Add fixtures in development mode
-    'resources/urlEncode.js' // URLEncoding Utility
+    //{src:'https://www.google.com/jsapi', type:'js'}, //Google JS Api
+    '//grapher/resources/jquery-1.7.2.min.js' // Use jQuery
+)
+.then(
+    '//grapher/resources/jquery.ba-bbq.js', // Ben Allmans back button and query parser
+    '//grapher/resources/underscore.js', // Underscore.js
+    '//grapher/resources/jquery.view.ejs.js', // EJS View Templates
+    '//grapher/resources/jquerytools/src/tabs/tabs.js', //jquery.tools Tabs
+    '//grapher/resources/jquery.sparql.js', // SPARQL Query Generation
+    //{path:'resources/jquery.fixture.js',
+    // ignore:true}, // Add fixtures in development mode
+    '//grapher/resources/urlEncode.js' // URLEncoding Utility
 
 )
-.css(
-    'styles/grapher',   // Use our own CSS
-    'styles/tabs-accordion'   // Tab styling
+.then(
+    '//grapher/styles/grapher.css',   // Use our own CSS
+    '//grapher/styles/tabs-accordion.css'   // Tab styling
 )
 .then( function(){
     (function($){
@@ -43,7 +45,7 @@ steal(
             shareable: true,
             configurable: true,
             chart_options: {'height': 400,
-                                     'width': 630,
+                                     'width': 629,
                                      'chartArea': {left:40,top:35,width:"440",height:"300"}
                                     },
             measureType: "MeasureProperty",
@@ -103,7 +105,6 @@ steal(
                         $this.bind('graphDataLoaded',
                             function(){
                                 $this.yl_grapher('drawGraph');
-                                $this.yl_grapher('drawInfo');
                                 // Set up the configurator if available
                                 if (settings.configurable) {
                                     $this.yl_grapher('initConfigurator');
@@ -113,7 +114,7 @@ steal(
                                         // redraw the graph
                                         $this.yl_grapher('drawGraph');
                                         // rewrite the title
-                                        $('#chart_title span', $this).replaceWith($.View('views/chart_pane_title.ejs', settings));
+                                        $('#chart_title', $this).html($.View('views/chart_pane_title.ejs', settings));
                                         // switch to the graph pane
                                         $('.accordion', $this).data('tabs').click(0);
                                     });
@@ -145,17 +146,16 @@ steal(
                     .prefix('qb', ns.qb)
                     .prefix('rdfs', ns.rdfs)
                     .prefix('rdf', ns.rdf)
-                    .select(['?dataset', '?datasetLabel', '?obs', '?propertyLabel',
+                    .select(['?dataset', '?obs', '?propertyLabel',
                                  '?valueLabel', '?value', '?property',
                                  '?propertyType', '?propertyOrder'])
                     .where('?dataset', 'qb:structure', '<' + settings.dsd + '>')
                     .where('?obs', 'qb:dataSet', '?dataset')
                     .where('?obs', '?property', '?value')
                     .where('?property', 'rdf:type', '?propertyType')
+                    //.where('?propertyType', 'rdfs:subClassOf', 'qb:ComponentProperty')
                     .where('?property', 'rdfs:label', '?propertyLabel')
                     .optional()
-                        .where('?dataset', 'rdfs:label', '?datasetLabel')
-                        .where('?property', 'rdfs:comment', '?propertyComment')
                         .where('?propertyClass', 'qb:dimension', '?property')
                         .where('?propertyClass', 'qb:order', '?propertyOrder')
                         .where('?value', 'rdfs:label', '?valueLabel')
@@ -166,253 +166,241 @@ steal(
                     + '?query='
                     + $.URLEncode(squery.serialiseQuery());
 
-                var fetch = $.when(
-                    $.Deferred( // Get the google packages we need
-                        function(deferred){
-                            google.load('visualization', '1', {'packages':['corechart', 'table']});
-                            google.setOnLoadCallback(function(){ deferred.resolve(); });
-                        }
-                    ),
-                    $.Deferred(function(deferred){ // Fetch our observation data
-                        $.ajax({
-                            url: qurl,
-                            dataType: 'json',
-                            method:'GET',
-                            success: function(observations){
-                                data.raw_observations = observations;
-                                deferred.resolve();
-                            },
-                            fixture: 'fixtures/sparql_result.json'
-                        });
-                    })
-                );
 
-                // Wait for completion of the fetch before proceeding
-                fetch.done(
-                    function(){
-                        // Build stores of Observations, Dimensions and Measures
-                        var obs = {};
-                        var dsd_comps = {};
-                        $.each(data.raw_observations.bindings, function(i, ob) {
-                            // Populate the Observation
-                            if (!obs[ob.obs.value]) {
-                                obs[ob.obs.value] = {};
-                            }
-                            var cast_val = $.fn.yl_grapher.sparqlCaster(ob.value);
-                            obs[ob.obs.value].dataset = ob.dataset.value;
-                            obs[ob.obs.value].uri = ob.obs.value;
-                            obs[ob.obs.value][ob.property.value] = {
-                                value:cast_val,
-                                label:ob.valueLabel?ob.valueLabel.value:null
-                            };
-                            // Ensure we've got the measure or dimension stores
-                            var store = dsd_comps[ob.propertyType.value];
-                            if(!store) {
-                                store = dsd_comps[ob.propertyType.value] = {};
-                            }
-                            // Ensure we've got an entry in the appropriate store
-                            var entry = store[ob.property.value];
-                            if(!entry) {
-                                entry = dsd_comps[ob.propertyType.value][ob.property.value] = {
-                                   label:ob.propertyLabel.value,
-                                   order:ob.propertyOrder?ob.propertyOrder.value:null,
-                                   uri:ob.property.value,
-                                   comment:ob.propertyComment?ob.propertyComment.value:null,
-                                   type: typeof(cast_val),
-                                   observations:[]
-                                };
-                            }
-                            // Now add to its known values
-                            entry.observations.push(ob);
-                        });
+		$.ajax({
+		    url: qurl,
+		    dataType: 'json',
+		    method:'GET',
+		    success: function(observations){
+			data.raw_observations = observations;
+			processResult();
+		    },
+		    fixture: 'fixtures/sparql_result.json'
+		});
+                  
+		function processResult(){
+		    // Build stores of Observations, Dimensions and Measures
+		    var obs = {};
+		    var dsd_comps = {};
+		    $.each(data.raw_observations.bindings, function(i, ob) {
+			// Populate the Observation
+			if (!obs[ob.obs.value]) {
+			    obs[ob.obs.value] = {};
+			}
+			var cast_val = $.fn.yl_grapher.sparqlCaster(ob.value);
+			obs[ob.obs.value].dataset = ob.dataset.value;
+			obs[ob.obs.value].uri = ob.obs.value;
+			obs[ob.obs.value][ob.property.value] = {
+			    value:cast_val,
+			    label:ob.valueLabel?ob.valueLabel.value:null
+			};
+			// Ensure we've got the measure or dimension stores
+			var store = dsd_comps[ob.propertyType.value];
+			if(!store) {
+			    store = dsd_comps[ob.propertyType.value] = {};
+			}
+			// Ensure we've got an entry in the appropriate store
+			var entry = store[ob.property.value];
+			if(!entry) {
+			    entry = dsd_comps[ob.propertyType.value][ob.property.value] = {
+			       label:ob.propertyLabel.value,
+			       order:ob.propertyOrder?ob.propertyOrder.value:null,
+			       uri:ob.property.value,
+			       type: typeof(cast_val),
+			       observations:[]
+			    };
+			}
+			// Now add to its known values
+			entry.observations.push(ob);
+		    });
 
-                        // Enhance dsd_comps with utility functions
-                        /**
-                         * Return a sorted list of dsd components
-                         * of the supplied type
-                         * The sort order is Alpahbetical by component label
-                         */
-                        dsd_comps.sortType = function(type){
-                            return _.sortBy(
-                                            _.values(this[ns.qb + type]),
-                                            function(comp){ return comp.label?comp.label:comp.uri; }
-                                        );
-                        };
+		    // Enhance dsd_comps with utility functions
+		    /**
+		     * Return a sorted list of dsd components
+		     * of the supplied type
+		     * The sort order is Alpahbetical by component label
+		     */
+		    dsd_comps.sortType = function(type){
+			return _.sortBy(
+					_.values(this[ns.qb + type]),
+					function(comp){ return comp.label?comp.label:comp.uri; }
+				    );
+		    };
 
-                        /**
-                         * Retrieve a component specification by URI
-                         */
-                        dsd_comps.getComponent = function(componentURI){
-                            // Locate the component scan all our subobjects
-                            var comps = Array.prototype.concat.apply([], _.map(this, function(v){
-                                        return _.values(v);
-                                })
-                            );
-                            // Find the coponent object we're looking for
-                            var comp = _.detect(
-                                    comps,
-                                    function(val){
-                                        return val.uri == componentURI;
-                                    }
-                            );
-                            return comp;
-                        }
+		    /**
+		     * Retrieve a component specification by URI
+		     */
+		    dsd_comps.getComponent = function(componentURI){
+			// Locate the component scan all our subobjects
+			var comps = Array.prototype.concat.apply([], _.map(this, function(v){
+				    return _.values(v);
+			    })
+			);
+			// Find the coponent object we're looking for
+			var comp = _.detect(
+				comps,
+				function(val){
+				    return val.uri == componentURI;
+				}
+			);
+			return comp;
+		    }
 
-                        /**
-                         * Return an array of values for a dsd component
-                         */
+		    /**
+		     * Return an array of values for a dsd component
+		     */
 
-                        dsd_comps.valuesFor = _.memoize(function(componentURI) {
-                            var comp = this.getComponent(componentURI);
+		    dsd_comps.valuesFor = _.memoize(function(componentURI) {
+			var comp = this.getComponent(componentURI);
 
-                            return  _.map(comp.observations, function(ob){
-                                return {label:ob.valueLabel?ob.valueLabel.value:null,
-                                                value: $.fn.yl_grapher.sparqlCaster(ob.value)};
-                            });
-                        });
+			return  _.map(comp.observations, function(ob){
+			    return {label:ob.valueLabel?ob.valueLabel.value:null,
+					    value: $.fn.yl_grapher.sparqlCaster(ob.value)};
+			});
+		    });
 
-                        /**
-                         * Return an array of unique values for a dsd component
-                         */
-                        dsd_comps.uniqueValuesFor = function(componentURI) {
-                            return _.sortBy(
-                                _.uniq(
-                                    this.valuesFor(componentURI),
-                                    false,
-                                   function(val){return val.value; }
-                                ),
-                                //sort on the value which includes sorting order numbers
-                                function(val) {return val.value;}
-                            );
-                        }
+		    /**
+		     * Return an array of unique values for a dsd component
+		     */
+		    dsd_comps.uniqueValuesFor = function(componentURI) {
+			return _.sortBy(
+			    _.uniq(
+				this.valuesFor(componentURI),
+				false,
+			       function(val){return val.value; }
+			    ),
+			    //sort on the value which includes sorting order numbers
+			    function(val) {return val.value;}
+			);
+		    }
 
-                        /**
-                         *Get the Label for a value for a component
-                         *
-                         *@param valuri {String} Value URI
-                         *@param componentURI {String} Component URI
-                         */
-                        dsd_comps.getValueLabel = function(val, componentURI) {
-                            var values = this.valuesFor(componentURI);
-                            var obj =  _.detect(values, function(item){return item.value === val;});
-                            if (obj.label) { return obj.label; }
-                            else {
-                                // Get the component label and append the val to it
-                                return this.getComponent(componentURI).label + ':' + val.toString();
-                            }
-                        }
+		    /**
+		     *Get the Label for a value for a component
+		     *
+		     *@param valuri {String} Value URI
+		     *@param componentURI {String} Component URI
+		     */
+		    dsd_comps.getValueLabel = function(val, componentURI) {
+			var values = this.valuesFor(componentURI);
+			var obj =  _.detect(values, function(item){return item.value === val;});
+			if (obj.label) { return obj.label; }
+			else {
+			    // Get the component label and append the val to it
+			    return this.getComponent(componentURI).label + ':' + val.toString();
+			}
+		    }
 
-                        /**
-                         * Returns true if all observations in the set have a value for the componets
-                         */
-                        dsd_comps.isCoreComponent = function(componentURI) {
-                            return (this.valuesFor(componentURI).length === _.keys(obs).length);
-                        }
+		    /**
+		     * Returns true if all observations in the set have a value for the componets
+		     */
+		    dsd_comps.isCoreComponent = function(componentURI) {
+			return (this.valuesFor(componentURI).length === _.keys(obs).length);
+		    }
 
-                        dsd_comps.getMeasures = function () {
-                            return _.sortBy(
-                                    this["http://purl.org/linked-data/cube#MeasureProperty"],
-                                    function(comp){ return comp.order; }
-                                );
-                        },
+		    dsd_comps.getMeasures = function () {
+			return _.sortBy(
+				this["http://purl.org/linked-data/cube#MeasureProperty"],
+				function(comp){ return comp.order; }
+			    );
+		    },
 
-                        /**
-                         * @function getDimensions
-                         * @return {Object}
-                         */
-                        dsd_comps.getDimensions = function () {
-                            return this["http://purl.org/linked-data/cube#DimensionProperty"];
-                        },
+		    /**
+		     * @function getDimensions
+		     * @return {Object}
+		     */
+		    dsd_comps.getDimensions = function () {
+			return this["http://purl.org/linked-data/cube#DimensionProperty"];
+		    },
 
-                        /**
-                         * @ function getGroupedDimensions
-                         * Return all the dsd components which are dimensions
-                         * @param {String} type 'core' or 'optional' get just an arry
-                         * @return {Object}
-                         */
-                        dsd_comps.getGroupedDimensions = function(type) {
-                            var grouped = _.groupBy(
-                                dsd_comps.getDimensions(),
-                                function(comp, uri){ return dsd_comps.isCoreComponent(uri)?'core':'optional'; }
-                            );
-                            if (type) {
-                                return grouped[type]
-                            } else {
-                                return grouped
-                            }
+		    /**
+		     * @ function getGroupedDimensions
+		     * Return all the dsd components which are dimensions
+		     * @param {String} type 'core' or 'optional' get just an arry
+		     * @return {Object}
+		     */
+		    dsd_comps.getGroupedDimensions = function(type) {
+			var grouped = _.groupBy(
+			    dsd_comps.getDimensions(),
+			    function(comp, uri){ return dsd_comps.isCoreComponent(uri)?'core':'optional'; }
+			);
+			if (type) {
+			    return grouped[type]
+			} else {
+			    return grouped
+			}
 
-                        },
+		    },
 
-                        /**
-                         * getDefaultConfig
-                         *
-                         * Analyses the dsd and attempts  a set of sensible grapher values
-                         */
-                        dsd_comps.getDefaultConfig = function(){
-                            var config = {
-                                graph_type: data.settings.default_graph_type,
-                                yMeasure: null,
-                                xDimension: null,
-                                xGroup: null,
-                                fixed: {//"http://data.younglives.org.uk/data/statistics/structure/components/country":
-                                           //     "http://data.younglives.org.uk/data/statistics/Ethiopia",
-                                        //"http://data.younglives.org.uk/data/statistics/structure/components/year":
-                                        //         2009,
-                                        //   "http://data.younglives.org.uk/data/statistics/structure/components/cohort":
-                                        //        "http://data.younglives.org.uk/data/statistics/AllCohorts"
-                                }
-                            };
+		    /**
+		     * getDefaultConfig
+		     *
+		     * Analyses the dsd and attempts  a set of sensible grapher values
+		     */
+		    dsd_comps.getDefaultConfig = function(){
+			var config = {
+			    graph_type: data.settings.default_graph_type,
+			    yMeasure: null,
+			    xDimension: null,
+			    xGroup: null,
+			    fixed: {//"http://data.younglives.org.uk/data/statistics/structure/components/country":
+				       //     "http://data.younglives.org.uk/data/statistics/Ethiopia",
+				    //"http://data.younglives.org.uk/data/statistics/structure/components/year":
+				    //         2009,
+				    //   "http://data.younglives.org.uk/data/statistics/structure/components/cohort":
+				    //        "http://data.younglives.org.uk/data/statistics/AllCohorts"
+			    }
+			};
 
-                            //Sort all the measures by order and grab the first
-                             config.yMeasure =  dsd_comps.getMeasures()[0].uri;
+			//Sort all the measures by order and grab the first
+			 config.yMeasure =  dsd_comps.getMeasures()[0].uri;
 
 
-                             // sort dimensions into core components and others
-                            var dim_map = dsd_comps.getGroupedDimensions();
+			 // sort dimensions into core components and others
+			var dim_map = dsd_comps.getGroupedDimensions();
 
-                            // sort the required components - group by the one with the largest range of values
-                            // fix the rest to the first of their unique values
-                            _.each(
-                                _.sortBy(
-                                    dim_map.core,
-                                    function(item){
-                                        return dsd_comps.uniqueValuesFor(item.uri).length;
-                                    }
-                                ).reverse(),
-                                function(v,i){
-                                    if (i === 0) {
-                                        //group by the first item
-                                        config.xGroup = v.uri;
-                                    } else {
-                                        // Fix the dimension to the first of its values
-                                        config.fixed[v.uri] = dsd_comps.uniqueValuesFor(v.uri)[0].value;
-                                    }
-                                }
-                            );
+			// sort the required components - group by the one with the largest range of values
+			// fix the rest to the first of their unique values
+			_.each(
+			    _.sortBy(
+				dim_map.core,
+				function(item){
+				    return dsd_comps.uniqueValuesFor(item.uri).length;
+				}
+			    ).reverse(),
+			    function(v,i){
+				if (i === 0) {
+				    //group by the first item
+				    config.xGroup = v.uri;
+				} else {
+				    // Fix the dimension to the first of its values
+				    config.fixed[v.uri] = dsd_comps.uniqueValuesFor(v.uri)[0].value;
+				}
+			    }
+			);
 
-                            // Choose a dimension to graph! RANDOMLY
-                            config.xDimension = dim_map.optional[Math.floor(Math.random()*dim_map.optional.length)].uri;
-                            return config;
+			// Choose a dimension to graph! RANDOMLY
+			config.xDimension = dim_map.optional[Math.floor(Math.random()*dim_map.optional.length)].uri;
+			return config;
 
-                        }
+		    }
 
-                        // Store parsed observations and dsd componetry
-                        data.observations = obs;
-                        data.dsd_components = dsd_comps;
+		    // Store parsed observations and dsd componetry
+		    data.observations = obs;
+		    data.dsd_components = dsd_comps;
 
-                        // Check our config - calculating defaults if necessary
-                        if (!data.settings.config) {
-                            data.settings.config = data.dsd_components.getDefaultConfig();
-                            $this.trigger('grapherConfigChanged');
-                        }
+		    // Check our config - calculating defaults if necessary
+		    if (!data.settings.config) {
+			data.settings.config = data.dsd_components.getDefaultConfig();
+			$this.trigger('grapherConfigChanged');
+		    }
 
-                        // Call supplied callback & emit loaded event
-                        $this.trigger('graphDataLoaded');
-                        if (callback) {
-                            callback(data);
-                        }
-                    }
-                );
+		    // Call supplied callback & emit loaded event
+		    $this.trigger('graphDataLoaded');
+		    if (callback) {
+			callback(data);
+		    }
+		}
+                
             }, // END loadGraphData
 
             /**
@@ -432,24 +420,15 @@ steal(
                     $.error('No Grapher plugin has been registered with an id of ' + settings.config.graph_type);
                 }
             }, //END drawGraph
-            
-            /**
-             * Draw information about the data into the info tab
-             */
-            drawInfo: function(){
-              var $this = $(this),
-                data = $this.data('grapher'),
-                infotab = $('#info', $this);
-                infotab.html($.View('views/info.ejs', data));
-            },
 
             /**
              *Set up the sharing interface
              */
             initSharing: function(){
-                var $this = $(this),
-                    data = $this.data('grapher'),
-                    shareui = $('#share', $this);
+                var $this = $(this)
+                        data = $(this).data('grapher');
+
+                var shareui = $('#share', $this);
 
                 // Call for an update of the sharing code whenever
                 // an input element changes
