@@ -178,5 +178,5 @@ foreach($younglives_database_pubs as $pubkey => $data) {
 print count($younglives_database_pubs);
 
 //$model->writeAsHtml();
-$model->saveAs("data/full_publications.rdf");
+$model->saveAs("data/full_publications.n3","n3");
 

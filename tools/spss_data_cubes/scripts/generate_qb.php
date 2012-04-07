@@ -16,7 +16,7 @@
 
 //Defaults
 $defaultCountry = "unknown";
-$defaultRound = "Round3";
+$defaultRound = "roundThree";
 $defaultCohort = "unknown";
 
 //Includes
@@ -110,14 +110,16 @@ foreach($folders as $folder => $folderName) {
 						    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 									echo $n++. ", ";
 								//Record an observation attached to the given dataset and using $data[1] and $data[2]
-									$observation = new Resource($prefix_stats."stats-$fileName-".uniqid()); //Note: Improve this ID 
+									$observation = new Resource($prefix_stats."stats-$fileName-".format_var_string($data[1])); //Note: Improve this ID 
 									$model->add(new Statement($observation,$RDF_type,$QB_Observation));
 									$model->add(new Statement($observation,$QB_dataSet,$dsd['dataset']));
 									$model->add(new Statement($observation,$RDFS_label,new Literal("Frequency of {$fileName}")));
 									$model->add(new Statement($observation,$dsd['country'],$thisCountry)); 
 									$model->add(new Statement($observation,$dsd['round'],$thisRound));
 									$model->add(new Statement($observation,$dsd['cohort'],$thisCohort));
-									$model->add(new Statement($observation,$dsd['variable'], new Resource($code_prefix.format_var_string($data[1]))));
+									$codeURI = new Resource($code_prefix.format_var_string($data[1]));
+									$model->add(new Statement($codeURI,$RDFS_label, new Literal($data[1])));
+									$model->add(new Statement($observation,$dsd['variable'], $codeURI));
 									$count = new Literal($data['2']); 
 									$count->setDatatype("http://www.w3.org/2001/XMLSchema#decimal");
 									$model->add(new Statement($observation,$dsd['frequency'],$count));
@@ -135,8 +137,7 @@ foreach($folders as $folder => $folderName) {
 	}
 }
 
-log_message("Writing to file");
-$model->saveAs("../data/rdf/output.n3", "n3");
+
 
 
 function setUpDSD($varname,$ns,&$model) {
@@ -147,9 +148,14 @@ function setUpDSD($varname,$ns,&$model) {
 	
 	//And create the dimensions we'll need later
 	$country = new Resource($prefix_structure."country");
+	$model->addWithoutDuplicates(new Statement($country,$RDF_type,$QB_DimensionProperty));
 	$round = new Resource($prefix_structure."round");
+	$model->addWithoutDuplicates(new Statement($round,$RDF_type,$QB_DimensionProperty));
 	$cohort = new Resource($prefix_structure."cohort");	
+	$model->addWithoutDuplicates(new Statement($cohort,$RDF_type,$QB_DimensionProperty));
 	$variable = new Resource($prefix_vars.$varname);
+	$model->addWithoutDuplicates(new Statement($variable,$RDF_type,$QB_DimensionProperty));
+	$model->addWithoutDuplicates(new Statement($variable,$RDFS_label,new Literal($varname)));
 	$frequency = new Resource($prefix_vars."frequency");
 	$model->addWithoutDuplicates(new Statement($frequency,$RDF_type,$QB_MeasureProperty));
 	$model->addWithoutDuplicates(new Statement($frequency,$RDFS_label,new Literal("Frequency")));
@@ -160,25 +166,24 @@ function setUpDSD($varname,$ns,&$model) {
 	$dsd = new Resource($ns['ylstats']."SumaryStatistics-".$varname);
 	$model->add(new Statement($dsd,$RDF_type,$QB_DataStructureDefinition));
 	$model->add(new Statement($dsd,$RDFS_label,new Literal("Distribution of responses to variable $varname")));
+	$model->add(new Statement($dsd,new Resource($ns['yls']."relatedVariable"),$variable));
 
 	$componentVariable = new Resource($prefix_structure."component/component-".$varname);
 	$model->addWithoutDuplicates(new Statement($componentVariable,$QB_dimension,$variable));
-	$model->addWithoutDuplicates(new Statement($componentVariable ,$QB_order,new Literal(1)));
+	$model->addWithoutDuplicates(new Statement($componentVariable ,$QB_order,new Literal(2)));
 	$model->add(new Statement($dsd,$QB_component,$componentVariable));
 
 	$componentCountry = new Resource($prefix_structure."component/component-country");
 	$model->addWithoutDuplicates(new Statement($componentCountry,$QB_dimension,$country));
-	$model->addWithoutDuplicates(new Statement($componentCountry,$QB_order,new Literal(2)));
 	$model->add(new Statement($dsd,$QB_component,$componentCountry));
 
 	$componentRound = new Resource($prefix_structure."component/component-round");
 	$model->addWithoutDuplicates(new Statement($componentRound,$QB_dimension,$round));
-	$model->addWithoutDuplicates(new Statement($componentRound,$QB_order,new Literal(3)));
+	$model->addWithoutDuplicates(new Statement($componentRound ,$QB_order,new Literal(1)));
 	$model->add(new Statement($dsd,$QB_component,$componentRound));
 
 	$componentCohort = new Resource($prefix_structure."component/component-cohort");
 	$model->addWithoutDuplicates(new Statement($componentCohort ,$QB_dimension,$cohort));
-	$model->addWithoutDuplicates(new Statement($componentCohort ,$QB_order,new Literal(4)));
 	$model->add(new Statement($dsd,$QB_component,$componentCohort));
 	
 	$componentFrequency = new Resource($prefix_structure."component/component-measure-frequency");

@@ -75,7 +75,7 @@ Ethiopia_R3-YoungerChild-stblHHSec8ChildWork,rdf:type,yls:Question
 Ethiopia_R3-YoungerChild-stblSec1Activities,yls:country,ylstats:Ethiopia
 Ethiopia_R3-YoungerChild-stblSec1Activities,yls:cohort,ylstats:Young_cohort
 Ethiopia_R3-YoungerChild-stblSec1Activities,rdf:type,yls:Question
-India_R3India_R3-OlderChild-IN_OC_ChildLevel,yls:country,ylstats:India
+India_R3-OlderChild-IN_OC_ChildLevel,yls:country,ylstats:India
 India_R3-OlderChild-IN_OC_ChildLevel,yls:cohort,ylstats:Old_cohort
 India_R3-OlderChild-IN_OC_ChildLevel,rdf:type,yls:Question
 India_R3-OlderChild-IN_OC_HouseholdLevel,yls:country,ylstats:India

@@ -4,7 +4,7 @@
 $QB_prefix = "http://purl.org/linked-data/cube#";
 $QB_MeasureProperty = new Resource($QB_prefix."MeasureProperty");
 $QB_AttributeProperty = new Resource($QB_prefix."AttributeProperty");
-$QB_DimensionProperty = new Resource($QB_prefix."DimensionsProperty");
+$QB_DimensionProperty = new Resource($QB_prefix."DimensionProperty");
 $QB_ComponentProperty = new Resource($QB_prefix."ComponentProperty");
 $QB_DataStructureDefinition = new Resource($QB_prefix."DataStructureDefinition");
 $QB_codeList = new Resource($QB_prefix."codeList");
