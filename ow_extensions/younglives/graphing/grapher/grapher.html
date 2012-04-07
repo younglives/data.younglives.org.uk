@@ -2,22 +2,39 @@
             "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
   <head>
+    <!--[if IE 8]>
+      <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <![endif]-->    
 	<title>Young Lives Grapher</title>
     <style>
         body {
             margin: 0px;
         }
     </style>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	    google.load("visualization", "1", {packages:["corechart", "table"]});
+	</script>
   </head>
   <body>
 	<div id="grapher"></div>
+	
 	<script type='text/javascript'
-        src='../steal/steal.js?grapher,development'></script>
+        src='../steal/steal.production.js'></script>
 	<script type="text/javascript">
-        var params = jQuery.deparam.querystring(true);
-        var opts = {}; //override/supplement url vars here if needed
-	    $.extend(params, opts);
-        $('#grapher').yl_grapher(params);
+	  steal('//grapher/grapher.js')
+	    .then(function(){
+	      
+              //google.setOnLoadCallback(function(){
+		var params = jQuery.deparam.querystring(true);
+		var opts = {}; //override/supplement url vars here if needed
+		$.extend(params, opts);
+		$('#grapher').yl_grapher(params);	
+	      //});
+	      
+	      //google.load('visualization', '1', {'packages':['corechart', 'table']});
+	    });
+        
 	</script>
   </body>
 </html>
