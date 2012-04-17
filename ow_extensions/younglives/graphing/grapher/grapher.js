@@ -14,7 +14,7 @@ steal(
 
 )
 .then(
-    '//grapher/styles/grapher.css',   // Use our own CSS
+    //'//grapher/styles/grapher.css',   // Use our own CSS
     '//grapher/styles/tabs-accordion.css'   // Tab styling
 )
 .then( function(){
