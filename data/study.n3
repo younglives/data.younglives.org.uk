@@ -48,30 +48,30 @@ ylstats:Vietnam a yls:Country;
 yls:provenaceExtractedFromFile a rdf:Property;
 	rdfs:label "This data was found in the related survey file"@en.
 	
-yls:Round a rdfs:Class;
+ylstats:Round a rdfs:Class;
 	rdfs:comment "The Young Lives Study is a longitudinal study carried out over a series of rounds."@en;
 	rdfs:label "Study Round"@en.
 	
-yls:roundOne a yls:Round;
+ylstats:roundOne a ylstats:Round;
 	rdfs:label "Study Round 1"@en.
 	
-yls:roundTwo a yls:Round;
+ylstats:roundTwo a ylstats:Round;
 	rdfs:label "Study Round 2"@en.
 	
-yls:roundThree a yls:Round;
+ylstats:roundThree a ylstats:Round;
 	rdfs:label "Study Round 3"@en.
 
-yls:roundFour a yls:Round;
+ylstats:roundFour a ylstats:Round;
 	rdfs:label "Study Round 4"@en.	
 
-yls:roundFive a yls:Round;
+ylstats:roundFive a ylstats:Round;
 	rdfs:label "Study Round 5"@en.
 		
 ylstats:Cohort a rdfs:Class;
 	rdfs:comment "The Young Lives study follows two cohorts of young people, divided based on their age in Round 1 of the study"@en;
 	rdfs:label "Cohort"@en.
 
-ylstats:All_cohorts a ylstat:Cohort.
+ylstats:All_cohorts a ylstats:Cohort.
 
 yls:round a rdf:Property, qb:DimensionProperty;
 	rdfs:label "Young Lives Study Round"@en.
@@ -96,6 +96,10 @@ yls:inRound a rdf:Property;
 yls:Variable a rdfs:Class;
 	rdfs:label "Young Lives Variable"@en;
 	rdfs:comment "A variable used within the Young Lives Study.".
+
+yls:relatedVariable a rdfs:Class;
+	rdfs:label "Related Variable"@en;
+	rdfs:comment "A related variable.".
 
 yls:Question a rdfs:Class;
 	rdfs:label "Young Lives Question"@en;
